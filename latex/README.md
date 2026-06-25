@@ -54,11 +54,11 @@ herramientas/.venv-excel/bin/python3 herramientas/scripts/build_figuras_fase_cd.
 ## Anexo III (Guía N°01)
 
 - Fuente: Helvetica 11 pt (sustituto de Arial), márgenes 3/2,5 cm, interlineado 1,5 / 1,0 en índices, anexos y referencias.
-- Escudo UNI (opcional): colocar `frontmatter/escudo-uni.png` para la carátula.
+- Escudo UNI: `frontmatter/escudo-uni.png` (carátula Anexo III).
 
 ## Pendiente
 
 - [ ] Cap. 4 completo (Fase F)
-- [ ] Escudo UNI en `frontmatter/escudo-uni.png` (opcional)
+- [x] Escudo UNI en `frontmatter/escudo-uni.png`
 - [ ] Actualizar `\asesorPlan` en `config/metadata.tex` cuando se asigne asesor
 - [ ] Verificar DOI en Zotero vs. `referencias.bib`
