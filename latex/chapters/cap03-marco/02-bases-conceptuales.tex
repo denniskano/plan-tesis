@@ -1,0 +1,41 @@
+Las bases conceptuales fijan el vocabulario del dominio bancario--técnico que utiliza el plan de
+tesis. Se complementan con las definiciones operativas del Capítulo~1 (§1.1 y §1.4) y con el mapa
+semántico unificado de la sección~\ref{sec:glosario}.
+
+\subsection{API REST y contrato OpenAPI}
+
+Una \textbf{API REST} expone recursos y operaciones sobre HTTP siguiendo principios de estado
+transferible, identificación uniforme de recursos y representaciones intercambiables (JSON, XML,
+etc.). El \textbf{contrato OpenAPI} materializa esa interfaz en un artefacto formal (YAML/JSON)
+con \textit{paths}, \textit{operations}, \textit{schemas} y metadatos, legible por herramientas de
+documentación, generación y análisis (Casas et al., 2021).
+
+\subsection{Modelo de referencia BIAN}
+
+\textbf{BIAN} organiza capacidades bancarias en \ServiceDomain{}s: unidades de negocio descritas
+mediante \Behavior{}s (acciones), \BusinessObject{}s (entidades) y relaciones de control. En este
+plan, BIAN actúa como \textbf{modelo de referencia} para contrastar si un contrato OpenAPI bancario
+refleja la semántica y la estructura esperadas del dominio (Farzi, 2021), sin evaluar implementaciones
+en código ni despliegues productivos.
+
+\subsection{Alineación, coherencia y desalineación}
+
+\textbf{Alineación} es el grado de correspondencia estructural y semántica entre un contrato OpenAPI
+bancario y un \ServiceDomain{} BIAN emparejado. \textbf{Coherencia} se usa como sinónimo operativo
+cuando el \AlignmentScore{} integrado alcanza niveles Altos o Medios según la escala del modelo.
+\textbf{Desalineación} agrupa las divergencias detectables; la tipología empleada (estructural,
+semántica, de modelado, REST/contrato) se define en el Capítulo~1 (Tabla~\ref{tab:tipologias}).
+
+\subsection{Modelo de puntuación}
+
+El \textbf{modelo de alineación} propuesto descompone la evaluación en tres componentes ---
+\SemanticScore{} (S), \StructuralScore{} (E) y \CoverageScore{} (C) --- agregados en
+\AlignmentScore{} mediante pesos $\alpha$, $\beta$ y $\gamma$. La \Cref{fig:bases-conceptuales}
+resume la relación entre capa técnica (OpenAPI), capa de negocio (BIAN) y producto del modelo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figura_05_Bases_Conceptuales}
+  \caption{Bases conceptuales: contrato OpenAPI, \ServiceDomain{} BIAN y modelo de alineación S/E/C}
+  \label{fig:bases-conceptuales}
+\end{figure}

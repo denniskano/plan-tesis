@@ -1,0 +1,25 @@
+# LaTeX — artefactos de compilación
+latex/build/
+latex/*.aux
+latex/*.fdb_latexmk
+latex/*.fls
+latex/*.log
+latex/*.out
+latex/*.toc
+latex/*.lof
+latex/*.lot
+latex/*.synctex.gz
+latex/*.bbl
+latex/*.blg
+
+# Office / temporales
+**/~$*.xlsx
+**/~$*.docx
+
+# SO / editores
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/

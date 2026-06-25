@@ -1,0 +1,49 @@
+\section{Introducción}
+
+Un \textbf{contrato OpenAPI} es un documento formal ---habitualmente en YAML o JSON--- que describe
+una interfaz REST de forma legible por máquinas: rutas (\textit{paths}), operaciones HTTP, esquemas
+de datos (\textit{schemas}), parámetros y restricciones. En la práctica bancaria, ese contrato
+funciona como la especificación técnica de una API: documenta qué expone el servicio y bajo qué
+estructuras, de modo que equipos de desarrollo, integradores y herramientas de gobernanza puedan
+interpretarla de forma uniforme (Casas et al., 2021; Santos et al., 2020).
+
+\textbf{BIAN} (\textit{Banking Industry Architecture Network}) es un estándar de arquitectura para
+la banca que organiza el negocio en \textbf{\ServiceDomain{}s} (\textit{dominios de servicio}):
+unidades que representan capacidades bancarias ---como gestión de clientes, administración de
+productos o procesamiento de pagos--- mediante \textit{behaviors} (acciones de negocio),
+\textit{business objects} (entidades de dominio) y relaciones de control. BIAN no sustituye la
+implementación técnica de una API; ofrece un \textbf{modelo de referencia de negocio} contra el
+cual contrastar si una interfaz expuesta refleja la semántica esperada (Farzi, 2021).
+
+En esta investigación, \textbf{alineación} designa el grado en que un contrato OpenAPI bancario
+corresponde, en estructura y significado, a un \ServiceDomain{} BIAN emparejado. El \textbf{modelo
+de alineación} propuesto integra tres métricas ---\SemanticScore{}, \StructuralScore{} y
+\CoverageScore{}--- en un indicador global \AlignmentScore{} ($\alpha \cdot S + \beta \cdot E +
+\gamma \cdot C$, con $\alpha + \beta + \gamma = 1$). El Capítulo~\ref{cap:marco} profundizará estos
+conceptos; aquí basta señalar que el estudio busca medir esa correspondencia de forma reproducible
+sobre artefactos documentales.
+
+Sobre ese marco conceptual, el sector financiero ha acelerado la adopción de arquitecturas
+orientadas a servicios y de interfaces de programación de aplicaciones (APIs) como mecanismo de
+integración entre sistemas internos, plataformas de socios y canales digitales (Bhatia, 2022).
+OpenAPI se ha consolidado como estándar de facto para describir APIs REST, mientras BIAN orienta la
+coherencia arquitectónica a nivel de negocio. La convergencia entre contratos técnicos OpenAPI y
+modelos BIAN es estratégica para instituciones que aspiran a una banca abierta, interoperable y
+gobernable.
+
+El presente plan de tesis documenta el diseño de ese modelo de alineación y el procedimiento para
+calcular S, E, C y \AlignmentScore{} a partir de contratos OpenAPI bancarios contrastados con
+\ServiceDomain{}s BIAN. La problemática que motiva el estudio, la formulación del problema de
+investigación y la delimitación del objeto se desarrollan en las secciones~\ref{sec:problematica}
+a~\ref{sec:objeto-estudio}; los capítulos siguientes presentan objetivos, marco teórico, diseño
+metodológico y administración del plan.
+
+La \Cref{fig:contexto} presenta el contexto de la investigación: la relación entre arquitecturas API
+bancarias, el estándar BIAN y los contratos OpenAPI.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figura_01_Contexto}
+  \caption{Contexto: arquitectura API bancaria, BIAN, OpenAPI y modelo S/E/C}
+  \label{fig:contexto}
+\end{figure}

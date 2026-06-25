@@ -1,0 +1,54 @@
+\subsection{Qué sí cubre la literatura revisada}
+
+De forma transversal, el estado del arte permite afirmar que:
+
+\begin{enumerate}
+  \item \textbf{OpenAPI} es el formato dominante para especificar APIs REST y soporta automatización
+        en el ciclo de vida del software (E1).
+  \item Existen marcos formales para \textbf{correspondencia entre esquemas} (E2) y \textbf{similitud
+        semántica / alineación ontológica} (E3), incluidos \textit{embeddings} de última generación.
+  \item La \textbf{arquitectura orientada al dominio} justifica separar modelos de negocio e
+        interfaces técnicas (E4).
+  \item Un volumen considerable de trabajo aborda \textbf{calidad, prueba y seguridad} de APIs (E5),
+        útil para delimitar el problema pero no para resolverlo.
+  \item La \textbf{representación semántica de servicios} se explota en selección y recomendación
+        (E6).
+\end{enumerate}
+
+Ninguna de estas líneas, tomadas aisladamente o en conjunto en los catorce papers revisados,
+responde a la pregunta del plan de tesis: \textit{¿en qué medida un contrato OpenAPI bancario refleja
+el modelo de negocio de un \ServiceDomain{} BIAN y cómo cuantificarlo de forma reproducible?}
+
+\subsection{Vacíos identificados}
+
+\input{tables/tab06-vacios}
+
+La \Cref{fig:brecha} sintetiza la transición desde los ejes del estado del arte hacia los vacíos
+V1--V5 y la oportunidad de investigación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{Figura_06_Brecha}
+  \caption{De la literatura revisada (E1--E6) a la brecha de investigación (V1--V5)}
+  \label{fig:brecha}
+\end{figure}
+
+\subsection{Oportunidad de investigación}
+
+La brecha abre la oportunidad de \textbf{diseñar un modelo de alineación} que, dado un contrato
+OpenAPI bancario y un \ServiceDomain{} BIAN emparejado:
+
+\begin{itemize}
+  \item normalice ambos artefactos a representaciones comparables;
+  \item calcule \SemanticScore{}, \StructuralScore{} y \CoverageScore{};
+  \item integre \AlignmentScore{} $= \alpha \cdot S + \beta \cdot E + \gamma \cdot C$ con
+        clasificación interpretativa (Alta / Media / Baja / Nula).
+\end{itemize}
+
+Este plan de tesis documenta el \textbf{diseño} de ese modelo y del procedimiento de cálculo.
+La construcción del artefacto y la experimentación empírica a escala quedan \textbf{fuera del
+alcance} de este documento, como se delimita en \Cref{sec:alcances}.
+
+La investigación contribuye al vacío V1--V4 con un enfoque reproducible sobre \textbf{artefactos
+documentales}, orientado a gobernanza de APIs bancarias y trazabilidad negocio--tecnología, sin
+sustituir testing operativo ni certificación regulatoria.

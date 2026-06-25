@@ -1,0 +1,109 @@
+\chapter{Objetivos, hipótesis y variables}
+\label{cap:objetivos}
+
+\section{Línea de base / datos iniciales}
+
+La \textbf{línea de base} del estudio comprende los artefactos documentales sobre los cuales opera el
+modelo de alineación:
+
+\begin{itemize}
+  \item \textbf{Entrada principal:} contratos OpenAPI~3.x del sector bancario (objeto de estudio,
+        Cap.~1 §1.4).
+  \item \textbf{Referencia de contraste:} especificaciones de \ServiceDomain{} BIAN (\Behavior{},
+        \BusinessObject{}, relaciones de control).
+  \item \textbf{Producto esperado:} representaciones normalizadas, scores S/E/C y
+        \AlignmentScore{} con clasificación por niveles.
+\end{itemize}
+
+No se incluyen en la línea de base implementaciones en producción, tráfico \textit{runtime} ni
+artefactos de testing automatizado (delimitación §1.6). Los ejemplos ilustrativos (Tabla~1.4,
+Cap.~1) no fijan un caso piloto único: el procedimiento aplica a cualquier par contrato OpenAPI
+bancario --- \ServiceDomain{} BIAN evaluado.
+
+\section{Objetivo general}
+
+\textbf{Diseñar y aplicar un modelo de alineación} que calcule \SemanticScore{} (S),
+\StructuralScore{} (E), \CoverageScore{} (C) y un \AlignmentScore{} integrado para evaluar contratos
+OpenAPI frente a \ServiceDomain{} BIAN.
+
+Cada componente operacionaliza las preguntas P1--P4 del §1.3: OE1 habilita la comparación;
+\StructuralScore{} responde P1; \SemanticScore{} responde P2; \CoverageScore{} y \AlignmentScore{}
+responden P3--P4. La cadena completa se detalla en los objetivos específicos y en la matriz de
+consistencia (Anexo~C).
+
+\section{Objetivos específicos}
+
+Cada objetivo específico se expresa como \textbf{transformación} entrada $\rightarrow$ salida
+(producto verificable), coherente con las cinco fases del modelo:
+
+\begin{table}[H]
+  \centering
+  \caption{Objetivos específicos como transformaciones}
+  \label{tab:objetivos-especificos}
+  \small
+  \begin{tabular}{@{}p{0.08\textwidth}p{0.22\textwidth}p{0.30\textwidth}p{0.30\textwidth}@{}}
+    \toprule
+    \textbf{ID} & \textbf{Subproblema} & \textbf{Entrada} & \textbf{Salida (producto)} \\
+    \midrule
+    \textbf{OE1} &
+    Adquisición y normalización &
+    Contrato OpenAPI bancario + \ServiceDomain{} BIAN &
+    Representaciones normalizadas comparables (\textit{paths}, \textit{schemas},
+    \Behavior{}, \BusinessObject{}) \\
+    \textbf{OE2} &
+    Alineación estructural (P1) &
+    Representaciones normalizadas &
+    Matriz de correspondencias + \StructuralScore{} (E) $\in [0, 1]$ \\
+    \textbf{OE3} &
+    Alineación semántica (P2) &
+    Representaciones normalizadas &
+    Matriz de similitud + \SemanticScore{} (S) $\in [0, 1]$ \\
+    \textbf{OE4} &
+    Evaluación integrada (P3--P4) &
+    \StructuralScore{} (E), \SemanticScore{} (S) y representaciones normalizadas (OE1) &
+    \CoverageScore{} (C); \AlignmentScore{}; clasificación (Alta/Media/Baja/Nula); tipologías \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+La \textbf{Fase~1} del modelo (diseño del procedimiento y definición de scores) corresponde al
+marco metodológico general del plan de tesis (Guía~1) y no se confunde con OE1--OE4, que son
+transformadores sucesivos sobre los artefactos.
+
+\section{Hipótesis}
+
+Se plantea una hipótesis por objetivo específico, vinculada al producto verificable de cada fase:
+
+\begin{enumerate}
+  \item \textbf{H1 (OE1):} La normalización de OpenAPI bancario y BIAN en un modelo intermedio
+        común habilita el cálculo sistemático de los scores S, E y C.
+  \item \textbf{H2 (OE2):} Las técnicas de \textit{schema matching} producen un \StructuralScore{}
+        que refleja la correspondencia entre la organización REST y el modelo BIAN.
+  \item \textbf{H3 (OE3):} Las métricas de similitud semántica producen un \SemanticScore{} que
+        discrimina conceptos alineados de desalineaciones semánticas o de modelado.
+  \item \textbf{H4 (OE4):} La agregación ponderada de S, E y C produce un \AlignmentScore{}
+        interpretable y clasificable por niveles de alineación del contrato OpenAPI bancario.
+\end{enumerate}
+
+Adicionalmente, la \textbf{Fase~1} (diseño) se sustenta en la hipótesis de que un modelo
+estructurado por componentes S, E y C permite calcular de forma reproducible un score de alineación
+interpretable entre OpenAPI y BIAN (detalle en Anexo~C).
+
+\section{Variables de investigación}
+
+\input{tables/tab05-variables}
+
+Los indicadores y métricas detallados por fase se documentan en la matriz de consistencia (Anexo~C).
+
+\section{Figura de cadena de objetivos}
+
+La \Cref{fig:cadena-objetivos} muestra la secuencia de transformaciones desde los artefactos de
+entrada hasta el \AlignmentScore{} integrado.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{Figura_04_Cadena_Objetivos}
+  \caption{Cadena de objetivos: normalización $\rightarrow$ scores parciales $\rightarrow$ score global.
+           Fase~1 (diseño del modelo) precede a OE1; ver Anexo~C.}
+  \label{fig:cadena-objetivos}
+\end{figure}

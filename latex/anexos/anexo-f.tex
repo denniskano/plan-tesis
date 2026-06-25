@@ -1,0 +1,133 @@
+\chapter{Ejemplos OpenAPI y BIAN}
+\label{anexo:f}
+
+Este anexo complementa la Tabla~1.4 (Cap.~1 §1.4) con un \textbf{ejemplo reducido} y un
+\textbf{ejemplo ampliado} de contrato OpenAPI bancario contrastado con un \ServiceDomain{} BIAN
+genérico del dominio de pagos. Los ejemplos son \textbf{ilustrativos}: no fijan un caso piloto
+único (PI-10, M4).
+
+\section{Ejemplo reducido (unidad de análisis)}
+
+\begin{table}[H]
+  \centering
+  \caption{Ejemplo reducido — pares OpenAPI $\leftrightarrow$ BIAN}
+  \label{tab:anexo-f-reducido}
+  \small
+  \begin{tabular}{@{}p{0.44\textwidth}p{0.44\textwidth}@{}}
+    \toprule
+    \textbf{Elemento OpenAPI} & \textbf{Elemento BIAN (referencia)} \\
+    \midrule
+    \texttt{POST /payment-orders} & \Behavior{} \texttt{Initiate} \\
+    \texttt{GET /payment-orders/\{id\}} & \Behavior{} \texttt{Retrieve} \\
+    Esquema \texttt{PaymentOrder} (\texttt{amount}, \texttt{currency}) &
+    \BusinessObject{} \texttt{Payment} / \texttt{PaymentAmount} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Ejemplo ampliado (fragmento de contrato)}
+
+\subsection{Contrato OpenAPI (extracto ilustrativo)}
+
+\begin{verbatim}
+openapi: 3.0.3
+info:
+  title: Retail Payment Initiation API
+  version: 1.0.0
+paths:
+  /payment-initiations:
+    post:
+      operationId: createPaymentInitiation
+      summary: Initiate a payment order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentInitiation'
+      responses:
+        '201':
+          description: Payment initiation created
+  /payment-initiations/{paymentInitiationId}:
+    get:
+      operationId: getPaymentInitiation
+      summary: Retrieve payment initiation status
+      parameters:
+        - name: paymentInitiationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Payment initiation details
+components:
+  schemas:
+    PaymentInitiation:
+      type: object
+      required: [debtorAccount, instructedAmount, creditor]
+      properties:
+        debtorAccount:
+          $ref: '#/components/schemas/AccountReference'
+        instructedAmount:
+          $ref: '#/components/schemas/Amount'
+        creditor:
+          $ref: '#/components/schemas/Party'
+    Amount:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+\end{verbatim}
+
+\subsection{Referencia BIAN (Payment Initiation — ilustrativo)}
+
+\begin{table}[H]
+  \centering
+  \caption{Elementos BIAN emparejables con el extracto OpenAPI}
+  \label{tab:anexo-f-bian}
+  \small
+  \begin{tabular}{@{}p{0.28\textwidth}p{0.62\textwidth}@{}}
+    \toprule
+    \textbf{Tipo BIAN} & \textbf{Elemento de referencia} \\
+    \midrule
+    \ServiceDomain{} & Payment Initiation (dominio de pagos) \\
+    \Behavior{} & \texttt{Initiate}, \texttt{Retrieve}, \texttt{Update} \\
+    \BusinessObject{} & \texttt{PaymentInstruction}, \texttt{PaymentAmount}, \texttt{Party} \\
+    Relación de control & Orquestación iniciación $\rightarrow$ confirmación de estado \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Correspondencias para el modelo S/E/C}
+
+\begin{table}[H]
+  \centering
+  \caption{Lectura del ejemplo bajo S, E y C}
+  \label{tab:anexo-f-scores}
+  \small
+  \begin{tabular}{@{}p{0.12\textwidth}p{0.78\textwidth}@{}}
+    \toprule
+    \textbf{Score} & \textbf{Qué evaluaría en este extracto} \\
+    \midrule
+    E &
+    Correspondencia \texttt{/payment-initiations} $\leftrightarrow$ \Behavior{};
+    anidamiento \texttt{components/schemas} $\leftrightarrow$ \BusinessObject{} \\
+    S &
+    Similitud \texttt{instructedAmount/currency} $\leftrightarrow$ \texttt{PaymentAmount};
+    \texttt{creditor} $\leftrightarrow$ \texttt{Party} \\
+    C &
+    Proporción de \Behavior{} y \BusinessObject{} del SD cubiertos por operaciones y esquemas
+    del fragmento \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Nota metodológica}
+
+El procedimiento completo de normalización, matching y cálculo de scores se documentará en el
+Capítulo~4 (diseño metodológico). Este anexo satisface la solicitud docente de contar con un
+ejemplo pequeño (Tabla~1.4) y uno ampliado (I5, PI-10) sin comprometer la decisión de equipo de
+no fijar un piloto en la matriz de consistencia.

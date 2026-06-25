@@ -1,0 +1,97 @@
+\section{Objeto de estudio}
+\label{sec:objeto-estudio}
+
+El \textbf{objeto de estudio} son los \textbf{contratos OpenAPI} (especificaciones en formato
+OpenAPI~3.x) utilizados para describir APIs en arquitecturas orientadas a servicios del
+\textbf{sector bancario}, en tanto artefactos observables y medibles que pueden contrastarse con
+modelos de negocio de referencia.
+
+No son objeto de estudio: la totalidad del estándar BIAN como organización, las implementaciones en
+código fuente de \textit{backends}, ni la infraestructura de despliegue. BIAN se emplea como
+\textbf{modelo de referencia} (\ServiceDomain{}: \textit{behaviors}, \textit{business objects},
+relaciones de control) contra el cual se evalúan los contratos.
+
+Aunque BIAN también publica contratos OpenAPI de referencia, el estudio no reduce BIAN a su capa
+REST: el \ServiceDomain{} representa el modelo de negocio y el \textbf{contrato OpenAPI bancario}
+---del banco, integrador o catálogo de referencia--- es la \textbf{capa técnica evaluada}.
+
+Para evitar ambigüedades, se distinguen tres niveles:
+
+\begin{table}[H]
+  \centering
+  \caption{Objeto, unidad de análisis y producto del modelo}
+  \label{tab:objeto-unidad-producto}
+  \begin{tabular}{@{}p{0.28\textwidth}p{0.62\textwidth}@{}}
+    \toprule
+    \textbf{Concepto} & \textbf{En este estudio} \\
+    \midrule
+    \textbf{Objeto de estudio} & El contrato OpenAPI bancario completo (artefacto documental) \\
+    \textbf{Unidad de análisis} &
+    Elementos comparables dentro del \textit{pipeline}: endpoint/operation/schema $\leftrightarrow$
+    \Behavior{} / \BusinessObject{} BIAN \\
+    \textbf{Producto del modelo} & Scores S, E, C y \AlignmentScore{} por contrato evaluado \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+En analogía con un procedimiento de evaluación automatizada, el \textbf{objeto} es el artefacto de
+entrada (el contrato); la \textbf{unidad de análisis} es cada instancia procesada dentro de ese
+artefacto (un par endpoint--\Behavior{}, un esquema--\BusinessObject{}, etc.); el \textbf{producto}
+es el resultado agregado del modelo (\AlignmentScore{} y clasificación).
+
+\input{tables/tab03-ejemplo-generico}
+
+La tabla anterior es \textbf{explicativa}: ilustra la unidad de análisis con nombres ficticios. El
+ejemplo ampliado se documenta en el Anexo~F. El procedimiento aplica a cualquier contrato OpenAPI
+bancario emparejado con un \ServiceDomain{} BIAN.
+La \Cref{fig:objeto-unidad} resume objeto, unidad de análisis, producto del modelo y el ejemplo
+genérico.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figura_02_Objeto_Unidad_Analisis}
+  \caption{Objeto de estudio, unidad de análisis y producto (ejemplo genérico)}
+  \label{fig:objeto-unidad}
+\end{figure}
+
+\subsection{Producto central: modelo de alineación}
+
+El \textbf{resultado esperado} de la investigación es un \textbf{modelo de alineación} que, dado un
+contrato OpenAPI bancario y un \ServiceDomain{} BIAN emparejado, calcule:
+
+\begin{table}[H]
+  \centering
+  \caption{Componentes del modelo de alineación}
+  \label{tab:componentes-score}
+  \begin{tabular}{@{}p{0.28\textwidth}p{0.62\textwidth}@{}}
+    \toprule
+    \textbf{Componente} & \textbf{Significado} \\
+    \midrule
+    \SemanticScore{} & Similitud de significado entre conceptos OpenAPI y BIAN \\
+    \StructuralScore{} & Correspondencia de jerarquía y organización (REST $\leftrightarrow$ SD) \\
+    \CoverageScore{} & Proporción de conceptos BIAN cubiertos por el contrato \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+A partir de estos componentes se obtiene el \AlignmentScore{}:
+
+\begin{quote}
+  \AlignmentScore{} $= \alpha \cdot S + \beta \cdot E + \gamma \cdot C$, con $\alpha + \beta +
+  \gamma = 1$
+\end{quote}
+
+La clasificación interpretativa del \textit{score} es: \textbf{Alta} ($\geq 0{,}80$),
+\textbf{Media} (0,60--0,79), \textbf{Baja} (0,40--0,59) y \textbf{Nula} ($< 0{,}40$). La
+\Cref{fig:alignment-score} ilustra el cálculo del score de alineación.
+
+\begin{figure}[H]
+  \centering
+  \figCapThree
+  \caption{Cálculo del score de alineación: S, E, C $\rightarrow$ \AlignmentScore{}}
+  \label{fig:alignment-score}
+\end{figure}
+
+Este modelo se descompone en cinco fases de transformación (diseño, normalización, cálculo de E, S
+y C, e integración en \AlignmentScore{}), coherentes con la matriz de consistencia (Anexo~C) y con
+los objetivos del Capítulo~\ref{cap:objetivos}.

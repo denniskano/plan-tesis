@@ -1,0 +1,43 @@
+\chapter{Matriz de consistencia}
+\label{anexo:c}
+
+La matriz de consistencia vincula \textbf{problema general}, \textbf{objetivo general}, las
+\textbf{cinco fases} del modelo S/E/C, variables, hipótesis, indicadores y controles. Fue
+ajustada según retroalimentación docente PI-10 (eliminación de piloto Payment Execution; Fase~1
+= diseño del procedimiento, no experimentación).
+
+\section{Metadatos}
+
+\begin{description}
+  \item[Problema general:] ¿En qué medida un contrato OpenAPI bancario se alinea con el modelo de
+        referencia BIAN y bajo qué tipologías se produce desalineación?
+  \item[Objetivo general:] Diseñar y aplicar un modelo de alineación que calcule
+        \SemanticScore{} (S), \StructuralScore{} (E), \CoverageScore{} (C) y un
+        \AlignmentScore{} integrado (Cap.~2 §2.2).
+\end{description}
+
+\section{Resumen por fase}
+
+\small
+\input{tables/tab-anexo-c-resumen}
+\normalsize
+
+\section{Trazabilidad Cap.~2}
+
+\begin{table}[H]
+  \centering
+  \caption{Vinculación fases del modelo $\rightarrow$ objetivos específicos}
+  \label{tab:anexo-c-trazabilidad}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Fase modelo} & \textbf{OE} & \textbf{Score / producto} \\
+    \midrule
+    Fase 1 — Diseño & Marco OG & Modelo S/E/C documentado \\
+    Fase 2 — Normalización & OE1 & Representaciones comparables \\
+    Fase 3 — Matching estructural & OE2 & \StructuralScore{} (E) \\
+    Fase 4 — Similitud semántica & OE3 & \SemanticScore{} (S) \\
+    Fase 5 — Integración & OE4 & \CoverageScore{} (C) + \AlignmentScore{} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

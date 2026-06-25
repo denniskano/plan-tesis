@@ -1,0 +1,33 @@
+Los antecedentes de esta investigación provienen de una revisión sistematizada de la literatura
+sobre especificación de APIs, correspondencia entre esquemas, similitud semántica y arquitectura de
+servicios en el sector financiero. Se analizaron \textbf{catorce trabajos} agrupados en seis ejes
+(E1--E6), con fichas detalladas en el Anexo~B y síntesis extendida en las secciones~\ref{sec:estado-arte}
+y~\ref{sec:brecha} de este capítulo.
+
+En lugar de enumerar resúmenes aislados por paper, los antecedentes se organizan en \textbf{cuatro
+líneas convergentes} que motivan el diseño del modelo de alineación propuesto:
+
+\begin{enumerate}
+  \item \textbf{Madurez de OpenAPI.} La literatura confirma que OpenAPI/Swagger es el estándar de
+        facto para describir APIs REST (Casas et al., 2021) y admite usos más allá de la
+        documentación ---generación, pruebas, gobernanza---, pero \textbf{no} aborda la coherencia
+        con modelos de negocio bancarios de referencia como BIAN.
+  \item \textbf{Técnicas de correspondencia estructural y semántica.} Existen marcos consolidados
+        para \textit{schema matching} (Shvaiko y Euzenat, 2005) y para similitud semántica y
+        alineación ontológica (El Bayadh et al., 2015; Chandrasekaran y Mago, 2022; Santos Sousa
+        et al., 2026), aplicables por separado a componentes del contrato OpenAPI y del
+        \ServiceDomain{} BIAN.
+  \item \textbf{Separación dominio--interfaz.} La arquitectura orientada al dominio y la
+        descomposición en microservicios (Schmidt y Thiry, 2020) justifican contrastar modelos de
+        negocio e interfaces técnicas, sin confundir la capa REST con el modelo BIAN completo.
+  \item \textbf{Delimitación del foco.} Revisiones sobre testing, seguridad y selección de servicios
+        (ejes E5 y E6) emplean OpenAPI con fines operativos distintos a la alineación documental;
+        acotan el alcance del presente plan (véase \Cref{sec:alcances}).
+\end{enumerate}
+
+Estos antecedentes permiten afirmar que, si bien existen bases parciales para medir correspondencia
+estructural (\StructuralScore{}), similitud semántica (\SemanticScore{}) y cobertura conceptual
+(\CoverageScore{}), \textbf{no hay un procedimiento integrado} que los combine en un
+\AlignmentScore{} reproducible sobre contratos OpenAPI bancarios frente a \ServiceDomain{}s BIAN. La
+revisión detallada por ejes, las tablas sistematizadas y la formulación explícita de la brecha se
+desarrollan a continuación en este capítulo.

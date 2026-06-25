@@ -1,0 +1,40 @@
+\section{Problemática}
+\label{sec:problematica}
+
+Históricamente, la integración en el sector bancario se apoyó en acuerdos propietarios, contratos
+ad hoc y documentación heterogénea, lo que generó silos de información, duplicidad de modelos y
+dificultad para reutilizar capacidades entre líneas de negocio y socios tecnológicos. La
+estandarización de APIs REST y la adopción de OpenAPI mitigaron parte de la fragmentación técnica al
+unificar la descripción formal de interfaces (Casas et al., 2021). Sin embargo, la estandarización
+del \textit{cómo} se expone un servicio no implica automáticamente la estandarización del
+\textit{qué} representa en términos de negocio.
+
+Farzi (2021) señala que la arquitectura empresarial y los modelos de referencia ---entre ellos
+BIAN--- son condición para la agilidad y la transformación digital bancaria, pero su adopción
+enfrenta barreras de madurez organizacional, heterogeneidad de implementaciones y brechas entre la
+arquitectura objetivo (\textit{to-be}) y los artefactos efectivamente desplegados. En la práctica,
+equipos de desarrollo producen contratos OpenAPI orientados a la implementación inmediata, mientras
+áreas de arquitectura y negocio mantienen modelos BIAN como referencia conceptual; la sincronización
+entre ambos suele ser manual, parcial y sin métricas objetivas de coherencia.
+
+Shabbir et al. (2025) evidencian, además, que la calidad de las APIs en la industria depende de
+múltiples requisitos no funcionales ---consistencia, usabilidad, mantenibilidad--- que se ven
+comprometidos cuando la documentación técnica no refleja con fidelidad el dominio de negocio. En
+arquitecturas API bancarias, esta situación se manifiesta como:
+
+\begin{itemize}
+  \item \textbf{Fragmentación semántica:} mismos conceptos de negocio nombrados de forma distinta
+        entre OpenAPI y BIAN (p.\ ej., \texttt{PaymentOrder} frente a \texttt{paymentRequest}).
+  \item \textbf{Inconsistencias estructurales:} operaciones y recursos HTTP que no corresponden a
+        las capacidades o \textit{behaviors} definidos en el \ServiceDomain{}.
+  \item \textbf{Deriva documental:} versiones de contratos OpenAPI que evolucionan sin trazabilidad
+        respecto al modelo de referencia BIAN.
+  \item \textbf{Falta de evaluación sistemática:} ausencia de procedimientos reproducibles para
+        cuantificar la alineación entre ambos artefactos antes del despliegue o la certificación de
+        conformidad.
+\end{itemize}
+
+Esta problemática no es anecdótica: afecta la gobernanza de APIs, la interoperabilidad en ecosistemas
+abiertos y la confianza de \textit{stakeholders} de negocio y tecnología en que una API representa
+correctamente una capacidad bancaria estandarizada. Motiva, por tanto, la necesidad de investigar
+cómo medir y caracterizar la alineación entre contratos OpenAPI y modelos BIAN.

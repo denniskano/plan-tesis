@@ -1,0 +1,45 @@
+\section{Planteamiento del problema}
+
+A partir de la problemática descrita, el \textbf{problema de investigación} se formula como una
+pregunta medible, distinta de los objetivos de la tesis:
+
+\begin{quote}
+  \textbf{¿En qué medida y bajo qué tipologías se produce desalineación entre contratos OpenAPI y
+  los modelos de negocio BIAN en arquitecturas API bancarias?}
+\end{quote}
+
+Para operacionalizar el problema se plantean las siguientes \textbf{preguntas específicas}:
+
+\begin{table}[H]
+  \centering
+  \caption{Preguntas específicas de investigación}
+  \label{tab:preguntas}
+  \small
+  \begin{tabular}{@{}p{0.06\textwidth}p{0.88\textwidth}@{}}
+    \toprule
+    \textbf{ID} & \textbf{Pregunta} \\
+    \midrule
+    \textbf{P1} &
+    ¿Qué correspondencias estructurales pueden establecerse entre elementos de un contrato OpenAPI
+    (\textit{paths}, \textit{operations}, \textit{schemas}) y los artefactos de un \ServiceDomain{}
+    BIAN? \\
+    \textbf{P2} &
+    ¿Qué grado de similitud semántica existe entre los términos y conceptos de negocio en BIAN y los
+    nombres de recursos, propiedades y descripciones en OpenAPI? \\
+    \textbf{P3} &
+    ¿Qué tipologías de desalineación predominan al comparar ambos artefactos en un mismo dominio de
+    servicio? \\
+    \textbf{P4} &
+    ¿Es posible integrar métricas estructurales y semánticas en un indicador de coherencia global
+    por cada instancia evaluada (par contrato OpenAPI bancario --- \ServiceDomain{} BIAN)? \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+La \Cref{tab:tipologias} resume la tipología de desalineaciones identificadas:
+
+\input{tables/tab02-tipologias}
+
+Las preguntas anteriores orientan la investigación; las transformaciones concretas (normalización,
+\textit{matching}, cálculo de \textit{scores}) se declaran como \textbf{objetivos específicos} en el
+Capítulo~\ref{cap:objetivos}.
