@@ -29,58 +29,7 @@ genérico del dominio de pagos. Los ejemplos son \textbf{ilustrativos}: no fijan
 
 \subsection{Contrato OpenAPI (extracto ilustrativo)}
 
-\begin{verbatim}
-openapi: 3.0.3
-info:
-  title: Retail Payment Initiation API
-  version: 1.0.0
-paths:
-  /payment-initiations:
-    post:
-      operationId: createPaymentInitiation
-      summary: Initiate a payment order
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PaymentInitiation'
-      responses:
-        '201':
-          description: Payment initiation created
-  /payment-initiations/{paymentInitiationId}:
-    get:
-      operationId: getPaymentInitiation
-      summary: Retrieve payment initiation status
-      parameters:
-        - name: paymentInitiationId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Payment initiation details
-components:
-  schemas:
-    PaymentInitiation:
-      type: object
-      required: [debtorAccount, instructedAmount, creditor]
-      properties:
-        debtorAccount:
-          $ref: '#/components/schemas/AccountReference'
-        instructedAmount:
-          $ref: '#/components/schemas/Amount'
-        creditor:
-          $ref: '#/components/schemas/Party'
-    Amount:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
-          pattern: '^[A-Z]{3}$'
-\end{verbatim}
+\lstinputlisting{../datos-objeto-estudio/ejemplo_openapi_payment_initiation.yaml}
 
 \subsection{Referencia BIAN (Payment Initiation — ilustrativo)}
 

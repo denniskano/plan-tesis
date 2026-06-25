@@ -58,6 +58,14 @@ cd plan-tesis/latex && make pdf
 
 `latex/build/` está en `.gitignore`. Scripts Python para regenerar tablas/figuras: `../../herramientas/scripts/` (repo v3, fuera de este Git).
 
+### Entrega Informe Guía 1 (Google Drive)
+
+```bash
+python3 herramientas/scripts/build_entrega_guia01.py
+```
+
+Genera `entrega/Informe_Guia1_Grupo9.2/` (5 carpetas, sin README internos) y `.zip`.
+
 ## Capítulos en LaTeX
 
 | Cap. | Carpeta | Estado |
