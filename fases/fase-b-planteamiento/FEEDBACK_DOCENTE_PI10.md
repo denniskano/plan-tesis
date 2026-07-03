@@ -4,7 +4,7 @@
 **Tema expuesto:** alineación OpenAPI ↔ BIAN en APIs bancarias · matriz de consistencia  
 **Integrantes:** Alex Mancilla · Jack Paitan  
 **Seguimiento:** Fases B–D (`CHECKLIST.md`, `REVISION_CRUZADA.md`) · `planificacion/PLAN_ELABORACION_PLAN_TESIS.md`  
-**Última actualización pendientes:** 2026-05-28
+**Última actualización pendientes:** 2026-07-02
 
 > **Decisión de equipo (2026-05-28):** Este repositorio cubre **solo el plan de tesis (Guía N°01)**. No se redactará contenido para Guía N°02 / tesis de investigación (otro curso). La experimentación y construcción del artefacto se **delimitan como fuera de alcance** en §1.6; no habrá sección dedicada en Cap. 4.
 
@@ -52,7 +52,7 @@
 | I2 | **Conceptos primero, papers después** | ✅ §1.1 reordenado |
 | I3 | Explicar **qué es BIAN** antes de usarlo | ✅ §1.1 |
 | I4 | Redactar para lector sin background | ✅ §1.1 (revisión continua) |
-| I5 | **Ejemplo chico + ejemplo más grande** del contrato | ✅ Tabla 1.4 (chico) · ✅ Anexo F (ampliado) · Cap. 4 casos ⏳ Fase F |
+| I5 | **Ejemplo chico + ejemplo más grande** del contrato | ✅ Tabla 1.4 · Anexo F · §4.6 |
 | I6 | **Conceptualizaciones de papers** en el documento | ✅ §3.3 glosario + §3.4 bases teóricas (Fase E) |
 
 ### D. Exposición oral
@@ -67,7 +67,7 @@
 
 | ID | Sugerencia del docente | Estado |
 |----|------------------------|--------|
-| G1 | **Este plan:** diseño del artefacto y procedimiento | ✅ §1.6 · Cap. 4 en redacción (Fase F) |
+| G1 | **Este plan:** diseño del artefacto y procedimiento | ✅ §1.6 · Cap. 4 ✅ |
 | G2 | No incluir **experimentación/construcción** como objetivo del plan | ✅ §1.6 Tabla 1.7 · fuera de matriz |
 | G3 | AS-IS, estado del arte → plan de tesis, no filas de matriz | ✅ §3.1–§3.6 LaTeX |
 
@@ -99,13 +99,12 @@
 | G3 | Cap. 3 completo §3.1–§3.6 (antecedentes + estado del arte + brecha) | Fase C + E ✅ |
 | I6 | Glosario 18 términos + bases teóricas | §3.3 Tabla 7 · §3.4 · Fig. 5 |
 | G3 | Cap. 5 + anexos A–F + referencias | Fase G ✅ |
+| G1 | Cap. 4 metodología completa | Fase F ✅ 2026-07-02 |
 | M5, G2 | Experimentación/construcción fuera de alcance del plan | §1.6 · matriz sin OE experimental |
 
 ### Abiertos — prioridad P1 (contenido del plan)
 
-| Prioridad | Qué | Dónde | IDs |
-|-----------|-----|-------|-----|
-| **P1** | Cap. 4 metodología completa (diseño reproducible) | Fase F | G1 |
+*Ninguno — informe LaTeX completo para Guía 1.*
 
 ### Abiertos — prioridad P2 (entrega / oral)
 
@@ -119,9 +118,9 @@
 
 | Qué | Dónde |
 |-----|-------|
-| Revisión docente Cap. 2–3 | Tras subir PDF / próxima sesión |
-| Anexos C–D en LaTeX, Zotero metadatos finos | Fase G ✅ · verificar DOI en Zotero |
-| Checklist cierre PI-08 | Fase H |
+| Revisión docente Cap. 1–4 | Tras subir PDF / próxima sesión |
+| Zotero metadatos finos (DOI) | Fase G · verificar |
+| Checklist cierre PI-08 | Fase H · ver `ESTADO_INFORME.md` |
 | Portada exacta Guía N°01 | Fase A (menor) |
 
 ---

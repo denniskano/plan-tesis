@@ -32,7 +32,7 @@
 | Fig. 1–3 | ✅ | Compilan en PDF |
 | Coherencia docente | ✅ | Problema ≠ objetivo; BIAN = referencia; sin PI-XX en `.tex` |
 
-**Riesgos transversales:** numeración interna «Tabla 3» en checklist ≠ Tabla 1.4 LaTeX (solo documentación); Anexo C aún placeholder en LaTeX (no bloquea Cap. 1).
+**Riesgos transversales:** numeración interna «Tabla 3» en checklist ≠ Tabla 1.4 LaTeX (solo documentación). Anexo C en LaTeX ✅.
 
 ---
 

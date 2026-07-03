@@ -1,29 +1,28 @@
 Las bases conceptuales fijan el vocabulario del dominio bancario--técnico que utiliza el plan de
-tesis. Se complementan con las definiciones operativas del Capítulo~1 (§1.1 y §1.4) y con el mapa
-semántico unificado de la sección~\ref{sec:glosario}.
+tesis del Grupo~9.2. Se complementan con las definiciones operativas del Capítulo~1 (§1.1 y §1.4) y
+con el mapa semántico unificado de la sección~\ref{sec:glosario}.
 
 \subsection{API REST y contrato OpenAPI}
 
-Una \textbf{API REST} expone recursos y operaciones sobre HTTP siguiendo principios de estado
-transferible, identificación uniforme de recursos y representaciones intercambiables (JSON, XML,
-etc.). El \textbf{contrato OpenAPI} materializa esa interfaz en un artefacto formal (YAML/JSON)
-con \textit{paths}, \textit{operations}, \textit{schemas} y metadatos, legible por herramientas de
-documentación, generación y análisis (Casas et al., 2021).
+En este plan, el \textbf{contrato OpenAPI} (YAML/JSON) es el artefacto concreto que el banco
+publica para describir su API: \textit{paths}, operaciones, \textit{schemas} y metadatos legibles
+por herramientas de documentación y análisis. Casas et al.\ (2021) lo confirman como estándar de
+facto en el ecosistema de APIs web; la capa REST subyacente se da por conocida y no se redefine aquí.
 
 \subsection{Modelo de referencia BIAN}
 
 \textbf{BIAN} organiza capacidades bancarias en \ServiceDomain{}s: unidades de negocio descritas
 mediante \Behavior{}s (acciones), \BusinessObject{}s (entidades) y relaciones de control. En este
 plan, BIAN actúa como \textbf{modelo de referencia} para contrastar si un contrato OpenAPI bancario
-refleja la semántica y la estructura esperadas del dominio (Farzi, 2021), sin evaluar implementaciones
-en código ni despliegues productivos.
+refleja la semántica y la estructura esperadas del dominio (Farzi, 2021). No se evalúan
+implementaciones en código ni despliegues productivos.
 
 \subsection{Alineación, coherencia y desalineación}
 
-\textbf{Alineación} es el grado de correspondencia estructural y semántica entre un contrato OpenAPI
-bancario y un \ServiceDomain{} BIAN emparejado. \textbf{Coherencia} se usa como sinónimo operativo
-cuando el \AlignmentScore{} integrado alcanza niveles Altos o Medios según la escala del modelo.
-\textbf{Desalineación} agrupa las divergencias detectables; la tipología empleada (estructural,
+\textbf{Alineación} designa el grado de correspondencia estructural y semántica entre un contrato
+OpenAPI bancario y un \ServiceDomain{} BIAN emparejado. \textbf{Coherencia} se emplea como sinónimo
+operativo cuando el \AlignmentScore{} integrado alcanza niveles Altos o Medios según la escala del
+modelo. \textbf{Desalineación} agrupa las divergencias detectables; la tipología (estructural,
 semántica, de modelado, REST/contrato) se define en el Capítulo~1 (Tabla~\ref{tab:tipologias}).
 
 \subsection{Modelo de puntuación}

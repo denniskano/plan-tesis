@@ -1,10 +1,11 @@
-\chapter{Objetivos, hipótesis y variables}
+\chapter{Objetivos, hipótesis y factores}
 \label{cap:objetivos}
 
 \section{Línea de base / datos iniciales}
 
-La \textbf{línea de base} del estudio comprende los artefactos documentales sobre los cuales opera el
-modelo de alineación:
+En el Grupo~9.2, la \textbf{línea de base} no alude a mediciones empíricas previas sino a los
+artefactos documentales sobre los que opera el modelo de alineación. Son tres piezas que el
+procedimiento toma como punto de partida:
 
 \begin{itemize}
   \item \textbf{Entrada principal:} contratos OpenAPI~3.x del sector bancario (objeto de estudio,
@@ -15,26 +16,45 @@ modelo de alineación:
         \AlignmentScore{} con clasificación por niveles.
 \end{itemize}
 
-No se incluyen en la línea de base implementaciones en producción, tráfico \textit{runtime} ni
-artefactos de testing automatizado (delimitación §1.6). Los ejemplos ilustrativos (Tabla~1.4,
-Cap.~1) no fijan un caso piloto único: el procedimiento aplica a cualquier par contrato OpenAPI
-bancario --- \ServiceDomain{} BIAN evaluado.
+Quedan fuera de esta línea de base las implementaciones en producción, el tráfico \textit{runtime} y
+los artefactos de testing automatizado (delimitación §1.6). Los ejemplos del Cap.~1 (Tabla~1.4,
+Anexo~F) ilustran el procedimiento pero \textbf{no fijan un caso piloto único}: el diseño aplica a
+cualquier par contrato OpenAPI bancario --- \ServiceDomain{} BIAN que cumpla los criterios de
+inclusión definidos en el plan.
 
-\section{Objetivo general}
+\section{Objetivo superior}
 
-\textbf{Diseñar y aplicar un modelo de alineación} que calcule \SemanticScore{} (S),
+Siguiendo la distinción del docente en PI-11, el \textbf{objetivo superior} expresa la consecuencia
+esperada en el mundo real \textit{si} el artefacto existiera y operara en un entorno bancario. No
+coincide con el objetivo técnico de esta maestría, pero orienta la relevancia del estudio:
+
+\begin{quote}
+  Contar con un procedimiento verificable que permita a equipos de arquitectura y gobernanza de APIs
+  \textbf{cuantificar la coherencia} entre contratos OpenAPI y modelos BIAN \textbf{antes} del
+  despliegue o la certificación, reduciendo retrabajo en adaptadores, ensayo--error en integraciones
+  y deriva entre la capa técnica y el modelo de negocio de referencia.
+\end{quote}
+
+La investigación de maestría \textbf{no implementa} ese cambio en producción (§1.6): entrega el
+\textbf{modelo y el diseño del procedimiento} que habilitarían esa consecuencia. La construcción del
+artefacto y la validación empírica quedan para la Tesis~2 (Guía~2).
+
+\section{Objetivo general (técnico)}
+
+\textbf{Diseñar un modelo de alineación} que defina cómo calcular \SemanticScore{} (S),
 \StructuralScore{} (E), \CoverageScore{} (C) y un \AlignmentScore{} integrado para evaluar contratos
-OpenAPI frente a \ServiceDomain{} BIAN.
+OpenAPI frente a \ServiceDomain{} BIAN, mediante un procedimiento reproducible documentado en este
+plan (Guía~1).
 
-Cada componente operacionaliza las preguntas P1--P4 del §1.3: OE1 habilita la comparación;
-\StructuralScore{} responde P1; \SemanticScore{} responde P2; \CoverageScore{} y \AlignmentScore{}
-responden P3--P4. La cadena completa se detalla en los objetivos específicos y en la matriz de
-consistencia (Anexo~C).
+Cada componente responde a las preguntas P1--P4 del §1.3: la normalización (OE1) habilita las
+comparaciones; el \textit{matching} estructural responde P1; la similitud semántica responde P2; la
+integración de S, E y C responde P3 y P4. La cadena completa se despliega en los objetivos
+específicos y en la matriz de consistencia (Anexo~C).
 
 \section{Objetivos específicos}
 
-Cada objetivo específico se expresa como \textbf{transformación} entrada $\rightarrow$ salida
-(producto verificable), coherente con las cinco fases del modelo:
+Cada objetivo específico se formula como \textbf{transformación} entrada $\rightarrow$ salida
+(producto verificable), alineada con las cinco fases del modelo del Grupo~9.2:
 
 \begin{table}[H]
   \centering
@@ -75,21 +95,29 @@ transformadores sucesivos sobre los artefactos.
 Se plantea una hipótesis por objetivo específico, vinculada al producto verificable de cada fase:
 
 \begin{enumerate}
-  \item \textbf{H1 (OE1):} La normalización de OpenAPI bancario y BIAN en un modelo intermedio
-        común habilita el cálculo sistemático de los scores S, E y C.
-  \item \textbf{H2 (OE2):} Las técnicas de \textit{schema matching} producen un \StructuralScore{}
-        que refleja la correspondencia entre la organización REST y el modelo BIAN.
-  \item \textbf{H3 (OE3):} Las métricas de similitud semántica producen un \SemanticScore{} que
-        discrimina conceptos alineados de desalineaciones semánticas o de modelado.
-  \item \textbf{H4 (OE4):} La agregación ponderada de S, E y C produce un \AlignmentScore{}
-        interpretable y clasificable por niveles de alineación del contrato OpenAPI bancario.
+  \item \textbf{H1 (OE1):} Normalizar contratos OpenAPI bancarios y especificaciones BIAN en un
+        modelo intermedio común permite calcular de forma sistemática los scores S, E y C.
+  \item \textbf{H2 (OE2):} Las técnicas de \textit{schema matching} (Shvaiko y Euzenat, 2005)
+        producen un \StructuralScore{} que refleja la correspondencia entre la organización REST y
+        el modelo BIAN de referencia.
+  \item \textbf{H3 (OE3):} Las métricas de similitud semántica (El Bayadh et al., 2015;
+        Chandrasekaran y Mago, 2022) producen un \SemanticScore{} capaz de distinguir conceptos
+        alineados de desalineaciones semánticas o de modelado.
+  \item \textbf{H4 (OE4):} La agregación ponderada de S, E y C ($\alpha$, $\beta$, $\gamma$) produce
+        un \AlignmentScore{} interpretable y clasificable por niveles de alineación del contrato
+        OpenAPI bancario.
 \end{enumerate}
 
-Adicionalmente, la \textbf{Fase~1} (diseño) se sustenta en la hipótesis de que un modelo
-estructurado por componentes S, E y C permite calcular de forma reproducible un score de alineación
-interpretable entre OpenAPI y BIAN (detalle en Anexo~C).
+Adicionalmente, la \textbf{Fase~1} (diseño) se apoya en la hipótesis de que un modelo estructurado
+por componentes S, E y C permite calcular de forma reproducible un score de alineación interpretable
+entre OpenAPI y BIAN (detalle en Anexo~C).
 
-\section{Variables de investigación}
+\section{Factores y ratios de la investigación}
+
+Siguiendo PI-11 y la Clase~04, los \textbf{factores} son las condiciones que el diseño experimental
+(Tesis~2) manipulará; los \textbf{ratios} son los resultados numéricos medidos (scores y
+clasificación). Los \textbf{parámetros de control} mantienen constantes otras condiciones para
+comparar el efecto de cada factor.
 
 \input{tables/tab05-variables}
 

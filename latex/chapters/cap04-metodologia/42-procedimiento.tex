@@ -1,15 +1,35 @@
-\fasePlaceholder{Fase F --- pipeline: adquisición $\rightarrow$ normalización $\rightarrow$ S, E, C $\rightarrow$ \AlignmentScore{}}
+El procedimiento sigue las cinco fases del modelo (Anexo~C), alineadas con OE1--OE4. En Guía~1 se
+documenta el diseño; en Tesis~2 se ejecutará.
 
-El procedimiento para calcular \StructuralScore{} incluye correspondencia jerárquica entre
-elementos del contrato OpenAPI evaluado y la estructura de referencia BIAN (cinco niveles:
-raíz, metadatos, recurso, método HTTP, elementos internos). La \Cref{fig:proc-estructural}
-resume ese enfoque; el texto metodológico completo se redactará en Fase F.
+\begin{enumerate}
+  \item \textbf{Fase 1 --- Diseño:} definir entradas, scores S/E/C, fórmula de agregación y
+        umbrales de clasificación (Cap.~1 §1.4; Anexo~C).
+  \item \textbf{Fase 2 --- Normalización (OE1):} parsear OpenAPI y material BIAN; producir
+        representaciones comparables (tabular, grafo o RDF según factor elegido).
+  \item \textbf{Fase 3 --- Matching estructural (OE2):} calcular correspondencias y
+        \StructuralScore{} (E).
+  \item \textbf{Fase 4 --- Similitud semántica (OE3):} calcular \SemanticScore{} (S).
+  \item \textbf{Fase 5 --- Integración (OE4):} \CoverageScore{} (C), \AlignmentScore{} y
+        clasificación por tipologías (Tabla~\ref{tab:tipologias}).
+\end{enumerate}
+
+La \Cref{fig:proc-estructural} ilustra la correspondencia jerárquica para E; la cadena completa
+aparece en la \Cref{fig:cadena-objetivos} (Cap.~2).
 
 \setcounter{figure}{6}
 \begin{figure}[H]
   \centering
   \figCapSeven
   \caption{Correspondencia jerárquica para el cálculo de \StructuralScore{} (E). Fuente: elaboración
-  propia; ejemplo ilustrativo para §4.2 --- ver \texttt{figuras/README.md}.}
+  propia; ejemplo ilustrativo.}
   \label{fig:proc-estructural}
 \end{figure}
+
+\subsection{Protocolo de experimentación (Tesis~2)}
+
+El protocolo escrito incluirá, según Clase~04: (1)~instrumento de captura (repositorio de contratos);
+(2)~infraestructura (\textit{parsing}, almacenamiento); (3)~condiciones de registro; (4)~tamaño y
+representatividad de la muestra; (5)~etiquetado de pares OpenAPI$\leftrightarrow$BIAN (juicio
+experto o \textit{ground truth} documentado); (6)~aspectos éticos/legales; (7)~evaluación del
+desempeño del sistema (precisión vs.\ referencia, análisis de falsos positivos/negativos en
+matching).

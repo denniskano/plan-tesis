@@ -23,7 +23,9 @@
 - [x] Cap. 1: definiciones §1.1, unidad de análisis + Tabla 1.4 §1.4, Guía 1/2 §1.6
 - [x] Matriz: Fase 1 = diseño; 5 fases; sin piloto; puente textual §1.4
 - [x] Revisión cruzada Alex ↔ Jack → `REVISION_CRUZADA.md`
-- [ ] Pendientes PI-10 **post–Fase B** → §4 de `FEEDBACK_DOCENTE_PI10.md` (Cap. 2, Cap. 4, PPT)
+- [x] PI-11 aplicado en Cap. 1 (2026-05-28 · relectura oral 2026-07-02)
+- [x] Pendientes PI-10 post–Fase B cerrados en Cap. 2 y Cap. 4 → `FEEDBACK_DOCENTE_PI10.md` §4
+- [ ] PPT exposición (E1–E3) — no es contenido LaTeX
 
 ## Figuras
 
@@ -50,4 +52,4 @@ herramientas/.venv-excel/bin/python3 herramientas/scripts/build_matriz_consisten
 
 ## Siguiente fase
 
-**Fase F** — Cap. 4 metodología · revisión docente Cap. 2–3
+**Fase H** — cierre curso · Turnitin 2 · aula virtual

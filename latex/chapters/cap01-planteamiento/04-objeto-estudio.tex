@@ -1,19 +1,22 @@
 \section{Objeto de estudio}
 \label{sec:objeto-estudio}
 
-El \textbf{objeto de estudio} son los \textbf{contratos OpenAPI} (especificaciones en formato
-OpenAPI~3.x) utilizados para describir APIs en arquitecturas orientadas a servicios del
-\textbf{sector bancario}, en tanto artefactos observables y medibles que pueden contrastarse con
-modelos de negocio de referencia.
+Esta sección corresponde a la \textbf{situación subyacente} del curso: abstracción y
+caracterización del objeto de estudio antes del problema tecnológico (§1.3).
 
-No son objeto de estudio: la totalidad del estándar BIAN como organización, las implementaciones en
-código fuente de \textit{backends}, ni la infraestructura de despliegue. BIAN se emplea como
-\textbf{modelo de referencia} (\ServiceDomain{}: \textit{behaviors}, \textit{business objects},
-relaciones de control) contra el cual se evalúan los contratos.
+El \textbf{objeto de estudio} son los \textbf{contratos OpenAPI} (OpenAPI~3.x) con los que el
+\textbf{sector bancario} describe sus APIs: artefactos documentales observables y medibles,
+contrastables con modelos de negocio de referencia.
 
-Aunque BIAN también publica contratos OpenAPI de referencia, el estudio no reduce BIAN a su capa
-REST: el \ServiceDomain{} representa el modelo de negocio y el \textbf{contrato OpenAPI bancario}
----del banco, integrador o catálogo de referencia--- es la \textbf{capa técnica evaluada}.
+Quedan fuera del objeto la organización BIAN en su totalidad, el código de \textit{backends} y la
+infraestructura de despliegue. BIAN entra como \textbf{modelo de referencia} (\ServiceDomain{}:
+\textit{behaviors}, \textit{business objects}, relaciones de control) contra el cual se leen los
+contratos.
+
+BIAN también publica contratos OpenAPI de referencia, pero el estudio no reduce el estándar a su
+capa REST: el \ServiceDomain{} expresa el negocio y el \textbf{contrato OpenAPI bancario}
+---del banco, de un integrador o de un catálogo--- es la \textbf{capa técnica evaluada}. Esa
+distinción recorre la ontología interna del Grupo~9.2 y se ilustra en Anexo~F.
 
 Para evitar ambigüedades, se distinguen tres niveles:
 
@@ -34,16 +37,20 @@ Para evitar ambigüedades, se distinguen tres niveles:
   \end{tabular}
 \end{table}
 
-En analogía con un procedimiento de evaluación automatizada, el \textbf{objeto} es el artefacto de
-entrada (el contrato); la \textbf{unidad de análisis} es cada instancia procesada dentro de ese
-artefacto (un par endpoint--\Behavior{}, un esquema--\BusinessObject{}, etc.); el \textbf{producto}
-es el resultado agregado del modelo (\AlignmentScore{} y clasificación).
+En el procedimiento del Grupo~9.2, el \textbf{objeto} es el archivo de entrada (el contrato); la
+\textbf{unidad de análisis} es cada par procesado dentro de él (endpoint--
+\Behavior{}, esquema--\BusinessObject{}, etc.); el \textbf{producto} agrega esos resultados en
+\AlignmentScore{} y clasificación por instancia \texttt{contrato} $\times$ \ServiceDomain{}.
+
+Cada instancia se identifica de forma unívoca, p. ej.
+\texttt{\{fuente\}\_\{service-domain\}\_\{version\}}, coherente con la adquisición de datos del
+Capítulo~\ref{cap:metodologia} (§4.3).
 
 \input{tables/tab03-ejemplo-generico}
 
-La tabla anterior es \textbf{explicativa}: ilustra la unidad de análisis con nombres ficticios. El
-ejemplo ampliado se documenta en el Anexo~F. El procedimiento aplica a cualquier contrato OpenAPI
-bancario emparejado con un \ServiceDomain{} BIAN.
+La tabla es \textbf{explicativa}: nombres ficticios para mostrar la unidad de análisis. El caso
+ampliado de \textit{Payment Initiation} está en Anexo~F; el procedimiento aplica a cualquier
+contrato OpenAPI bancario emparejado con un \ServiceDomain{} BIAN.
 La \Cref{fig:objeto-unidad} resume objeto, unidad de análisis, producto del modelo y el ejemplo
 genérico.
 
@@ -56,8 +63,9 @@ genérico.
 
 \subsection{Producto central: modelo de alineación}
 
-El \textbf{resultado esperado} de la investigación es un \textbf{modelo de alineación} que, dado un
-contrato OpenAPI bancario y un \ServiceDomain{} BIAN emparejado, calcule:
+El \textbf{resultado esperado} ---lo que la matriz y el Capítulo~\ref{cap:objetivos} declaran como
+producto--- es un \textbf{modelo de alineación}. Dado un contrato OpenAPI bancario y un
+\ServiceDomain{} BIAN emparejado, debe calcular:
 
 \begin{table}[H]
   \centering
@@ -82,8 +90,11 @@ A partir de estos componentes se obtiene el \AlignmentScore{}:
 \end{quote}
 
 La clasificación interpretativa del \textit{score} es: \textbf{Alta} ($\geq 0{,}80$),
-\textbf{Media} (0,60--0,79), \textbf{Baja} (0,40--0,59) y \textbf{Nula} ($< 0{,}40$). La
-\Cref{fig:alignment-score} ilustra el cálculo del score de alineación.
+\textbf{Media} (0,60--0,79), \textbf{Baja} (0,40--0,59) y \textbf{Nula} ($< 0{,}40$). Los umbrales
+son \textbf{convención provisional del diseño} del Grupo~9.2 para la Guía~1; su calibración empírica
+queda para Tesis~2. Los scores S, E y C se calculan por unidad de análisis (par UA); el
+\AlignmentScore{} y la clasificación se reportan por instancia contrato $\times$ \ServiceDomain{}.
+La \Cref{fig:alignment-score} ilustra el cálculo del score de alineación.
 
 \begin{figure}[H]
   \centering
@@ -92,6 +103,6 @@ La clasificación interpretativa del \textit{score} es: \textbf{Alta} ($\geq 0{,
   \label{fig:alignment-score}
 \end{figure}
 
-Este modelo se descompone en cinco fases de transformación (diseño, normalización, cálculo de E, S
-y C, e integración en \AlignmentScore{}), coherentes con la matriz de consistencia (Anexo~C) y con
-los objetivos del Capítulo~\ref{cap:objetivos}.
+Esas cinco fases de transformación ---diseño, normalización, cálculo de E, S y C, integración en
+\AlignmentScore{}--- coinciden con la matriz de consistencia (Anexo~C) y con la cadena OE1--OE4 del
+Capítulo~\ref{cap:objetivos}.

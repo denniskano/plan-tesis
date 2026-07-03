@@ -1,26 +1,44 @@
 \section{Problemática}
 \label{sec:problematica}
 
-Históricamente, la integración en el sector bancario se apoyó en acuerdos propietarios, contratos
-ad hoc y documentación heterogénea, lo que generó silos de información, duplicidad de modelos y
-dificultad para reutilizar capacidades entre líneas de negocio y socios tecnológicos. La
-estandarización de APIs REST y la adopción de OpenAPI mitigaron parte de la fragmentación técnica al
-unificar la descripción formal de interfaces (Casas et al., 2021). Sin embargo, la estandarización
-del \textit{cómo} se expone un servicio no implica automáticamente la estandarización del
-\textit{qué} representa en términos de negocio.
+Esta sección corresponde a la \textbf{situación real} de la investigación basada en diseño: síntomas
+observables del sector ---casos, cifras, costos--- antes de abstraer el objeto o formular el
+problema tecnológico de la matriz (§1.3).
 
-Farzi (2021) señala que la arquitectura empresarial y los modelos de referencia ---entre ellos
-BIAN--- son condición para la agilidad y la transformación digital bancaria, pero su adopción
-enfrenta barreras de madurez organizacional, heterogeneidad de implementaciones y brechas entre la
-arquitectura objetivo (\textit{to-be}) y los artefactos efectivamente desplegados. En la práctica,
-equipos de desarrollo producen contratos OpenAPI orientados a la implementación inmediata, mientras
-áreas de arquitectura y negocio mantienen modelos BIAN como referencia conceptual; la sincronización
-entre ambos suele ser manual, parcial y sin métricas objetivas de coherencia.
+Durante años la integración bancaria dependió de acuerdos cerrados, contratos \textit{ad hoc} y
+documentación dispare. El resultado fueron silos, modelos duplicados y poca reutilización de
+capacidades entre líneas de negocio y socios tecnológicos. OpenAPI y las APIs REST ayudaron a
+unificar \textit{cómo} se describe técnicamente una interfaz (Casas et al., 2021), pero describir
+operaciones HTTP no garantiza que la API exprese el mismo concepto de negocio en todos los equipos.
 
-Shabbir et al. (2025) evidencian, además, que la calidad de las APIs en la industria depende de
-múltiples requisitos no funcionales ---consistencia, usabilidad, mantenibilidad--- que se ven
-comprometidos cuando la documentación técnica no refleja con fidelidad el dominio de negocio. En
-arquitecturas API bancarias, esta situación se manifiesta como:
+\textbf{Casuística observable.} Casas et al.\ (2021), en su mapeo sistemático, encontraron que solo
+el 40\,\% de los 47 estudios primarios aborda un dominio concreto; la mayoría trabaja con APIs
+genéricas. Esa proporción resume una heterogeneidad de modelado que persiste pese a la adopción de
+OpenAPI. Golmohammadi et al.\ (2024) revisaron 92 trabajos sobre prueba de APIs REST y subrayan el
+\textbf{costo} de validar servicios ya desplegados y la escasez de casos industriales
+reproducibles. En \textit{open banking}, la regulación británica obligó desde 2018 a nueve grandes
+bancos de \textit{retail} a exponer APIs estandarizadas (CMA, 2016); hacer converger esas
+interfaces con los modelos de negocio de referencia sigue siendo, en la práctica, un ejercicio de
+gobernanza más que de despliegue de especificaciones.
+
+Como \textbf{episodio documentado} de integración fallida, la migración de plataformas del TSB
+(Reino Unido, 2018) dejó temporalmente sin servicio a cerca de \textbf{1,9 millones de clientes}.
+Los costes públicos hablan de \textbf{cientos de millones de libras} y de semanas con operación
+restringida mientras se reconstruían capas de integración mal alineadas (House of Commons Treasury
+Committee, 2018). El caso no cita OpenAPI ni BIAN, pero el Grupo~9.2 lo usa en exposición porque
+muestra el \textbf{dolor operativo} cuando negocio y tecnología evolucionan sin correspondencia
+verificable: retrabajo, ensayo--error en adaptadores, riesgo reputacional y regulatorio.
+
+Farzi (2021) vincula arquitectura empresarial y modelos como BIAN con la agilidad bancaria, pero
+advierte barreras de madurez, heterogeneidad de implementaciones y distancia entre la arquitectura
+\textit{to-be} y lo desplegado. En el día a día, desarrollo publica contratos OpenAPI pensando en
+la implementación inmediata; arquitectura y negocio conservan BIAN como referencia. La
+sincronización entre ambos planos sigue siendo manual, parcial y sin métrica objetiva de
+coherencia---precisamente el vacío que el plan intenta acotar con S/E/C y \AlignmentScore{}.
+
+Shabbir et al.\ (2025) añaden que la calidad industrial de las APIs depende de requisitos no
+funcionales ---consistencia, usabilidad, mantenibilidad--- que se resienten cuando la documentación
+técnica no refleja el dominio de negocio. En arquitecturas API bancarias eso se traduce en:
 
 \begin{itemize}
   \item \textbf{Fragmentación semántica:} mismos conceptos de negocio nombrados de forma distinta
@@ -34,7 +52,7 @@ arquitecturas API bancarias, esta situación se manifiesta como:
         conformidad.
 \end{itemize}
 
-Esta problemática no es anecdótica: afecta la gobernanza de APIs, la interoperabilidad en ecosistemas
-abiertos y la confianza de \textit{stakeholders} de negocio y tecnología en que una API representa
-correctamente una capacidad bancaria estandarizada. Motiva, por tanto, la necesidad de investigar
-cómo medir y caracterizar la alineación entre contratos OpenAPI y modelos BIAN.
+Los síntomas anteriores no son anecdóticos: condicionan gobernanza, interoperabilidad en ecosistemas
+abiertos y la confianza de \textit{stakeholders} en que una API representa una capacidad bancaria
+estandarizada. Por eso el §1.3 pasa al diagnóstico subyacente y al problema tecnológico que ancla
+la matriz (Anexo~C).

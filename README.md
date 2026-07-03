@@ -1,7 +1,17 @@
 # Plan de tesis — Grupo 9.2
 
-**PDF:** `latex/build/Plan_Tesis_Grupo9.2.pdf` (~55 páginas)  
-**Plan maestro:** `planificacion/PLAN_ELABORACION_PLAN_TESIS.md`
+**PDF:** `latex/build/Plan_Tesis_Grupo9.2.pdf` (57 pp.)  
+**Plan maestro:** `planificacion/PLAN_ELABORACION_PLAN_TESIS.md`  
+**Estado consolidado:** `planificacion/ESTADO_INFORME.md`
+
+## Avance Guía 1 (Tesis 1)
+
+| Dimensión | % |
+|-----------|---|
+| Contenido informe (LaTeX) | **~98%** |
+| Cierre curso (Turnitin + aula) | **~70%** |
+
+**Alcance:** solo diseño del plan · **no** Tesis 2 (construcción/experimento).
 
 ## Estado por fase
 
@@ -14,10 +24,12 @@
 | D — Cap. 2 | ✅ | `fases/fase-d-objetivos/CHECKLIST.md` |
 | E — §3.1–§3.4 | ✅ | `fases/fase-e-marco-teorico/CHECKLIST.md` |
 | G — Cap. 5 + anexos | ✅ | `fases/fase-g-administracion/CHECKLIST.md` |
-| F — Cap. 4 | ⏳ | — |
-| H — Cierre | ⏳ | idem |
+| F — Cap. 4 | ✅ | §4.1–§4.8 · PI-11 adquisición datos |
+| H — Cierre | ⏳ | Turnitin 2 · subir aula virtual |
 
-**Feedback PI-10:** `fases/fase-b-planteamiento/FEEDBACK_DOCENTE_PI10.md`
+**Feedback PI-10:** `fases/fase-b-planteamiento/FEEDBACK_DOCENTE_PI10.md`  
+**Feedback PI-11 + Clase 04:** `fases/FEEDBACK_DOCENTE_PI11.md`  
+**Revisión Turnitin (IA):** `planificacion/REVISION_TURNITIN_IA.md`
 
 ## Carpetas
 
@@ -35,7 +47,7 @@ Requisitos: MacTeX o TeX Live (`pdflatex`, `latexmk`).
 
 ```bash
 cd latex && make pdf
-# Salida: latex/build/Plan_Tesis_Grupo9.2.pdf
+# Salida: build/Plan_Tesis_Grupo9.2.pdf (copia de main.pdf; no usar latexmk sin make)
 ```
 
 ## Repositorio Git
@@ -73,7 +85,7 @@ Genera `entrega/Informe_Guia1_Grupo9.2/` (5 carpetas, sin README internos) y `.z
 | 1 | `latex/chapters/cap01-planteamiento/` | ✅ |
 | 2 | `latex/chapters/cap02-objetivos/` | ✅ |
 | 3 | `latex/chapters/cap03-marco/` | ✅ §3.1–§3.6 |
-| 4 | `latex/chapters/cap04-metodologia/` | ⏳ |
+| 4 | `latex/chapters/cap04-metodologia/` | ✅ |
 | 5 | `latex/chapters/cap05-administracion/` | ✅ |
 
 ## Ver también

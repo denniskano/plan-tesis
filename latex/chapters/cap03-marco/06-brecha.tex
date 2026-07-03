@@ -1,18 +1,25 @@
 \subsection{Qué sí cubre la literatura revisada}
 
-De forma transversal, el estado del arte permite afirmar que:
+De forma transversal, el estado del arte del Grupo~9.2 permite afirmar lo siguiente:
 
 \begin{enumerate}
   \item \textbf{OpenAPI} es el formato dominante para especificar APIs REST y soporta automatización
-        en el ciclo de vida del software (E1).
+        en el ciclo de vida del software (E1). Casas et al.\ (2021) mapean 47 artículos que lo
+        confirman; Mainas et al.\ (2023) muestran que el enriquecimiento semántico es viable sobre
+        corpus reales.
   \item Existen marcos formales para \textbf{correspondencia entre esquemas} (E2) y \textbf{similitud
         semántica / alineación ontológica} (E3), incluidos \textit{embeddings} de última generación.
+        Shvaiko y Euzenat (2005) y El Bayadh et al.\ (2015) ofrecen taxonomías reutilizables; la
+        literatura reciente (Santos Sousa et al., 2026) documenta limitaciones prácticas.
   \item La \textbf{arquitectura orientada al dominio} justifica separar modelos de negocio e
-        interfaces técnicas (E4).
+        interfaces técnicas (E4). Schmidt y Thiry (2020) relacionan capacidades de dominio con
+        límites de microservicio, en la misma línea que BIAN como referencia de negocio.
   \item Un volumen considerable de trabajo aborda \textbf{calidad, prueba y seguridad} de APIs (E5),
-        útil para delimitar el problema pero no para resolverlo.
+        útil para delimitar el problema pero no para resolverlo. Ehsan et al.\ (2022) y los demás
+        papers del eje confirman que OpenAPI es entrada de verificación \textit{runtime}.
   \item La \textbf{representación semántica de servicios} se explota en selección y recomendación
-        (E6).
+        (E6). Mahanra Rao et al.\ (2025) muestran que BERT mejora ranking por QoS, no conformidad
+        documental.
 \end{enumerate}
 
 Ninguna de estas líneas, tomadas aisladamente o en conjunto en los catorce papers revisados,
@@ -39,16 +46,18 @@ La brecha abre la oportunidad de \textbf{diseñar un modelo de alineación} que,
 OpenAPI bancario y un \ServiceDomain{} BIAN emparejado:
 
 \begin{itemize}
-  \item normalice ambos artefactos a representaciones comparables;
-  \item calcule \SemanticScore{}, \StructuralScore{} y \CoverageScore{};
+  \item normalice ambos artefactos a representaciones comparables (OE1);
+  \item calcule \SemanticScore{}, \StructuralScore{} y \CoverageScore{} (OE2--OE3);
   \item integre \AlignmentScore{} $= \alpha \cdot S + \beta \cdot E + \gamma \cdot C$ con
         clasificación interpretativa (Alta / Media / Baja / Nula).
 \end{itemize}
 
-Este plan de tesis documenta el \textbf{diseño} de ese modelo y del procedimiento de cálculo.
-La construcción del artefacto y la experimentación empírica a escala quedan \textbf{fuera del
-alcance} de este documento, como se delimita en \Cref{sec:alcances}.
+Este plan de tesis documenta el \textbf{diseño} de ese modelo y del procedimiento de cálculo en
+cinco fases (Fase~1: diseño; Fases~2--5: transformaciones OE1--OE4). La construcción del artefacto y
+la experimentación empírica a escala quedan \textbf{fuera del alcance} de este documento, como se
+delimita en \Cref{sec:alcances}.
 
 La investigación contribuye al vacío V1--V4 con un enfoque reproducible sobre \textbf{artefactos
-documentales}, orientado a gobernanza de APIs bancarias y trazabilidad negocio--tecnología, sin
-sustituir testing operativo ni certificación regulatoria.
+documentales}, orientado a gobernanza de APIs bancarias y trazabilidad negocio--tecnología. No
+sustituye testing operativo (E5) ni certificación regulatoria; tampoco confunde calidad
+\textit{runtime} (E1/E6) con coherencia documental (V5).

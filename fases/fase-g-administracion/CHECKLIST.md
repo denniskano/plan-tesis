@@ -4,7 +4,7 @@
 **PDF:** `../../latex/build/Plan_Tesis_Grupo9.2.pdf` (~55 pp.)  
 **Estado Fase G:** ✅ **cerrada** (2026-05-28)
 
-**Prerequisitos:** Fases 0, B, C, D, E ✅ · Cap. 4 ⏳ (Fase F — no bloquea anexos ni administración)
+**Prerequisitos:** Fases 0, B, C, D, E, F ✅
 
 ---
 
@@ -18,9 +18,9 @@
 | Anexo A — string búsqueda | ✅ `anexos/anexo-a.tex` |
 | Anexo B — matriz papers | ✅ LaTeX + Excel |
 | Anexo C — matriz consistencia | ✅ LaTeX + Excel |
-| Anexo D — operación variables | ✅ `tab-anexo-d-operacion.tex` |
+| Anexo D — operación ratios + factores | ✅ `tab-anexo-d-operacion.tex` |
 | Anexo E — diseño factorial N/A | ✅ `anexo-e.tex` |
-| Anexo F — ejemplos OpenAPI/BIAN | ✅ (I5 parcial) |
+| Anexo F — ejemplos OpenAPI/BIAN | ✅ (I5) |
 | Referencias bibliográficas | ✅ `frontmatter/referencias.tex` + `referencias.bib` |
 | Compilación PDF | ✅ |
 
@@ -41,8 +41,8 @@
 - [x] A — Cadenas de búsqueda + criterios inclusión/exclusión
 - [x] B — Resumen 14 papers (`build_anexos_latex.py` → `tab-anexo-b-resumen.tex`)
 - [x] C — Resumen 5 fases + trazabilidad OE
-- [x] D — Operación de variables S/E/C + VI por OE
-- [x] E — No aplica (justificación)
+- [x] D — Operación de ratios + factores S/E/C + factores por OE
+- [x] E — No aplica (justificación; terminología factores PI-11)
 - [x] F — Ejemplo reducido + ampliado (YAML + tablas BIAN/S/E/C)
 
 ---
@@ -80,4 +80,4 @@ cd plan-tesis/latex && make pdf
 
 ## Siguiente fase
 
-**Fase F** — Cap. 4 metodología completa · **Fase H** — revisión cierre PI-08
+**Fase H** — Turnitin 2 · entrega aula virtual · revisión cierre docente

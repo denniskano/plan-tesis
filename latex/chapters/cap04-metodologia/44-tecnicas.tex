@@ -1,14 +1,17 @@
-\fasePlaceholder{Fase F --- embeddings, similitud coseno, matching estructural}
+Las técnicas se seleccionaron a partir del estado del arte (Cap.~3) y se vinculan a los factores
+del Cap.~2:
 
-La \Cref{fig:proc-semantico} detalla el cálculo de \SemanticScore{} (S): extracción de
-\textit{path}, \textit{summary} y \textit{description}; normalización; \textit{embeddings};
-similitud coseno; y agregación ponderada. Material de apoyo del anexo
-\texttt{figuras\_alineacion\_openapi\_bian.pdf} (pág.~3).
+\begin{itemize}
+  \item \textbf{OE1:} \textit{parsing} OpenAPI~3.x; extracción de \textit{paths}, operaciones y
+        esquemas; alineación con elementos BIAN en representación intermedia (Mainas et al., 2023
+        como referencia de enriquecimiento semántico).
+  \item \textbf{OE2:} \textit{schema matching} según taxonomía Shvaiko y Euzenat (2005): nombre,
+        ruta, profundidad de esquema, operación HTTP.
+  \item \textbf{OE3:} similitud semántica por embeddings y/o ontología (El Bayadh et al., 2015;
+        Chandrasekaran y Mago, 2022).
+  \item \textbf{OE4:} agregación ponderada $\alpha S + \beta E + \gamma C$ y clasificación por
+        umbrales fijos (§1.4).
+\end{itemize}
 
-\begin{figure}[H]
-  \centering
-  \figApoyoS
-  \caption{Procedimiento de similitud semántica entre endpoints (cálculo de S). Fuente: elaboración
-  propia; ejemplo ilustrativo --- generalizar en §4.6 / Anexo F.}
-  \label{fig:proc-semantico}
-\end{figure}
+Herramientas previstas: Python para prototipo, validadores OpenAPI, bibliotecas de similitud textual;
+detalle de implementación fuera de alcance de Guía~1.

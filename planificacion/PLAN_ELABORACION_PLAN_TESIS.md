@@ -6,12 +6,12 @@
 **Tipo de investigación:** Tecnológica (investigación basada en diseño — no encuestas ni población/muestra al estilo Sampieri)  
 **Producto del curso:** Plan de tesis (Guía N°01) — **solo este documento**; construcción/experimentación queda fuera de alcance (§1.6)
 
-**Documento maestro:** `../latex/build/Plan_Tesis_Grupo9.2.pdf` (~43 pp.)  
-**Fuentes revisadas:** transcripciones PI-01 a PI-10 · bibliografía en `../../bibliografia/`  
-**Índice del proyecto:** `../README.md` · checklists por fase en `../fases/`  
-**Última actualización:** 2026-05-28
+**Documento maestro:** `../latex/build/Plan_Tesis_Grupo9.2.pdf` (57 pp.)  
+**Fuentes revisadas:** transcripciones PI-01 a PI-11 · bibliografía en `../../bibliografia/`  
+**Índice del proyecto:** `../README.md` · estado consolidado: `ESTADO_INFORME.md`  
+**Última actualización:** 2026-07-02
 
-> **Decisión de equipo:** No se redacta contenido para Guía N°02 u otro curso. La delimitación de lo excluido aparece en §1.6; no hay sección de «experimentación futura» en Cap. 4.
+> **Decisión de equipo:** Solo Guía N°01 (Tesis 1). No se construye ni experimenta (§1.6). Las menciones a Tesis 2 en Cap. 4 son **delimitación** exigida por PI-11/Clase 04, no tareas de este curso.
 
 ---
 
@@ -26,10 +26,10 @@
 | **D** | Cap. 2 objetivos + Fig. 4 | ✅ | `fases/fase-d-objetivos/CHECKLIST.md` |
 | **E** | §3.1–§3.4 marco + glosario + Fig. 5 | ✅ | `fases/fase-e-marco-teorico/CHECKLIST.md` |
 | **G** | Cap. 5 + anexos LaTeX + referencias | ✅ | `fases/fase-g-administracion/CHECKLIST.md` |
-| **F** | Cap. 4 metodología | ⏳ parcial | — |
-| **H** | Revisión cierre docente | ⏳ | §3 abajo |
+| **F** | Cap. 4 metodología | ✅ | §4.1–§4.8 · PI-11 · 2026-07-02 |
+| **H** | Revisión cierre docente | ⏳ ~45% | Turnitin 2 · aula virtual · Fase H §3 |
 
-**Retroalimentación docente PI-10:** `fases/fase-b-planteamiento/FEEDBACK_DOCENTE_PI10.md`
+**Retroalimentación docente:** PI-10 `fases/fase-b-planteamiento/FEEDBACK_DOCENTE_PI10.md` · PI-11 `fases/FEEDBACK_DOCENTE_PI11.md`
 
 ---
 
@@ -100,6 +100,7 @@ Tabla de contenido **objetivo** vs **estado LaTeX** (`latex/chapters/`).
 | Fig. 1–3 | ✅ |
 | Tablas 1.1–1.8 (alcances, tipologías, objeto, etc.) | ✅ |
 | Feedback PI-10 aplicado | ✅ `FEEDBACK_DOCENTE_PI10.md` |
+| Feedback PI-11 aplicado | ✅ `FEEDBACK_DOCENTE_PI11.md` · relectura oral 2026-07-02 |
 
 **1.6.1 Alcances (implementado en `tables/tab01-alcances.tex`)**
 
@@ -156,20 +157,23 @@ Borrador Markdown fuente §3.5–§3.6: `fases/fase-c-marco-teorico/CAPITULO_03_
 
 ---
 
-### CAPÍTULO 4 — DISEÑO METODOLÓGICO ⏳
+### CAPÍTULO 4 — DISEÑO METODOLÓGICO ✅
 
-**LaTeX:** `latex/chapters/cap04-metodologia/` · **Fase F**
+**LaTeX:** `latex/chapters/cap04-metodologia/` · **Fase F** · cerrada 2026-07-02
 
 | Sección | Estado |
 |---------|--------|
-| §4.1 Tipo y enfoque | ⏳ placeholder |
-| §4.2 Procedimiento + Fig. 7 (E) | ⏳ parcial |
-| §4.3–§4.6 | ⏳ placeholder |
-| §4.7–§4.8 Validez / amenazas | ⏳ placeholder |
+| §4.1 Tipo y enfoque | ✅ design science · sin encuestas |
+| §4.2 Procedimiento + Fig. 7 (E) | ✅ 5 fases · protocolo bosquejado (delimitación Tesis 2) |
+| §4.3 Fuentes + adquisición datos | ✅ Tabla Clase 04 · criterios inclusión |
+| §4.4 Técnicas y herramientas | ✅ OE1–OE4 · matching · embeddings |
+| §4.5 Métricas de evaluación | ✅ ratios S/E/C · Anexo D |
+| §4.6 Casos de estudio | ✅ Anexo F · representatividad (sin piloto) |
+| §4.7–§4.8 Validez / amenazas | ✅ |
 
-**Papers `aporte/` prioritarios Cap. 4:** Moon 2025, Mainas 2023, Muhamad 2022, Shimangaud 2026.
+**Papers `aporte/` Cap. 4:** Mainas 2023, El Bayadh 2015, Shvaiko & Euzenat 2005 (citados en §4.4).
 
-**Pendiente docente (PI-10):** ejemplo ampliado de contrato (I5) → Cap. 4 o Anexo F.
+**Ejemplo ampliado contrato (PI-10 I5):** ✅ Anexo F + §4.6 (ilustración; no ejecución).
 
 ---
 
@@ -227,8 +231,9 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 | **PI-04** | Problema ≠ objetivo; keywords EN | Cap. 1–2 ✅ |
 | **PI-05** | Estado del arte; marco con sentido | Cap. 3 ✅ |
 | **PI-06/07** | Tablas sistematizadas | §3.5 ✅ |
-| **PI-08** | Esquema extendido; variables; anexos | Cap. 2 ✅ · anexos LaTeX ⏳ |
-| **PI-10** | Matriz 5 fases; transformadores; objeto concreto | Cap. 1–2 ✅ · acta en `FEEDBACK_DOCENTE_PI10.md` |
+| **PI-08** | Esquema extendido; variables; anexos | Cap. 2 ✅ · anexos LaTeX ✅ |
+| **PI-10** | Matriz 5 fases; transformadores; objeto concreto | Cap. 1–2 ✅ · acta PI-10 |
+| **PI-11** | Niveles problema; factores/ratios; adquisición datos | Cap. 1–4 ✅ · acta PI-11 |
 
 ---
 
@@ -246,7 +251,8 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 
 - [x] Estructura capítulos 1–5 + anexos + preliminares
 - [x] Índices automáticos
-- [ ] Portada formato exacto Guía N°01
+- [x] Portada con formato **exacto** Guía N°01 (`frontmatter/portada.tex`)
+- [ ] Verificar datos asesor cuando se asigne (`\asesorPlan`)
 
 ### Fase B — Capítulo 1 ✅
 
@@ -259,29 +265,33 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 **Carpeta:** `fases/fase-c-marco-teorico/`
 
 - [x] LaTeX integrado · Fig. 6 · revisión cruzada
-- [ ] Revisión docente
+- [x] Revisión cruzada Turnitin Cap. 1–3 (2026-07-02)
+- [ ] Revisión docente formal
 
 ### Fase D — Capítulo 2 ✅
 
 **Carpeta:** `fases/fase-d-objetivos/`
 
 - [x] OG · OE1–OE4 · H1–H4 · variables · Fig. 4 · revisión cruzada
-- [ ] Revisión docente
+- [x] Revisión cruzada Turnitin Cap. 1–3 (2026-07-02)
+- [ ] Revisión docente formal
 
 ### Fase E — §3.1–§3.4 ✅
 
 **Carpeta:** `fases/fase-e-marco-teorico/`
 
 - [x] Antecedentes · bases conceptuales · glosario 18 términos · bases teóricas · Fig. 5
-- [ ] Revisión cruzada · revisión docente · Zotero
+- [x] Revisión cruzada Turnitin Cap. 3 (2026-07-02)
+- [ ] Revisión docente formal
+- [ ] Citas Zotero DOI finales
 
-### Fase F — Capítulo 4 ⏳
+### Fase F — Capítulo 4 ✅
 
-1. Completar §4.1–§4.8 (diseño reproducible, sin experimentación)
-2. Representación intermedia (tabular / grafo / RDF)
-3. Fórmulas explícitas S, E, C, AlignmentScore
-4. Casos ilustrativos BIAN + **ejemplo ampliado** contrato (I5)
-5. Apoyos Fig. S/C en §4.4–§4.5
+- [x] §4.1–§4.8 (diseño reproducible; sin experimentación ejecutada)
+- [x] Representación intermedia documentada (tabular / grafo / RDF) — Anexo D factores OE1
+- [x] Fórmulas S, E, C, AlignmentScore — Cap. 1 §1.4 · §4.5 · Anexo D
+- [x] Casos ilustrativos — Anexo F + §4.6
+- [x] Fig. 7 en §4.2 · técnicas §4.4
 
 ### Fase G — Capítulo 5 + anexos ✅
 
@@ -290,13 +300,16 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 - [x] Referencias APA + `referencias.bib`
 - [ ] Verificar metadatos Zotero vs. fichas
 
-### Fase H — Revisión de cierre ⏳
+### Fase H — Revisión de cierre ⏳ (~45%)
 
-- [ ] Hilo conductor + glosario §3.3 en todos los capítulos
-- [ ] Problemática ≠ problema ≠ objetivo
-- [ ] Estado del arte + vacío explícito
-- [ ] Metodología tecnológica sin encuestas
-- [ ] Referencias uniformes · portada Guía 01
+- [x] Problemática ≠ problema ≠ objetivo (Cap. 1 PI-11)
+- [x] Estado del arte + vacío explícito (§3.6)
+- [x] Metodología tecnológica sin encuestas (Cap. 4)
+- [x] Relectura oral Alex ↔ Jack + correcciones Turnitin Cap. 1–3
+- [ ] Hilo conductor final Cap. 1 ↔ 2 ↔ 3 ↔ 4 (repaso conjunto)
+- [ ] Referencias uniformes · verificar DOI Zotero
+- [ ] Segundo Turnitin · subir aula virtual
+- [ ] Revisión docente formal
 
 ---
 
@@ -308,9 +321,9 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 | Matriz estado del arte (14 papers) | Jack | ✅ |
 | Cap. 2 objetivos/hipótesis/figura | Ambos | ✅ |
 | Cap. 3 §3.1–§3.6 | Alex (§3.5–§3.6) · Jack (§3.1–§3.4) | ✅ |
-| Cap. 4 diseño metodológico | Jack | ⏳ |
-| Cap. 5 + anexos + Zotero | Jack | ⏳ |
-| Revisión hilo conductor | Ambos | ⏳ |
+| Cap. 4 diseño metodológico | Jack | ✅ |
+| Cap. 5 + anexos + Zotero | Jack | ✅ LaTeX · ⏳ Zotero DOI |
+| Revisión hilo conductor | Ambos | ⏳ Fase H |
 
 ---
 
@@ -322,8 +335,8 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 | 2 | Objeto = OpenAPI bancario; BIAN = referencia | ✅ Cap. 1 |
 | 3 | Matriz 5 fases; sin piloto Payment Execution | ✅ Anexo C |
 | 4 | Solo plan Guía N°01; no redactar Guía 2 | ✅ §1.6 · 2026-05-28 |
-| 5 | Métrica semántica (embeddings vs ontología) | ⏳ definir en Cap. 4 Fase F |
-| 6 | Representación intermedia BIAN/OpenAPI | ⏳ Cap. 4 Fase F |
+| 5 | Métrica semántica (embeddings vs ontología) | ✅ §4.4 OE3 · factor documentado |
+| 6 | Representación intermedia BIAN/OpenAPI | ✅ Anexo D OE1 · §4.4 |
 
 ---
 
@@ -340,9 +353,12 @@ Regenerar Fig. 4–6: `herramientas/scripts/build_figuras_fase_cd.py` · Fig. 1�
 
 ## 7. Próxima acción
 
-1. **Fase F** — completar Cap. 4 metodología.
-2. **Subir PDF** + `referencias.bib` + paper al aula virtual (PI-03).
-3. **Fase H** — revisión cierre docente · portada Guía N°01.
+1. **Segundo Turnitin** — PDF completo · comparar % IA con 49% inicial.
+2. **Subir** PDF + `referencias.bib` + paper al aula virtual (PI-03).
+3. **Fase H** — repaso hilo conductor · verificar DOI Zotero · revisión docente.
+4. **PPT** — «dos casitos» + modelo S/E/C (PI-10 E1–E3; no es contenido LaTeX).
+
+Ver detalle: `ESTADO_INFORME.md`
 
 ---
 

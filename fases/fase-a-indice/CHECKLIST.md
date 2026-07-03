@@ -14,7 +14,7 @@
 |--------------|------------------------------|
 | `main.tex` + carpetas `chapters/`, `frontmatter/`, `anexos/` | Cap. 1 redactado → **Fase B** (`../fase-b-planteamiento/CHECKLIST.md`) |
 | Títulos §1.1–§5.x con `[Por redactar — Fase X]` | Cap. 1–3 redactados → **Fases B–E** ✅ |
-| Índice, lista de figuras y tablas **generados al compilar** | Cap. 4–5 → **Fases F–G** ⏳ |
+| Índice, lista de figuras y tablas **generados al compilar** | Cap. 1–5 ✅ · ver `../../planificacion/ESTADO_INFORME.md` |
 | Portada, resumen/abstract **borrador** | Metodología Cap. 4 → **Fase F** |
 | Metadatos título + macros S/E/C en `config/` | Fichas / Anexo B → **Fase 0** |
 | Plan maestro: figuras y tablas en estructura | Ver `../../figuras/README.md` · `../../planificacion/PLAN_ELABORACION_PLAN_TESIS.md` |
@@ -65,6 +65,5 @@ Figuras y tablas (plan maestro completo): `../../figuras/README.md` · `../../la
 
 ## Siguiente paso del proyecto (no Fase A)
 
-1. **Fase F** — Cap. 4 metodología completa  
-2. **Subir** PDF + `referencias.bib` + paper al aula virtual  
-3. **Fase H** — revisión cierre · portada Guía N°01
+1. **Fase H** — Turnitin 2 · aula virtual · repaso hilo conductor  
+2. Ver `../../planificacion/ESTADO_INFORME.md`

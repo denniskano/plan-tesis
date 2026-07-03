@@ -1,14 +1,14 @@
 \chapter*{Resumen}
 \addcontentsline{toc}{chapter}{Resumen}
 
-El sector bancario adopta contratos OpenAPI para exponer capacidades de negocio, mientras BIAN
-estandariza modelos de referencia por \ServiceDomain{}. Sin embargo, no existe garantía de que un
-contrato OpenAPI bancario refleje fielmente el modelo de negocio de referencia. Esta investigación
-toma como \textbf{objeto de estudio} los contratos OpenAPI bancarios y propone un \textbf{modelo de
-alineación} frente a \ServiceDomain{}s BIAN, mediante análisis estructural, similitud semántica y
-cobertura de conceptos, expresado en un \AlignmentScore{} reproducible. El estudio se delimita al
-análisis de artefactos documentales, sin implementación en producción ni evaluación de seguridad
-operativa de APIs.
+Los bancos publican sus APIs como contratos OpenAPI (YAML/JSON), mientras BIAN ordena el negocio
+en \ServiceDomain{}s con \textit{behaviors} y \textit{business objects}. En el día a día esas dos
+capas se escriben por equipos distintos y rara vez se comprueba, antes de integrar o certificar, si
+el contrato REST dice lo mismo que el modelo de referencia. Este plan ---Grupo 9.2, Guía~N°01---
+propone **cómo** medir esa correspondencia: \SemanticScore{} (S), \StructuralScore{} (E),
+\CoverageScore{} (C) y un \AlignmentScore{} agregado, con trazabilidad en la matriz de
+consistencia (Anexo~C). Trabajamos solo sobre artefactos documentales (contrato + extracto BIAN);
+no implementamos el artefacto ni evaluamos seguridad operativa de APIs en producción (§1.6).
 
 \vspace{0.5cm}
 \noindent\textbf{Palabras clave:} \palabrasClaveES.

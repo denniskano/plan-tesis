@@ -16,9 +16,9 @@
 - [x] §3.4 Bases teóricas — schema matching, ontología, similitud
 - [x] Figura 5 — `figuras/cap03/Figura_05_Bases_Conceptuales.png`
 - [x] Etiquetas `\ref{sec:antecedentes}`, `sec:glosario`, `sec:estado-arte`, `sec:brecha`
-- [ ] Revisión cruzada Alex ↔ Jack
-- [ ] Revisión docente
-- [ ] Citas Zotero → Fase G
+- [x] Revisión cruzada Alex ↔ Jack (Turnitin 2026-07-02)
+- [ ] Revisión docente formal
+- [ ] Citas Zotero DOI finales
 
 ---
 
@@ -42,4 +42,4 @@ herramientas/.venv-excel/bin/python3 herramientas/scripts/build_figuras_fase_cd.
 
 ## Siguiente fase
 
-**Fase F** — Cap. 4 metodología completa
+**Fase H** — cierre curso

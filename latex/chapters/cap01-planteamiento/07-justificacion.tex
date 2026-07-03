@@ -1,17 +1,15 @@
 \section{Justificación e importancia}
 
-\textbf{Para la arquitectura empresarial bancaria:} La coherencia entre modelos de negocio y
-contratos técnicos reduce la deriva arquitectónica y facilita la trazabilidad entre capacidades
-BIAN y APIs expuestas (Farzi, 2021; Bhatia, 2022).
+La arquitectura bancaria necesita trazabilidad entre capacidades BIAN y contratos que realmente se
+exponen: sin ella, cada \textit{release} acumula deriva entre negocio y REST (Farzi, 2021; Bhatia,
+2022). Este plan propone medir esa coherencia \textbf{antes} de integrar, mediante
+\AlignmentScore{} y las preguntas P1--P4 del §1.3.
 
-\textbf{Para la gobernanza de APIs:} Disponer de métricas objetivas de alineación permite priorizar
-revisiones de contratos, evaluar conformidad con estándares internos y sostener decisiones de
-integración con terceros sobre evidencia documental (Shabbir et al., 2025).
-
-\textbf{Para la investigación:} Casas et al. (2021) mapean un cuerpo creciente de literatura sobre
-OpenAPI, pero la intersección sistemática OpenAPI--BIAN permanece poco explorada; este estudio
-contribuye a caracterizar esa brecha con un enfoque reproducible.
-
-\textbf{Para el campo de la inteligencia artificial aplicada:} El tema se inscribe en
-representación del conocimiento, alineación de esquemas y evaluación semántica en ingeniería de
-software.
+Para gobernanza de APIs, métricas objetivas permiten priorizar revisiones y respaldar decisiones con
+evidencia documental en lugar de revisiones manuales aisladas (Shabbir et al., 2025). En la línea
+investigativa, Casas et al.\ (2021) cartografían usos de OpenAPI, pero la intersección sistemática
+OpenAPI--BIAN sigue delgada: el Grupo~9.2 aporta un procedimiento reproducible y una matriz de
+consistencia (Anexo~C) que cierra esa brecha metodológica. Finalmente, el diseño se apoya en
+representación del conocimiento, alineación de esquemas y similitud semántica ---las mismas líneas
+que alimentan S y el \textit{matching} estructural E--- sin confundirse con testing \textit{runtime}
+(E5 del estado del arte).
