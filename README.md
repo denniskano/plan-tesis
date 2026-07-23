@@ -39,6 +39,7 @@
 | `latex/` | Documento maestro LaTeX |
 | `figuras/` | Fig. 1–7 (`figuras/README.md`) |
 | `fases/` | Checklists y borradores por fase |
+| `exposicion/` | Guion, checklist y PPT (23/30 jul) |
 | `anexos/` | Matrices Excel + PDF modelo S/E/C |
 
 ## Compilar

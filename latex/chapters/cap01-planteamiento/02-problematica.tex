@@ -1,58 +1,63 @@
 \section{Problemática}
 \label{sec:problematica}
 
-Esta sección corresponde a la \textbf{situación real} de la investigación basada en diseño: síntomas
-observables del sector ---casos, cifras, costos--- antes de abstraer el objeto o formular el
-problema tecnológico de la matriz (§1.3).
+Esta sección corresponde a la \textbf{situación real}: síntomas observables del sector ---casos,
+cifras, costos--- antes de abstraer el objeto o formular el problema tecnológico (§\ref{sec:planteamiento}).
 
 Durante años la integración bancaria dependió de acuerdos cerrados, contratos \textit{ad hoc} y
 documentación dispare. El resultado fueron silos, modelos duplicados y poca reutilización de
-capacidades entre líneas de negocio y socios tecnológicos. OpenAPI y las APIs REST ayudaron a
-unificar \textit{cómo} se describe técnicamente una interfaz (Casas et al., 2021), pero describir
-operaciones HTTP no garantiza que la API exprese el mismo concepto de negocio en todos los equipos.
+capacidades entre líneas de negocio y socios tecnológicos.
 
-\textbf{Casuística observable.} Casas et al.\ (2021), en su mapeo sistemático, encontraron que solo
-el 40\,\% de los 47 estudios primarios aborda un dominio concreto; la mayoría trabaja con APIs
-genéricas. Esa proporción resume una heterogeneidad de modelado que persiste pese a la adopción de
-OpenAPI. Golmohammadi et al.\ (2024) revisaron 92 trabajos sobre prueba de APIs REST y subrayan el
+OpenAPI y las APIs REST unificaron \textit{cómo} se describe técnicamente una interfaz (Casas et
+al., 2021). Describir operaciones HTTP no garantiza, sin embargo, que la API exprese el mismo
+concepto de negocio en todos los equipos.
+
+\textbf{Casuística observable.} Casas et al.\ (2021) mapearon 47 estudios primarios: solo el
+40\,\% aborda un dominio concreto; la mayoría trabaja con APIs genéricas. Esa proporción resume una
+heterogeneidad de modelado que persiste pese a la adopción de OpenAPI.
+
+Golmohammadi et al.\ (2024) revisaron 92 trabajos sobre prueba de APIs REST. Subrayan el
 \textbf{costo} de validar servicios ya desplegados y la escasez de casos industriales
-reproducibles. En \textit{open banking}, la regulación británica obligó desde 2018 a nueve grandes
-bancos de \textit{retail} a exponer APIs estandarizadas (CMA, 2016); hacer converger esas
-interfaces con los modelos de negocio de referencia sigue siendo, en la práctica, un ejercicio de
-gobernanza más que de despliegue de especificaciones.
+reproducibles.
 
-Como \textbf{episodio documentado} de integración fallida, la migración de plataformas del TSB
-(Reino Unido, 2018) dejó temporalmente sin servicio a cerca de \textbf{1,9 millones de clientes}.
-Los costes públicos hablan de \textbf{cientos de millones de libras} y de semanas con operación
-restringida mientras se reconstruían capas de integración mal alineadas (House of Commons Treasury
-Committee, 2018). El caso no cita OpenAPI ni BIAN, pero el Grupo~9.2 lo usa en exposición porque
-muestra el \textbf{dolor operativo} cuando negocio y tecnología evolucionan sin correspondencia
-verificable: retrabajo, ensayo--error en adaptadores, riesgo reputacional y regulatorio.
+En \textit{open banking}, la regulación británica obligó desde 2018 a nueve grandes bancos de
+\textit{retail} a exponer APIs estandarizadas (CMA, 2016). Converger esas interfaces con modelos de
+negocio de referencia sigue siendo, en la práctica, un ejercicio de gobernanza más que de despliegue
+de especificaciones.
 
-Farzi (2021) vincula arquitectura empresarial y modelos como BIAN con la agilidad bancaria, pero
-advierte barreras de madurez, heterogeneidad de implementaciones y distancia entre la arquitectura
-\textit{to-be} y lo desplegado. En el día a día, desarrollo publica contratos OpenAPI pensando en
-la implementación inmediata; arquitectura y negocio conservan BIAN como referencia. La
-sincronización entre ambos planos sigue siendo manual, parcial y sin métrica objetiva de
-coherencia---precisamente el vacío que el plan intenta acotar con S/E/C y \AlignmentScore{}.
+Como \textbf{episodio documentado}, la migración de plataformas del TSB (Reino Unido, 2018) dejó
+temporalmente sin servicio a cerca de \textbf{1,9 millones de clientes}. Los costes públicos hablan
+de \textbf{cientos de millones de libras} y de semanas con operación restringida (House of Commons
+Treasury Committee, 2018).
 
-Shabbir et al.\ (2025) añaden que la calidad industrial de las APIs depende de requisitos no
-funcionales ---consistencia, usabilidad, mantenibilidad--- que se resienten cuando la documentación
-técnica no refleja el dominio de negocio. En arquitecturas API bancarias eso se traduce en:
+El episodio no cita OpenAPI ni BIAN, pero ilustra el \textbf{dolor operativo} cuando negocio y
+tecnología evolucionan sin correspondencia verificable: retrabajo, ensayo--error en adaptadores,
+riesgo reputacional y regulatorio.
+
+Farzi (2021) vincula arquitectura empresarial y modelos como BIAN con la agilidad bancaria. Advierte
+barreras de madurez, heterogeneidad de implementaciones y distancia entre la arquitectura
+\textit{to-be} y lo desplegado.
+
+En el día a día, desarrollo publica contratos OpenAPI pensando en la implementación inmediata;
+arquitectura y negocio conservan BIAN como referencia. La sincronización entre ambos planos sigue
+siendo manual, parcial y sin métrica objetiva de coherencia.
+
+Shabbir et al.\ (2025) señalan que la calidad industrial de las APIs depende de consistencia,
+usabilidad y mantenibilidad. Esos requisitos se resienten cuando la documentación técnica no refleja
+el dominio de negocio. En arquitecturas API bancarias eso se traduce en:
 
 \begin{itemize}
-  \item \textbf{Fragmentación semántica:} mismos conceptos de negocio nombrados de forma distinta
-        entre OpenAPI y BIAN (p.\ ej., \texttt{PaymentOrder} frente a \texttt{paymentRequest}).
-  \item \textbf{Inconsistencias estructurales:} operaciones y recursos HTTP que no corresponden a
-        las capacidades o \textit{behaviors} definidos en el \ServiceDomain{}.
-  \item \textbf{Deriva documental:} versiones de contratos OpenAPI que evolucionan sin trazabilidad
-        respecto al modelo de referencia BIAN.
-  \item \textbf{Falta de evaluación sistemática:} ausencia de procedimientos reproducibles para
-        cuantificar la alineación entre ambos artefactos antes del despliegue o la certificación de
-        conformidad.
+  \item \textbf{Fragmentación semántica:} mismos conceptos nombrados de forma distinta entre
+        OpenAPI y BIAN (p.\ ej., \texttt{PaymentOrder} frente a \texttt{paymentRequest}).
+  \item \textbf{Inconsistencias estructurales:} operaciones HTTP que no corresponden a
+        \textit{behaviors} del \ServiceDomain{}.
+  \item \textbf{Deriva documental:} versiones de contratos OpenAPI sin trazabilidad respecto al
+        modelo BIAN de referencia.
+  \item \textbf{Evaluación no sistemática:} revisiones manuales o herramientas genéricas no
+        adaptadas al par contrato OpenAPI bancario --- \ServiceDomain{} BIAN antes del despliegue.
 \end{itemize}
 
-Los síntomas anteriores no son anecdóticos: condicionan gobernanza, interoperabilidad en ecosistemas
-abiertos y la confianza de \textit{stakeholders} en que una API representa una capacidad bancaria
-estandarizada. Por eso el §1.3 pasa al diagnóstico subyacente y al problema tecnológico que ancla
-la matriz (Anexo~C).
+Los síntomas condicionan gobernanza, interoperabilidad en ecosistemas abiertos y la confianza de
+\textit{stakeholders} en que una API representa una capacidad bancaria estandarizada. Por ello el
+§\ref{sec:planteamiento} pasa al diagnóstico subyacente y al problema tecnológico que ancla la
+matriz (Anexo~C).

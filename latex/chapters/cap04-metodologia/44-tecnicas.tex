@@ -1,10 +1,10 @@
-Las técnicas se seleccionaron a partir del estado del arte (Cap.~3) y se vinculan a los factores
-del Cap.~2:
+Esta sección detalla las técnicas previstas por objetivo específico, tomadas del estado del arte
+(§\ref{sec:estado-arte}) y vinculadas a los factores del Capítulo~\ref{cap:objetivos}:
 
 \begin{itemize}
   \item \textbf{OE1:} \textit{parsing} OpenAPI~3.x; extracción de \textit{paths}, operaciones y
-        esquemas; alineación con elementos BIAN en representación intermedia (Mainas et al., 2023
-        como referencia de enriquecimiento semántico).
+        esquemas; representación intermedia alineada con BIAN (Mainas et al., 2023 como referencia
+        de enriquecimiento semántico).
   \item \textbf{OE2:} \textit{schema matching} según taxonomía Shvaiko y Euzenat (2005): nombre,
         ruta, profundidad de esquema, operación HTTP.
   \item \textbf{OE3:} similitud semántica por embeddings y/o ontología (El Bayadh et al., 2015;
@@ -13,5 +13,5 @@ del Cap.~2:
         umbrales fijos (§1.4).
 \end{itemize}
 
-Herramientas previstas: Python para prototipo, validadores OpenAPI, bibliotecas de similitud textual;
-detalle de implementación fuera de alcance de Guía~1.
+Herramientas previstas: Python para prototipo, validadores OpenAPI, bibliotecas de similitud textual.
+La implementación concreta queda fuera del alcance del presente plan (§\ref{sec:alcances}).

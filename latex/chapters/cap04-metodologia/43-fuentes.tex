@@ -2,15 +2,15 @@
 
 Los datos no provienen de campo clínico ni de encuestas: son \textbf{artefactos digitales}
 (contratos OpenAPI en YAML/JSON y material de referencia BIAN) que el procedimiento trata como
-``señales'' documentales (PI-11). Cada instancia debe identificarse de forma unívoca (p. ej.
+representaciones documentales comparables. Cada instancia debe identificarse de forma unívoca (p. ej.
 \texttt{\{fuente\}\_\{service-domain\}\_\{version\}}).
 
 \input{tables/tab04-adquisicion-datos}
 
-\subsection{Criterios de inclusión (muestra empírica, Tesis~2)}
+\subsection{Criterios de inclusión (muestra empírica)}
 
-Para la validación futura se considerarán contratos OpenAPI~3.x del sector bancario emparejados
-con un \ServiceDomain{} BIAN declarado en la documentación del caso, con:
+Para una validación empírica posterior se considerarán contratos OpenAPI~3.x del sector bancario
+emparejados con un \ServiceDomain{} BIAN declarado en la documentación del caso, con:
 
 \begin{itemize}
   \item especificación parseable sin errores de sintaxis;
@@ -21,6 +21,6 @@ con un \ServiceDomain{} BIAN declarado en la documentación del caso, con:
 \end{itemize}
 
 La \textbf{población teórica} abarca todas las instancias de medición posibles sobre pares
-OpenAPI $\leftrightarrow$ BIAN en ese universo; la \textbf{muestra} será el subconjunto de
-contratos/pares seleccionados en Tesis~2 según representatividad de dominios (pagos, cuentas,
-préstamos, etc.), no un piloto único obligatorio.
+OpenAPI $\leftrightarrow$ BIAN en ese universo; la \textbf{muestra empírica} será el subconjunto de
+contratos/pares seleccionados según representatividad de dominios (pagos, cuentas, préstamos, etc.),
+sin fijar un piloto único obligatorio.

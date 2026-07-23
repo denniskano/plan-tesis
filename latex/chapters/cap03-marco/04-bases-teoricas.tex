@@ -10,14 +10,14 @@ matching}}: técnicas aproximadas o exactas a nivel de esquema; evidencia sintá
 externa a nivel de elemento y estructura; grado de automatización. El marco es anterior a OpenAPI y
 JSON Schema, pero fundamenta el cálculo del \StructuralScore{} al contrastar \textit{paths},
 \textit{operations} y \textit{schemas} con la organización de \Behavior{}s y \BusinessObject{}s del
-\ServiceDomain{} de referencia (ficha E2-01, Anexo~B).
+\ServiceDomain{} de referencia.
 
 \subsection{Alineación ontológica y similitud semántica}
 
 El Bayadh et al.\ (2015) clasifican enfoques de \textbf{alineación ontológica} en cuatro familias:
 medidas terminológicas, estructurales, extensionales y semánticas. Ninguna medida aislada basta;
 combinaciones fijas pueden ser subóptimas, lo que justifica un diseño explícito de pesos en el
-modelo S/E/C del Grupo~9.2.
+modelo S/E/C propuesto.
 
 Chandrasekaran y Mago (2022) trazan la evolución de la \textbf{similitud semántica} desde recursos
 léxicos (WordNet) hacia \textit{embeddings} y modelos transformadores. Santos Sousa et al.\ (2026)
@@ -32,10 +32,11 @@ BIAN normalizado.
 
 Mainas et al.\ (2023) ---citados en el eje E1--- proponen anotaciones semánticas
 (\texttt{x-refersTo}, \texttt{x-kindOf}, etc.), ontología REST/Hydra y traducción OpenAPI
-$\rightarrow$ RDF como vía de \textbf{representación enriquecida}. Evaluaron más de 300 contratos de
-SwaggerHub con consultas SPARQL; los tiempos de traducción superan 1~s para YAML de más de 200
-líneas. En este plan se consideran como técnicas de normalización candidatas (Cap.~4), no como
-definición previa del \SemanticScore{}.
+$\rightarrow$ RDF como vía de \textbf{representación enriquecida}.
+
+Evaluaron más de 300 contratos de SwaggerHub con consultas SPARQL. Los tiempos de traducción superan
+1~s para YAML de más de 200 líneas. En este plan se consideran como técnicas de normalización
+candidatas (Cap.~4), no como definición previa del \SemanticScore{}.
 
 \subsection{Relación con el modelo propuesto}
 

@@ -1,6 +1,10 @@
 \chapter{Diseño metodológico}
 \label{cap:metodologia}
 
+Este capítulo describe el \textbf{diseño metodológico} del plan: enfoque, procedimiento, fuentes de
+datos, técnicas y criterios de validez. Se explicita cómo cada objetivo específico (Cap.~2) se
+materializa en pasos con verbos de acción (§4.2--§4.2.1).
+
 \section{Tipo y enfoque metodológico}
 \input{chapters/cap04-metodologia/41-tipo-enfoque}
 
@@ -11,6 +15,7 @@
 \input{chapters/cap04-metodologia/43-fuentes}
 
 \section{Técnicas y herramientas}
+\label{sec:tecnicas-herramientas}
 \input{chapters/cap04-metodologia/44-tecnicas}
 
 \section{Métricas de evaluación}
@@ -29,12 +34,20 @@ Cap.~3 y operacionalización Anexo~D; (4)~\textbf{delimitación explícita} de a
 \section{Amenazas a la validez}
 
 \begin{itemize}
-  \item \textbf{Interna:} ambigüedad léxica en contratos; errores de \textit{parsing}; sesgo en
-        etiquetado experto de pares OpenAPI$\leftrightarrow$BIAN.
-  \item \textbf{Externa:} muestra de contratos no representativa de todo el sector; versiones BIAN
-        distintas entre emisores.
-  \item \textbf{De constructo:} \AlignmentScore{} resume S/E/C; puede ocultar desalineaciones
-        localizadas relevantes para negocio.
-  \item \textbf{Conclusión:} generalizar scores de la muestra al universo de contratos bancarios
-        requiere criterios de muestreo explícitos (§4.3).
+  \item \textbf{Interna:} sin artefacto software ni piloto fijo en este plan, la validez interna
+        depende de la coherencia del diseño (Anexo~C) y de futuros \textit{parsings} sin errores
+        sobre contratos OpenAPI~3.x; la ambigüedad léxica entre términos REST y \Behavior{} BIAN puede
+        sesgar S si no se normaliza en OE1.
+  \item \textbf{Externa:} los umbrales 0,80 / 0,60 / 0,40 son \textbf{convención provisional} del
+        diseño; una muestra empírica futura podría no representar dominios menos frecuentes (p. ej.
+        crédito vs.\ pagos) ni versiones BIAN distintas entre emisores.
+  \item \textbf{De constructo:} agregar S, E y C en un único \AlignmentScore{} puede ocultar
+        desalineaciones localizadas ---un \textit{schema} crítico mal emparejado con peso bajo en
+        C--- que sí importan a negocio aunque el score global sea ``Medio''.
+  \item \textbf{Conclusión:} cualquier generalización al sector bancario exigirá criterios de
+        inclusión explícitos (§4.3), trazabilidad instancia $\rightarrow$ score por contrato y
+        reporte de amenazas en la validación empírica posterior (fuera de alcance Guía~1).
 \end{itemize}
+
+En síntesis, este capítulo fija el procedimiento reproducible que materializa OE1--OE4 y prepara
+la validación empírica futura (§4.2, protocolo fuera de alcance Guía~1).

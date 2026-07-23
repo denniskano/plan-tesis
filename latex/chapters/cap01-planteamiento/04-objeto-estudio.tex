@@ -1,7 +1,7 @@
 \section{Objeto de estudio}
 \label{sec:objeto-estudio}
 
-Esta sección corresponde a la \textbf{situación subyacente} del curso: abstracción y
+Esta sección corresponde a la \textbf{situación subyacente} de la investigación: abstracción y
 caracterización del objeto de estudio antes del problema tecnológico (§1.3).
 
 El \textbf{objeto de estudio} son los \textbf{contratos OpenAPI} (OpenAPI~3.x) con los que el
@@ -16,9 +16,13 @@ contratos.
 BIAN también publica contratos OpenAPI de referencia, pero el estudio no reduce el estándar a su
 capa REST: el \ServiceDomain{} expresa el negocio y el \textbf{contrato OpenAPI bancario}
 ---del banco, de un integrador o de un catálogo--- es la \textbf{capa técnica evaluada}. Esa
-distinción recorre la ontología interna del Grupo~9.2 y se ilustra en Anexo~F.
+distinción orienta la lectura del contrato frente al \ServiceDomain{} y se ilustra en Anexo~F.
 
-Para evitar ambigüedades, se distinguen tres niveles:
+Para evitar ambigüedades, se distinguen tres niveles. La \Cref{fig:ontologia} resume la relación
+entre objeto, referencia BIAN, unidad de análisis y producto del modelo; el detalle tabular sigue
+en la \Cref{tab:objeto-unidad-producto}.
+
+\input{chapters/cap01-planteamiento/fig-ontologia}
 
 \begin{table}[H]
   \centering
@@ -37,7 +41,7 @@ Para evitar ambigüedades, se distinguen tres niveles:
   \end{tabular}
 \end{table}
 
-En el procedimiento del Grupo~9.2, el \textbf{objeto} es el archivo de entrada (el contrato); la
+En el procedimiento propuesto, el \textbf{objeto} es el archivo de entrada (el contrato); la
 \textbf{unidad de análisis} es cada par procesado dentro de él (endpoint--
 \Behavior{}, esquema--\BusinessObject{}, etc.); el \textbf{producto} agrega esos resultados en
 \AlignmentScore{} y clasificación por instancia \texttt{contrato} $\times$ \ServiceDomain{}.
@@ -91,8 +95,8 @@ A partir de estos componentes se obtiene el \AlignmentScore{}:
 
 La clasificación interpretativa del \textit{score} es: \textbf{Alta} ($\geq 0{,}80$),
 \textbf{Media} (0,60--0,79), \textbf{Baja} (0,40--0,59) y \textbf{Nula} ($< 0{,}40$). Los umbrales
-son \textbf{convención provisional del diseño} del Grupo~9.2 para la Guía~1; su calibración empírica
-queda para Tesis~2. Los scores S, E y C se calculan por unidad de análisis (par UA); el
+son \textbf{convención provisional del diseño} para este plan; su calibración empírica
+permanece fuera del alcance (§1.6). Los scores S, E y C se calculan por unidad de análisis (par UA); el
 \AlignmentScore{} y la clasificación se reportan por instancia contrato $\times$ \ServiceDomain{}.
 La \Cref{fig:alignment-score} ilustra el cálculo del score de alineación.
 

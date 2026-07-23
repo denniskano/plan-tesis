@@ -1,17 +1,19 @@
-El procedimiento sigue las cinco fases del modelo (Anexo~C), alineadas con OE1--OE4. En Guía~1 se
-documenta el diseño; en Tesis~2 se ejecutará.
+El procedimiento sigue las cinco fases del modelo (Anexo~C), alineadas con OE1--OE4. Este capítulo
+documenta el diseño del procedimiento; su ejecución a escala queda fuera del alcance (§1.6).
 
 \begin{enumerate}
-  \item \textbf{Fase 1 --- Diseño:} definir entradas, scores S/E/C, fórmula de agregación y
-        umbrales de clasificación (Cap.~1 §1.4; Anexo~C).
-  \item \textbf{Fase 2 --- Normalización (OE1):} parsear OpenAPI y material BIAN; producir
-        representaciones comparables (tabular, grafo o RDF según factor elegido).
-  \item \textbf{Fase 3 --- Matching estructural (OE2):} calcular correspondencias y
+  \item \textbf{Fase 1 --- Diseñar el modelo:} definir entradas, scores S/E/C, fórmula de
+        agregación y umbrales de clasificación (Cap.~1 §1.4; Anexo~C).
+  \item \textbf{Fase 2 --- Normalizar artefactos (OE1):} parsear el contrato OpenAPI y el material
+        BIAN; producir representaciones comparables (tabular, grafo o RDF según factor elegido).
+  \item \textbf{Fase 3 --- Emparejar estructuras (OE2):} calcular correspondencias y
         \StructuralScore{} (E).
-  \item \textbf{Fase 4 --- Similitud semántica (OE3):} calcular \SemanticScore{} (S).
-  \item \textbf{Fase 5 --- Integración (OE4):} \CoverageScore{} (C), \AlignmentScore{} y
-        clasificación por tipologías (Tabla~\ref{tab:tipologias}).
+  \item \textbf{Fase 4 --- Calcular similitud semántica (OE3):} obtener \SemanticScore{} (S).
+  \item \textbf{Fase 5 --- Integrar y clasificar (OE4):} calcular \CoverageScore{} (C),
+        \AlignmentScore{} y clasificación por tipologías (Tabla~\ref{tab:tipologias}).
 \end{enumerate}
+
+\input{chapters/cap04-metodologia/47-objetivos-metodologia}
 
 La \Cref{fig:proc-estructural} ilustra la correspondencia jerárquica para E; la cadena completa
 aparece en la \Cref{fig:cadena-objetivos} (Cap.~2).
@@ -25,11 +27,11 @@ aparece en la \Cref{fig:cadena-objetivos} (Cap.~2).
   \label{fig:proc-estructural}
 \end{figure}
 
-\subsection{Protocolo de experimentación (Tesis~2)}
+\subsection{Protocolo de validación empírica (fuera de alcance)}
 
-El protocolo escrito incluirá, según Clase~04: (1)~instrumento de captura (repositorio de contratos);
-(2)~infraestructura (\textit{parsing}, almacenamiento); (3)~condiciones de registro; (4)~tamaño y
-representatividad de la muestra; (5)~etiquetado de pares OpenAPI$\leftrightarrow$BIAN (juicio
-experto o \textit{ground truth} documentado); (6)~aspectos éticos/legales; (7)~evaluación del
-desempeño del sistema (precisión vs.\ referencia, análisis de falsos positivos/negativos en
-matching).
+Para una validación empírica posterior, el protocolo escrito contemplará: (1)~instrumento de captura
+(repositorio de contratos); (2)~infraestructura (\textit{parsing}, almacenamiento);
+(3)~condiciones de registro; (4)~tamaño y representatividad de la muestra; (5)~etiquetado de pares
+OpenAPI$\leftrightarrow$BIAN (juicio experto o \textit{ground truth} documentado);
+(6)~aspectos éticos/legales; (7)~evaluación del desempeño del sistema (precisión vs.\ referencia,
+análisis de falsos positivos/negativos en matching).

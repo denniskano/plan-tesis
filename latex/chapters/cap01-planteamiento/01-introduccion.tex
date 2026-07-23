@@ -1,27 +1,36 @@
 \section{Introducción}
 
-En banca, las APIs se integran cada vez más entre canales propios, \textit{fintechs} y socios
-(Bhatia, 2022). Para describirlas de forma uniforme se usa OpenAPI: un archivo ---YAML o JSON---
-con \textit{paths}, operaciones HTTP, \textit{schemas} y restricciones legibles por máquina (Casas
-et al., 2021; Santos et al., 2020). Ese contrato es lo que revisan desarrollo, integradores y
-gobernanza antes de exponer un servicio.
+En banca, las APIs conectan canales propios, \textit{fintechs} y socios (Bhatia, 2022). Para
+describirlas de forma uniforme se usa \textbf{OpenAPI}: un archivo YAML o JSON con \textit{paths},
+operaciones HTTP, \textit{schemas} y restricciones legibles por máquina (Casas et al., 2021; Santos
+et al., 2020). Ese contrato revisan desarrollo, integradores y gobernanza antes de exponer un
+servicio.
 
-En paralelo, BIAN (\textit{Banking Industry Architecture Network}) propone un mapa de negocio por
-\textbf{\ServiceDomain{}s}: capacidades como pagos o cuentas, expresadas con \textit{behaviors},
-\textit{business objects} y relaciones de control (Farzi, 2021). BIAN no reemplaza el código de la
-API; sirve como \textbf{referencia} para preguntar si la interfaz expuesta cuenta la misma historia de
-negocio.
+En paralelo, \textbf{BIAN} (\textit{Banking Industry Architecture Network}) organiza el negocio en
+\textbf{\ServiceDomain{}s}: capacidades como pagos o cuentas, con \textit{behaviors},
+\textit{business objects} y relaciones de control (Farzi, 2021). BIAN no sustituye el código de la
+API; funciona como \textbf{referencia} para contrastar si la interfaz expuesta cuenta la misma
+historia de negocio.
 
-Este plan aborda el \textbf{hueco entre ambas capas}. Llamamos \textbf{alineación} al grado en que un
-contrato OpenAPI bancario y un \ServiceDomain{} BIAN emparejado coinciden en estructura y
-significado. El producto del estudio es un \textbf{modelo de puntuación}: S (semántica), E (estructura),
-C (cobertura) y \AlignmentScore{} $= \alpha S + \beta E + \gamma C$ con $\alpha + \beta + \gamma =
-1$. El Capítulo~\ref{cap:marco} desarrolla las bases; aquí fijamos el alcance: medir sobre
-documentos, de forma reproducible, sin afirmar aún cómo se implementará el cálculo en software
-(§1.6).
+Llamamos \textbf{alineación} al grado en que un contrato OpenAPI bancario y un \ServiceDomain{} BIAN
+emparejado coinciden en estructura y significado. El producto del estudio es un \textbf{modelo de
+puntuación}: \SemanticScore{} (S), \StructuralScore{} (E), \CoverageScore{} (C) y
+\AlignmentScore{} $= \alpha S + \beta E + \gamma C$ con $\alpha + \beta + \gamma = 1$ (detalle en
+§1.4 y Fig.~\ref{fig:alignment-score}).
 
-La \Cref{fig:contexto} sitúa el contexto: sector API bancario, referencia BIAN, contrato OpenAPI
-como entrada y scores como salida del procedimiento.
+A nivel de sector, la problemática (§\ref{sec:problematica}) muestra síntomas observables:
+fragmentación semántica, costos de integración y casos documentados como TSB (2018) o \textit{open
+banking} británico (CMA, 2016). El diagnóstico subyacente (§\ref{sec:objeto-estudio}) abstrae dos
+jerarquías comparables ---contrato OpenAPI frente a \ServiceDomain{} BIAN---. El problema
+tecnológico (§\ref{sec:planteamiento}) exige un procedimiento reproducible para cuantificar esa
+correspondencia antes del despliegue.
+
+La estrategia del plan es \textbf{diseñar} ese procedimiento y el modelo S/E/C, documentados con
+trazabilidad en la matriz de consistencia (Anexo~C). La construcción del artefacto y la validación
+empírica quedan fuera de alcance (§\ref{sec:alcances}).
+
+La \Cref{fig:contexto} resume el flujo: sector API bancario, referencia BIAN, contrato OpenAPI como
+entrada y scores como salida.
 
 \begin{figure}[H]
   \centering
@@ -30,6 +39,7 @@ como entrada y scores como salida del procedimiento.
   \label{fig:contexto}
 \end{figure}
 
-Las secciones~\ref{sec:problematica}--\ref{sec:objeto-estudio} desarrollan la problemática del
-sector, los tres niveles del problema, el objeto de estudio y la unidad de análisis. Los
-capítulos siguientes presentan objetivos, marco teórico, metodología y administración del plan.
+En la \Cref{sec:problematica} se describe la situación real; en §\ref{sec:planteamiento} y
+§\ref{sec:objeto-estudio}, el problema subyacente y el objeto de estudio. Los
+capítulos~\ref{cap:objetivos}--\ref{cap:metodologia} desarrollan objetivos, marco teórico y diseño
+metodológico; el Capítulo~5 administra el plan.
