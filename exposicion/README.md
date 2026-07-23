@@ -11,7 +11,9 @@ Materiales para las sesiones de exposición del curso (PI-13 / PI-14): **23 y 30
 
 | Archivo / carpeta | Uso |
 |-------------------|-----|
-| [`GUIA_EXPOSICION_JULIO.md`](GUIA_EXPOSICION_JULIO.md) | Guion completo (~12–15 min documento + PPT final) |
+| [`LIBRETO_EXPOSICION_COMPLETO.md`](LIBRETO_EXPOSICION_COMPLETO.md) | **Libreto oral** — texto slide por slide (15 min) |
+| [`ppt/GUION_15MIN_AMPLIADO.md`](ppt/GUION_15MIN_AMPLIADO.md) | Timing + qué exponer / qué no |
+| [`GUIA_EXPOSICION_JULIO.md`](GUIA_EXPOSICION_JULIO.md) | Guía general + preguntas frecuentes |
 | [`CHECKLIST_PRE_EXPOSICION.md`](CHECKLIST_PRE_EXPOSICION.md) | Lista rápida antes de entrar a clase |
 | [`ppt/`](ppt/) | Diapositivas para exposición final (30 jul) |
 | [`referencias/`](referencias/) | Notas de papers a demostrar en vivo (Casas, Shvaiko) |

@@ -105,26 +105,24 @@ Decir explícito: «S/E/C se calculan por **unidad de análisis**; el score glob
 
 ## 7. Exposición final con PPT (30 jul)
 
-**Archivo generado:** [`ppt/Exposicion_Plan_Tesis_Grupo9.2.pptx`](ppt/Exposicion_Plan_Tesis_Grupo9.2.pptx) (21 diapositivas · ppt-rules completo)  
-**Revisión Alex/Jack:** [`ppt/REVISION_PPT_ALEX_JACK.md`](ppt/REVISION_PPT_ALEX_JACK.md)  
-**Guion oral:** [`ppt/NOTAS_ORAL_RUBRICA.md`](ppt/NOTAS_ORAL_RUBRICA.md)
+**Archivo para presentar:** [`ppt/Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx`](ppt/Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx) (23 slides · **15 min**)  
+**Guion:** [`ppt/GUION_15MIN_AMPLIADO.md`](ppt/GUION_15MIN_AMPLIADO.md)  
+**Optimizar tras editar:** `ppt/optimize_ampliado.py`
 
-### Diapositivas (12 — ~12 min)
+### Regla ppt-rules
 
-1. Título + IEEE/ACM + integrantes  
-2. Introducción — conceptos y estrategia  
-3. Ontología (Fig. objeto/UA)  
-4. Problemática real (TSB, Casas)  
-5. Objeto de estudio  
-6. Problema tecnológico + OE1–OE4  
-7. Modelo S/E/C (Fig. 3)  
-8. Caso A + Caso B  
-9. Cadena objetivos (Fig. 4)  
-10. Metodología §4.2.1 (verbos)  
-11. Brecha V1–V5 (Fig. 6)  
-12. Alcance Guía 1 + referencias + cierre  
+- **Slide 2 Fuentes:** NO exponer en clase (solo entrega Drive).
+- Presentar en orden: slide 1 → 3 → … → 23.
 
-**Evitar:** párrafos largos en slides; bullets de una línea; animaciones innecesarias.
+### Bloques (15 min)
+
+| Min | Bloque | Slides |
+|-----|--------|--------|
+| 0–4 | Intro + problemática + objeto (figuras Alex) | 1, 3–8 |
+| 4–7 | Instrumento + casos + problema + OG | 9–12 |
+| 7–11 | OE + variables + metodología + S/E/C | 13–17 |
+| 11–14 | Matriz + brecha | 18–20 |
+| 14–15 | Cierre + referencias | 21–23 |
 
 ---
 

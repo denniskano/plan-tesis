@@ -50,7 +50,7 @@
 |---|-------|-------------|--------------|
 | 1 | Segundo envío Turnitin (comparar % IA vs 49%) | Ambos | `REVISION_TURNITIN_IA.md` |
 | 2 | Subir PDF + `.bib` + paper al aula virtual | Ambos | `fase-g-administracion/CHECKLIST.md` |
-| 3 | Regenerar/subir zip Drive si aplica | Jack | `entrega/Informe_Guia1_Grupo9.2.zip` |
+| 3 | Regenerar/subir zip Drive si aplica | Jack | `entrega/Informe_Guia1_Grupo9.2.zip` ✅ 2026-07-23 |
 
 ### Prioridad 2 — calidad / curso
 
