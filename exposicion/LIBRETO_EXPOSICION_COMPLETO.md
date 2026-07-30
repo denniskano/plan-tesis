@@ -1,17 +1,17 @@
 # Libreto completo — Exposición Plan de Tesis Grupo 9.2
 
-**PPT:** `ppt/Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx`  
-**Duración:** 15:00 (22 slides orales; **omitir slide 2**)  
+**Presentación oficial:** `Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf` (**22 slides**)  
+**Duración:** 15:00 (**19 slides orales**; **omitir slides 2, 3 y 4**)  
 **Integrantes:** Alex Mancilla · Jack Paitan  
-**Regla:** señalar la diapositiva al hablar (como «mudo que señala» — PI-13).
+**Regla:** señalar la diapositiva al hablar. El público no conoce el plan: **explicar cada sigla la primera vez que aparezca**.
 
 ---
 
 ## Antes de empezar
 
-- [ ] PDF Casas (2021) y Shvaiko (2005) abiertos en pestañas
-- [ ] PDF plan §1.4 / Anexo C listo por si preguntan matriz
-- [ ] Navegación: slide **1 → 3** (saltar slide 2 Fuentes)
+- [ ] PDF **Casas et al. (2021)** y **Shvaiko & Euzenat (2005)** abiertos en pestañas
+- [ ] PDF del plan con **Anexo C** (matriz) listo por si preguntan detalle
+- [ ] Navegación: slide **1 → 5** (saltar **2** Fuentes, **3** Intro escrita, **4** Ontología)
 
 ---
 
@@ -21,385 +21,435 @@
 
 > Buenas [tardes/noches]. Somos el Grupo 9.2 — Alex Mancilla y Jack Paitan.  
 >  
-> Nuestro plan de tesis aborda la **alineación entre contratos OpenAPI bancarios y Service Domains BIAN**, mediante un modelo de puntuación **S, E, C** y un **AlignmentScore** integrado.  
+> Nuestro plan de tesis estudia qué tan bien **coinciden** dos descripciones del mismo negocio bancario: por un lado, el **contrato OpenAPI** — es decir, el archivo **YAML o JSON** con el que el banco **publica** su API REST (rutas, operaciones y esquemas de datos); por otro, el **Service Domain BIAN** — un bloque del modelo de referencia **BIAN** (*Banking Industry Architecture Network*), que estandariza capacidades bancarias como pagos o cuentas.  
 >  
-> Es una **investigación tecnológica** en la línea de **design science**: diseñamos un procedimiento reproducible, no implementamos aún el software en producción.  
+> Para medir esa coincidencia proponemos tres puntajes entre 0 y 1: **S** (*SemanticScore*, similitud de significado), **E** (*StructuralScore*, correspondencia estructural) y **C** (*CoverageScore*, cobertura de operaciones), integrados en un **AlignmentScore** ponderado.  
 >  
-> Clasificamos el tema en **IEEE: Knowledge Representation** y **ACM: Semantic networks / alineación de esquemas**, porque comparamos representaciones formales de negocio y de API.
+> Es una **investigación tecnológica** en la línea de **design science** (*ciencia del diseño*): en esta **Guía 1** entregamos el **diseño** del procedimiento; la implementación y validación empírica quedan para **Tesis 2**.  
+>  
+> Clasificamos el tema en **IEEE: Knowledge Representation** y **ACM: Semantic networks**, porque comparamos dos **representaciones formales** — la técnica (OpenAPI) y la de negocio (BIAN).
 
-**Acción:** señalar título y líneas IEEE/ACM.
+**Acción:** señalar título y las dos líneas de clasificación IEEE/ACM.
 
 ---
 
 ## SLIDE 2 · ⛔ NO EXPONER
 
-**Avanzar directo a slide 3.** (Fuentes = entrega Drive, ppt-rules §3.)
+**Diapositiva:** Fuentes / Drive + Zotero (punto rojo)
+
+> ⛔ **No exponer.** Solo cumplimiento de formato. Avanzar a slide 5.
+
+**Acción:** pulsar siguiente sin hablar.
 
 ---
 
-## SLIDE 3 · 0:45–1:35 · **Alex**
+## SLIDE 3 · ⛔ NO EXPONER
 
-**Diapositiva:** Introducción §1.1
+**Diapositiva:** Introducción §1.1 (punto rojo)
 
-> En banca, las APIs se documentan con **OpenAPI**: un contrato YAML o JSON legible por máquina. Casas et al. confirman que es el estándar de facto — lo citamos en la problemática.  
->  
-> En paralelo, **BIAN** organiza capacidades de negocio en **Service Domains**; actúa como **referencia**, no sustituye el contrato técnico — Farzi, 2021.  
->  
-> Llamamos **alineación** al grado en que un contrato OpenAPI y un Service Domain emparejado coinciden en **estructura y significado**.  
->  
-> El producto del estudio es el modelo **SemanticScore (S)**, **StructuralScore (E)**, **CoverageScore (C)** y el **AlignmentScore** agregado.  
->  
-> En esta **Guía 1** documentamos el **diseño** del procedimiento. La validación empírica a escala queda para **Tesis 2**, según §1.6.
+> ⛔ **No exponer.** Texto de respaldo del Capítulo 1. Avanzar a slide 5.
 
-**Acción:** marcar cada bullet al nombrarlo; no leer el slide entero de corrido.
+**Acción:** pulsar siguiente sin hablar.
 
 ---
 
-## SLIDE 4 · 1:35–2:20 · **Jack**
+## SLIDE 4 · ⛔ NO EXPONER
 
-**Diapositiva:** Ontología (figura)
+**Diapositiva:** Ontología (figura informe · punto rojo)
 
-> Esta figura resume nuestra **ontología interna** — no es una contribución publicada; nos orienta al redactar y al exponer.  
->  
-> Señalo cuatro piezas: el **objeto de estudio real** es el **contrato OpenAPI bancario** completo. La **unidad de análisis** es la **instancia** de medición: un par comparable dentro del contrato evaluado contra un Service Domain, identificado como `{fuente}_{service-domain}_{versión}`.  
->  
-> El **producto** son los scores **S, E, C** y el **AlignmentScore**. **BIAN** es **referencia de contraste**, no el objeto.  
->  
-> Esta distinción evita la pregunta típica: «¿evalúan BIAN o el contrato?» — evaluamos el **contrato** frente a BIAN.
+> ⛔ **No exponer.** Figura de respaldo del informe. Avanzar a slide 5.
 
-**Acción:** señalar cajas objeto · UA · producto · referencia BIAN.
+**Acción:** pulsar siguiente sin hablar.
 
 ---
 
-## SLIDE 5 · 2:20–3:10 · **Jack**
+## SLIDE 5 · 0:45–1:35 · **Jack**
 
 **Diapositiva:** Problemática — situación real (figura)
 
-> Pasamos a la **problemática**, §1.2 — la **situación real**. Esto **no** es el problema de la matriz ni el problema tecnológico.  
+> Entramos en la **problemática del sector** — Capítulo 1, sección 1.2: la **situación real** donde se observa el problema. Esto **no** es el problema tecnológico de nuestro artefacto ni la matriz del Anexo C; es el **contexto bancario** que motiva la investigación.  
 >  
-> **¿Dónde ocurre?** En el ecosistema bancario digital: APIs propias, fintechs, **open banking** — por ejemplo la investigación de la CMA en Reino Unido, 2016.  
+> **¿Dónde ocurre?** En el ecosistema de **banca digital**: el banco expone APIs, entran **fintechs** (empresas tecnológicas financieras) y, en muchos países, regímenes de **open banking** (*banca abierta*) — regulación que obliga o incentiva a compartir datos y servicios vía APIs estandarizadas. Un ejemplo citado en el plan es la investigación de la **CMA** (*Competition and Markets Authority*, la autoridad de competencia del **Reino Unido**) en **2016**, que impulsó el open banking británico al concluir que la competencia en servicios bancarios dependía de APIs más abiertas.  
 >  
-> **¿Quiénes actúan?** Arquitectura, integración, gobernanza de APIs y socios externos.  
+> **¿Quiénes intervienen?** Equipos de **arquitectura**, **integración**, **gobernanza de APIs** y **socios externos** que consumen o publican contratos.  
 >  
-> Los **síntomas** los vemos en la siguiente diapositiva; aquí la idea es: hay **dolor observable** en el sector — fragmentación, costos de integración — y eso **motiva** medir coherencia **antes** de integrar, pero **no se resuelve** solo con nuestro artefacto de diseño.
+> Los **síntomas concretos** — retrabajo, fragmentación — los veremos en la siguiente diapositiva. Aquí la idea es: hay **dolor observable** en el sector; eso **motiva** medir coherencia **antes** de integrar sistemas, aunque nuestro plan de Guía 1 solo **diseña** cómo medirla, no la resuelve en producción.
 
-**Acción:** señalar figura de contexto / actores en la imagen.
+**Acción:** señalar en la figura el contexto sectorial y los actores al nombrarlos.
 
 ---
 
-## SLIDE 6 · 3:10–4:05 · **Jack**
+## SLIDE 6 · 1:35–2:25 · **Jack**
 
-**Diapositiva:** Síntomas, dolor, estadísticas (2 figuras)
+**Diapositiva:** Síntomas, dolor y estadísticas (2 figuras)
 
-> Los **síntomas** concretos: **fragmentación semántica** entre equipos, **retrabajo** en adaptadores, **deriva** entre negocio y capa REST en cada release.  
+> En la misma problemática, los **síntomas** que documentamos son tres.  
 >  
-> Caso **TSB, 2018**: fallas masivas tras migración IT — muestra el riesgo cuando la capa API pierde trazabilidad con el negocio. *(Señalar figura TSB si aplica.)*  
+> Primero, **fragmentación semántica**: distintos equipos nombran igual concepto de negocio de formas distintas en sus APIs. Segundo, **retrabajo** en adaptadores e integraciones cada vez que cambia el contrato. Tercero, **deriva** entre lo que el negocio entiende y lo que la capa REST expone en cada release.  
 >  
-> **Casas et al., 2021** — mapeo de 47 artículos: el **68 %** propone herramientas y el **43 %** mejora documentación, pero **ninguno** enlaza OpenAPI con modelos BIAN de forma sistemática. *(Señalar figura Casas / cifra.)*  
+> Un caso sectorial fuerte es el banco **TSB** (*Trustee Savings Bank*, Reino Unido): en **2018** sufrió una **caída masiva de servicios** tras una migración de sistemas; en el plan lo usamos como ejemplo de riesgo cuando la capa API **pierde trazabilidad** con el modelo de negocio. *(Señalar la figura del caso TSB.)*  
 >  
-> Si el docente pide el paper: «Sí, lo leímos» — abrir PDF Casas y señalar el apartado del mapeo.
+> En el estado del arte, **Casas, Pinto y Silva (2021)** revisaron **47 artículos** sobre OpenAPI. El **68 %** propone herramientas y el **43 %** mejora documentación, pero **ningún artículo** enlaza OpenAPI con modelos **BIAN** de forma sistemática — ahí está el vacío que nuestro plan aborda. *(Señalar la cifra 68 % en la figura.)*  
+>  
+> Si el docente pide el paper: abrimos el PDF de Casas y señalamos el apartado del mapeo sistemático.
 
-**Acción:** señalar **ambas** figuras; mencionar cifra **68 %** de memoria.
+**Acción:** señalar **ambas** figuras; decir «sesenta y ocho por ciento» con claridad.
 
 ---
 
-## SLIDE 7 · 4:05–4:50 · **Jack**
+## SLIDE 7 · 2:25–3:15 · **Jack**
 
 **Diapositiva:** Objeto de estudio — situación subyacente (figura)
 
-> Subimos un nivel: la **situación subyacente**, §1.4. La **causa** abstracta de los síntomas es la **desalineación** entre dos jerarquías comparables: el **contrato OpenAPI** — paths, operations, schemas — y el **Service Domain BIAN** — behaviors, business objects, relaciones.  
+> Subimos un nivel conceptual: la **situación subyacente** (§1.4). La **causa abstracta** de los síntomas es la **desalineación** entre dos jerarquías que deberían contar la misma historia:  
 >  
-> El **objeto de estudio** es el **contrato OpenAPI bancario** — el archivo YAML o JSON publicado. **No** evaluamos código en producción ni tráfico runtime.  
+> — el **contrato OpenAPI**: *paths* (rutas), *operations* (verbos HTTP) y *schemas* (estructuras de datos);  
+> — el **Service Domain BIAN**: *behaviors* (comportamientos de negocio), *business objects* (objetos de negocio) y sus relaciones.  
 >  
-> BIAN funciona como **modelo de referencia** para contrastar si la interfaz expuesta cuenta la misma historia de negocio.
+> Nuestro **objeto de estudio** es el **contrato OpenAPI bancario completo** — el archivo que el banco publica. **No** evaluamos código en ejecución ni tráfico en tiempo real.  
+>  
+> **BIAN** actúa como **modelo de referencia**: no es lo que medimos, sino el **patrón** con el que comparamos si la API expuesta refleja la misma capacidad de negocio.
 
-**Acción:** señalar capa técnica vs capa negocio en la figura.
+**Acción:** señalar en la figura la capa técnica (OpenAPI) frente a la capa de negocio (BIAN).
 
 ---
 
-## SLIDE 8 · 4:50–5:30 · **Jack**
+## SLIDE 8 · 3:15–4:00 · **Jack**
 
 **Diapositiva:** Objeto real — taxonomía y ciclo de vida
 
-> El **objeto de estudio real** existe independiente del observador: es el contrato que el banco **publica**.  
+> El **objeto de estudio real** existe **independiente del investigador**: es el contrato que el banco **publica** en su repositorio de APIs.  
 >  
-> Su **taxonomía** en el plan: OpenAPI **3.x**, dominios como pagos, cuentas o préstamos, versiones versionadas en repositorio de APIs.  
+> En el plan lo clasificamos así: contratos **OpenAPI 3.x**, en dominios como **pagos**, **cuentas** o **préstamos**, con **versiones** trazables (v1, v2…).  
 >  
-> El **ciclo de vida** del **contrato** — diseño, revisión, publicación, consumo — **no** confundirlo con el ciclo de vida del proceso bancario completo.  
+> También distinguimos el **ciclo de vida del contrato** — diseño, revisión, publicación, consumo por terceros — del ciclo de vida del **proceso bancario** completo. Nosotros medimos coherencia en el **documento** del contrato, típicamente **antes del despliegue**.  
 >  
-> Ejemplos concretos están en el **Anexo F** del informe.
+> Ejemplos concretos de contratos de referencia están en el **Anexo F** del informe escrito.
 
-**Acción:** señalar figura taxonomía / ciclo si está en la imagen.
+**Acción:** señalar taxonomía y ciclo de vida en la figura si están visibles.
 
 ---
 
-## SLIDE 9 · 5:30–6:15 · **Alex**
+## SLIDE 9 · 4:00–4:45 · **Alex**
 
-**Diapositiva:** Instrumento y objeto modelado (figura procedimiento)
+**Diapositiva:** Instrumento y objeto modelado (figura)
 
-> Para **capturar** propiedades del contrato usamos un **instrumento** documental, no encuestas ni IoT:  
+> Para **obtener datos** del contrato usamos un **instrumento de investigación documental** — no encuestas ni sensores: un **procedimiento reproducible** sobre archivos.  
 >  
-> — **Parser OpenAPI 3.x** + extracto del Service Domain BIAN.  
-> — **Procedimiento de normalización** (OE1).  
-> — **Schema matching** y **similitud semántica** para calcular E y S.  
+> El flujo es: **(1)** un *parser* que lee OpenAPI 3.x y extrae la estructura; **(2)** un extracto del **Service Domain BIAN** emparejado; **(3)** **normalización** (objetivo **OE1**) para dejar ambos en representaciones comparables; **(4)** **schema matching** — técnica de emparejamiento entre esquemas, basada en **Shvaiko & Euzenat (2005)** — para el score **E**; **(5)** **similitud semántica** para el score **S**.  
 >  
-> El **objeto modelado** son representaciones normalizadas, matrices de correspondencia y scores en **[0, 1]**.  
+> El **objeto modelado** son matrices de correspondencia y puntajes en la escala **[0, 1]**.  
 >  
-> En la siguiente slide mostramos **ejemplos** y **estados** de clasificación del artefacto.
+> En la siguiente diapositiva mostramos **dos casos concretos** y la **escala de clasificación** del artefacto.
 
-**Acción:** señalar flujo instrumento → representación → scores en la figura.
+**Acción:** recorrer con el cursor el flujo de la figura de izquierda a derecha.
 
 ---
 
-## SLIDE 10 · 6:15–7:00 · **Alex**
+## SLIDE 10 · 4:45–5:30 · **Alex**
 
 **Diapositiva:** Casos A/B + estados (figura)
 
-> **Caso A — SemanticScore (S):** en OpenAPI tenemos `POST /payments` con schema `PaymentRequest`; en BIAN, `InitiatePayment` y `PaymentOrder`. Mismos roles de negocio, **nombres distintos** → baja **S**. *(Señalar columna OpenAPI / BIAN.)*  
+> **Caso A — score semántico (S):** en OpenAPI aparece `POST /payments` con el schema `PaymentRequest`; en BIAN, los behaviors `InitiatePayment` y el objeto `PaymentOrder`. Representan el **mismo rol de negocio** con **nombres distintos** → el **SemanticScore S** sería **bajo**. *(Señalar columnas OpenAPI y BIAN.)*  
 >  
-> **Caso B — CoverageScore (C):** el contrato solo expone `GET /payments/{id}`, pero BIAN define además `Initiate`, `Confirm` y `Cancel Payment`. Cobertura **incompleta** → baja **C** aunque el matching estructural E sea alto.  
+> **Caso B — score de cobertura (C):** el contrato solo expone `GET /payments/{id}` (consultar un pago), pero BIAN define también iniciar, confirmar y cancelar pagos. Hay **operaciones de negocio sin equivalente** en la API → **C** bajo aunque la estructura (**E**) parezca correcta.  
 >  
-> El artefacto clasifica el contrato en **Alta, Media, Baja o Nula** según umbrales provisionales: **0,80 / 0,60 / 0,40** — convención del diseño, calibración futura en Tesis 2.  
+> El artefacto clasifica el contrato en **Alta, Media, Baja o Nula** según umbrales **provisionales** del diseño: **0,80 / 0,60 / 0,40** — convención para la Guía 1; la calibración con datos reales de bancos queda para **Tesis 2**.  
 >  
-> Los scores se calculan por **unidad de análisis** y se interpretan por **contrato × Service Domain**.
+> Cada medición se hace por **unidad de análisis**: un par comparable dentro del contrato frente a un Service Domain, identificado como `{fuente}_{service-domain}_{versión}`. El puntaje global se interpreta por **contrato × Service Domain**.
 
-**Acción:** señalar casos y escala Alta–Nula.
+**Acción:** señalar casos A y B y la escala Alta–Nula.
 
 ---
 
-## SLIDE 11 · 7:00–7:50 · **Alex**
+## SLIDE 11 · 5:30–6:20 · **Alex**
 
-**Diapositiva:** Problema tecnológico + P1–P4
+**Diapositiva:** Problema tecnológico + P1–P4 (§1.3)
 
-> Este es el **problema tecnológico** — §1.3 — el de la **matriz de consistencia**. Es **distinto** de la problemática del sector.  
+> Este es el **problema tecnológico** — el de la **matriz de consistencia** (Anexo C). Es **distinto** de la problemática del sector que explicó Jack: aquí hablamos de **qué artefacto falta diseñar** y con qué método.  
 >  
-> Decimos que los métodos actuales son **insuficientes o no adaptados** a OpenAPI↔BIAN — **no** «no existe ningún método». Hay revisión manual y schema matching genérico, pero falta un procedimiento **reproducible** para este par artefactual.  
+> Formulamos que los enfoques actuales son **insuficientes o no adaptados** al par OpenAPI↔BIAN. **No** decimos «no existe ningún método»: hay revisión manual y *schema matching* genérico, pero falta un procedimiento **reproducible y documentado** para este par de artefactos.  
 >  
-> El **artefacto** a diseñar: procedimiento + modelo **S/E/C → AlignmentScore** — software **documentado** en el plan.  
+> El **artefacto** a diseñar combina procedimiento + modelo **S/E/C → AlignmentScore**.  
 >  
-> Las preguntas **P1–P4** operacionalizan: **P1** matching estructural → **E**; **P2** similitud semántica → **S**; **P3** cobertura → **C**; **P4** score integrado y clasificación.
+> Las preguntas **P1 a P4** lo operacionalizan: **P1** — ¿cómo emparejar estructuras? → **E**; **P2** — ¿cómo medir similitud de significado? → **S**; **P3** — ¿qué proporción del dominio BIAN cubre el contrato? → **C**; **P4** — ¿cómo integrar y clasificar? → **AlignmentScore** y nivel Alta/Media/Baja/Nula.
 
-**Acción:** enfatizar «**insuficiente**»; señalar P1–P4.
+**Acción:** enfatizar en voz la palabra «**insuficiente**»; señalar P1–P4 en la diapositiva.
 
 ---
 
-## SLIDE 12 · 7:50–8:25 · **Alex**
+## SLIDE 12 · 6:20–6:55 · **Alex**
 
-**Diapositiva:** Objetivo general + VD
+**Diapositiva:** Objetivo general + variable dependiente
 
-> **Insumo inicial:** contrato OpenAPI bancario + Service Domain BIAN emparejado.  
+> **Insumo del procedimiento:** un contrato OpenAPI bancario emparejado con un **Service Domain BIAN** del mismo dominio (por ejemplo, pagos con pagos).  
 >  
-> **Objetivo general técnico:** diseñar el modelo S/E/C y el procedimiento reproducible de alineación.  
+> **Objetivo general (técnico):** **diseñar** el modelo S/E/C y el procedimiento reproducible que produce el **AlignmentScore**.  
 >  
 > **Variable dependiente del artefacto:** el **AlignmentScore** en **[0, 1]** más la **clasificación** por niveles.  
 >  
-> El **objetivo superior** — consecuencia en el mundo real si el artefacto operara — es que equipos de arquitectura **cuantifiquen coherencia antes del despliegue**. En Guía 1 **no implementamos** ese cambio en producción; entregamos el **diseño**.
+> El **objetivo superior** — lo que ocurriría en el mundo real **si** el artefacto existiera y se usara — es que equipos de arquitectura **cuantifiquen la coherencia negocio–API antes del despliegue**. En Guía 1 **no implementamos** ese cambio; solo entregamos el **diseño** validable en Tesis 2.
 
-**Acción:** distinguir OG técnico vs objetivo superior.
-
----
-
-## SLIDE 13 · 8:25–9:15 · **Alex**
-
-**Diapositiva:** OE1–OE4 — cadena (figura)
-
-> Cada **objetivo específico** es un **hito con producto medible** — no confundir con «programar en Python» o «hacer experimentos», que el docente descarta como OE.  
->  
-> **OE1:** normalizar → representaciones comparables.  
-> **OE2:** emparejar estructuras → **StructuralScore (E)**.  
-> **OE3:** similitud semántica → **SemanticScore (S)**.  
-> **OE4:** integrar → **CoverageScore (C)**, **AlignmentScore** y tipologías de desalineación.  
->  
-> La **Fase 1** del modelo es el **diseño** del procedimiento; **OE1–OE4** son transformadores sucesivos sobre los artefactos — como muestra la figura.
-
-**Acción:** recorrer la cadena con el cursor en la figura.
+**Acción:** distinguir en voz «objetivo general técnico» vs «objetivo superior (consecuencia)».
 
 ---
 
-## SLIDE 14 · 9:15–9:55 · **Alex**
+## SLIDE 13 · 6:55–7:45 · **Alex**
+
+**Diapositiva:** Objetivos específicos OE1–OE4 (figura cadena)
+
+> Los **objetivos específicos** son **hitos con producto verificable** — no formulaciones vagas como «programar en Python» o «hacer experimentos».  
+>  
+> **OE1 — Normalizar:** transformar contrato y extracto BIAN en **representaciones intermedias comparables**. Producto: esquemas normalizados versionados.  
+> **OE2 — Emparejar:** aplicar *schema matching* → producto: **StructuralScore E** ∈ [0, 1].  
+> **OE3 — Similitud semántica:** calcular correspondencia de significado → producto: **SemanticScore S** ∈ [0, 1].  
+> **OE4 — Integrar:** agregar S, E y C con pesos **α, β, γ** (que suman 1) → producto: **CoverageScore C**, **AlignmentScore** y **tipologías** de desalineación.  
+>  
+> La figura muestra la **cadena**: cada OE recibe la salida del anterior, como una línea de transformación documental.
+
+**Acción:** recorrer la cadena OE1→OE4 con el cursor en la figura.
+
+---
+
+## SLIDE 14 · 7:45–8:25 · **Alex**
 
 **Diapositiva:** Variables independientes (Tabla 5)
 
-> Las **variables independientes** son **factores de diseño** que controla el investigador — **no** hiperparámetros de entrenamiento como epochs o learning rate.  
+> Las **variables independientes (VI)** son **decisiones de diseño** que el investigador fija al construir el procedimiento — **no** hiperparámetros de *machine learning* como *epochs* o *learning rate*.  
 >  
-> **OE1:** esquema de **representación intermedia**.  
-> **OE2:** estrategia de **schema matching** — Shvaiko & Euzenat, 2005.  
-> **OE3:** técnica de **similitud semántica** — embeddings, ontología o híbrido.  
-> **OE4:** pesos **α, β, γ** de agregación, con **α + β + γ = 1**.  
+> **OE1:** esquema de **representación intermedia** (cómo aplanar paths/schemas frente a behaviors/objetos BIAN).  
+> **OE2:** estrategia de **schema matching** (Shvaiko & Euzenat, 2005 — revisión clásica de técnicas de emparejamiento entre esquemas).  
+> **OE3:** técnica de **similitud semántica** — por ejemplo embeddings vectoriales, alineación ontológica o enfoque híbrido.  
+> **OE4:** pesos **α, β, γ** de la fórmula **AlignmentScore = α·S + β·E + γ·C**, con **α + β + γ = 1**.  
 >  
-> Cada factor tiene **estados o alternativas** definidas en el plan para una validación futura.
+> Cada factor tiene **alternativas** definidas en el plan para una validación futura en Tesis 2.
 
-**Acción:** señalar filas OE1–OE4 en la tabla del slide.
+**Acción:** señalar cada fila OE1–OE4 en la tabla.
 
 ---
 
-## SLIDE 15 · 9:55–10:35 · **Alex**
+## SLIDE 15 · 8:25–9:05 · **Alex**
 
 **Diapositiva:** Variables dependientes (Tabla 5 · Anexo D)
 
-> Las **variables dependientes** son los **ratios** medidos:  
+> Las **variables dependientes (VD)** son los **ratios o puntajes medidos** como resultado del procedimiento:  
 >  
-> **OE1:** completitud de la normalización.  
-> **OE2:** **E** ∈ [0, 1].  
-> **OE3:** **S** ∈ [0, 1].  
-> **OE4:** **C**, **AlignmentScore** y nivel de clasificación.  
+> **OE1:** **completitud de la normalización** (elementos extraídos vs esperados).  
+> **OE2:** **E** — StructuralScore ∈ [0, 1].  
+> **OE3:** **S** — SemanticScore ∈ [0, 1].  
+> **OE4:** **C** (cobertura), **AlignmentScore** agregado y **nivel** Alta/Media/Baja/Nula.  
 >  
-> Fórmula central: **AlignmentScore = α·S + β·E + γ·C**.  
+> Repito la fórmula central porque es el corazón del artefacto: **AlignmentScore = α·S + β·E + γ·C**.  
 >  
-> El detalle operativo de medición está en el **Anexo D**; la trazabilidad con hipótesis, en el **Anexo C**.
+> El detalle de **cómo medir** cada ratio está en el **Anexo D** del informe; la trazabilidad con hipótesis, en el **Anexo C**.
 
-**Acción:** decir la fórmula mirando slide 17 si hace falta reforzar.
+**Acción:** decir la fórmula mirando la tabla; reforzar en slide 17 si hace falta.
 
 ---
 
-## SLIDE 16 · 10:35–11:15 · **Alex**
+## SLIDE 16 · 9:05–9:45 · **Alex**
 
-**Diapositiva:** Metodología — 5 fases con verbos
+**Diapositiva:** Metodología — 5 fases (§4.2)
 
-> Si el docente pide «empiecen por metodología», esta es la slide — PI-14.  
+> Si el docente pide «empiecen por metodología», esta es la diapositiva clave.  
 >  
-> **Fase 1 · Diseñar** entradas, scores y umbrales → modelo documentado.  
-> **Fase 2 · Normalizar** (OE1).  
-> **Fase 3 · Emparejar** estructuralmente → E (OE2).  
-> **Fase 4 · Calcular** similitud → S (OE3).  
-> **Fase 5 · Integrar** S, E, C → C + AlignmentScore + tipologías (OE4).  
+> **Fase 1 · Diseñar** — definir entradas, definición de scores y umbrales → producto: modelo S/E/C **documentado**.  
+> **Fase 2 · Normalizar** — ejecutar OE1 sobre contrato + Service Domain.  
+> **Fase 3 · Emparejar** — OE2 → matriz estructural y **E**.  
+> **Fase 4 · Calcular similitud** — OE3 → **S**.  
+> **Fase 5 · Integrar** — OE4 → **C**, **AlignmentScore** y tipologías de desalineación.  
 >  
-> Cada verbo corresponde a una fila de la tabla §4.2.1 del informe.
+> Cada verbo corresponde a una fila de la tabla del Capítulo 4, sección 4.2.1, del informe escrito.
 
-**Acción:** señalar cada fase; tener PDF §4.2.1 por si profundizan.
+**Acción:** señalar cada fase en la tabla; tener el PDF §4.2.1 por si profundizan.
 
 ---
 
-## SLIDE 17 · 11:15–12:00 · **Alex**
+## SLIDE 17 · 9:45–10:30 · **Alex**
 
 **Diapositiva:** Artefacto S / E / C (figura)
 
-> El **artefacto** descompone la evaluación en tres componentes:  
+> El **artefacto** descompone la evaluación en tres dimensiones complementarias:  
 >  
-> **E (StructuralScore):** correspondencia entre organización REST y modelo BIAN — base teórica en **Shvaiko & Euzenat, 2005**.  
-> **S (SemanticScore):** similitud de significado entre conceptos.  
-> **C (CoverageScore):** proporción del Service Domain cubierta por el contrato.  
+> **E (StructuralScore):** grado en que la organización REST (recursos, métodos, anidamiento) corresponde a la estructura del Service Domain BIAN. Base teórica: emparejamiento de esquemas (**Shvaiko & Euzenat, 2005**).  
+> **S (SemanticScore):** similitud de **significado** entre nombres y conceptos — no solo la forma.  
+> **C (CoverageScore):** qué **proporción** de behaviors/objetos definidos en BIAN tiene equivalente en el contrato.  
 >  
-> **AlignmentScore = α·S + β·E + γ·C** → clasificación **Alta / Media / Baja / Nula**.  
+> Se combinan en **AlignmentScore = α·S + β·E + γ·C**, que alimenta la clasificación **Alta / Media / Baja / Nula**.  
 >  
-> **S, E y C se calculan por unidad de análisis**; el score global se interpreta por **contrato × Service Domain**.
+> **S, E y C se calculan por unidad de análisis** (cada par comparable dentro del contrato); el resultado global resume el **contrato completo frente a un Service Domain**.
 
 **Acción:** señalar S, E, C y la fórmula en la figura. Tener PDF Shvaiko listo.
 
 ---
 
-## SLIDE 18 · 12:00–12:40 · **Alex**
+## SLIDE 18 · 10:30–11:30 · **Alex**
 
-**Diapositiva:** Matriz de consistencia (I)
+**Diapositiva:** Matriz de consistencia — Anexo C (2 tablas)
 
-> La **matriz de consistencia**, Anexo C, alinea **problema tecnológico**, **objetivo**, **producto verificable** por fase. **No** es la brecha del estado del arte.  
+> Llegamos a una pieza que el docente suele revisar con lupa: la **matriz de consistencia** del **Anexo C** del informe escrito.  
 >  
-> **Fase 1:** problema — método insuficiente para cuantificar alineación OpenAPI↔BIAN; objetivo — diseñar modelo S/E/C; producto — modelo metodológico documentado.  
+> **¿Para qué sirve?** Para demostrar que el plan **no está desarmado**: cada fase del procedimiento tiene un **problema tecnológico concreto**, un **objetivo** que lo responde y un **producto verificable** — algo que se puede revisar en un documento o, en Tesis 2, en una ejecución.  
 >  
-> **Fase 2 / OE1:** representaciones no comparables → normalizar → representaciones versionadas.  
->  
-> **Fase 3 / OE2:** sin E sistemático → emparejar → matriz + **E** ∈ [0, 1].  
->  
-> Señalo las columnas **Problema → Objetivo → Producto**; el detalle completo está en el PDF Anexo C.
+> **Antes de entrar en la tabla**, una distinción importante — la repetiremos en la slide 19: esta matriz **no** es la **brecha** del estado del arte. La matriz habla del **artefacto que diseñamos**; la brecha habla de lo que **aún no hace la literatura**. Son complementarias, no intercambiables.
 
-**Acción:** señalar columnas de la tabla; no leer celda por celda.
+**Primera tabla — «Problema tecnológico → objetivo → producto»**
+
+> Señalo el título de la primera tabla y las **cuatro columnas**: **F** es la **fase** del procedimiento; luego **problema tecnológico**, **objetivo** y **producto verificable**.  
+>  
+> **Fase 1 — Diseño del modelo.**  
+> El **problema** es que hoy no existe un **método reproducible** para cuantificar la alineación entre OpenAPI y BIAN — hay prácticas aisladas, pero no un procedimiento documentado para este par.  
+> El **objetivo** de la fase es **diseñar** el modelo **S/E/C** y su agregación.  
+> El **producto** es el **modelo metodológico documentado** — lo que estamos entregando en esta Guía 1, visible en el propio Anexo C.  
+>  
+> **Fase 2 — Normalización (OE1).**  
+> El **problema**: contrato OpenAPI y extracto BIAN vienen en **representaciones distintas** — no se pueden comparar directamente.  
+> El **objetivo**: **OE1**, normalizar ambos a un **esquema intermedio** comparable.  
+> El **producto**: **representaciones versionadas** — archivos o estructuras normalizadas que quedan trazadas por versión del contrato.  
+>  
+> **Fase 3 — Emparejamiento estructural (OE2).**  
+> El **problema**: aún no tenemos un **StructuralScore E** sistemático que diga qué tan bien encajan paths, operaciones y schemas con behaviors y objetos BIAN.  
+> El **objetivo**: **OE2**, emparejar estructuras con *schema matching*.  
+> El **producto**: una **matriz de correspondencia** más el puntaje **E ∈ [0, 1]** por unidad de análisis.  
+>  
+> **Fase 4 — Similitud semántica (OE3).**  
+> El **problema**: la estructura puede coincidir pero los **nombres y significados** no — recuerden el Caso A de la slide 10.  
+> El **objetivo**: **OE3**, calcular similitud semántica.  
+> El **producto**: matriz ampliada con **S ∈ [0, 1]**.  
+>  
+> **Fase 5 — Integración (OE4).**  
+> El **problema**: faltan **cobertura**, **score integrado** y **clasificación** interpretable para arquitectos.  
+> El **objetivo**: **OE4**, integrar S, E y C con pesos **α, β, γ**.  
+> El **producto**: **CoverageScore C**, **AlignmentScore** y la **clasificación** Alta / Media / Baja / Nula.  
+>  
+> Si leen la tabla de izquierda a derecha, cada fila responde: «**qué falla hoy → qué hacemos → qué entregamos**».
+
+**Segunda tabla — «VI · VD · Hipótesis»**
+
+> Bajo el segundo título aparecen tres columnas más técnicas, pero la lógica es la misma.  
+> **VI** = **variable independiente**: la **decisión de diseño** que el investigador fija.  
+> **VD** = **variable dependiente**: el **puntaje o ratio** que el procedimiento **mide**.  
+> **Hipótesis** = lo que **esperamos comprobar** cuando ejecutemos el artefacto en Tesis 2 — aquí solo las **declaramos**, no las probamos aún.  
+>  
+> **Fase 1.**  
+> **VI:** definición del esquema S/E/C y de los pesos **α, β, γ**.  
+> **VD:** que los scores queden **definidos** de forma reproducible.  
+> **H0:** el **modelo metodológico es reproducible** — es decir, dos investigadores con el mismo contrato y el mismo Service Domain deberían obtener el mismo procedimiento documentado.  
+>  
+> **Fase 2 / OE1.**  
+> **VI:** diseño del **esquema intermedio** de normalización.  
+> **VD:** **completitud** de la normalización — cuántos elementos se extrajeron vs cuántos se esperaban.  
+> **H1:** si normalizamos bien, **habilitamos** el cálculo sistemático de S, E y C en las fases siguientes.  
+>  
+> **Fase 3 / OE2.**  
+> **VI:** estrategia de **schema matching** (Shvaiko & Euzenat).  
+> **VD:** **StructuralScore E**.  
+> **H2:** el matching produce un **E coherente** con la organización REST frente a BIAN.  
+>  
+> **Fase 4 / OE3.**  
+> **VI:** técnica de **similitud semántica** (embeddings, ontología o híbrido).  
+> **VD:** **SemanticScore S**.  
+> **H3:** la similitud produce un **S** que **discrimina** desalineaciones reales — no todos los contratos salen iguales.  
+>  
+> **Fase 5 / OE4.**  
+> **VI:** pesos **α, β, γ** de agregación.  
+> **VD:** **C**, **AlignmentScore** y nivel de clasificación.  
+> **H4:** la agregación ponderada produce un **AlignmentScore interpretable** para decisiones de arquitectura.  
+>  
+> **Cierre de la slide:** la matriz cierra el circuito **problema → objetivo → producto → variable → hipótesis**. El detalle celda por celda, con redacción completa, está en el **Anexo C** del PDF del plan — lo tenemos listo si el docente pide profundizar en una fila.
+
+**Acción:** recorrer **primero** la tabla superior fila por fila señalando las columnas; **pausa breve**; luego la tabla inferior. No leer cada celda palabra por palabra — **narrar la lógica** señalando la fila activa. Tener **Anexo C** abierto en otra pestaña. Cerrar en voz: «**Matriz = diseño del artefacto; brecha = literatura — slide siguiente**».
 
 ---
 
-## SLIDE 19 · 12:40–13:20 · **Alex**
+## SLIDE 19 · 11:30–12:10 · **Jack + Alex**
 
-**Diapositiva:** Matriz de consistencia (II)
-
-> Segunda parte: **variables independientes**, **dependientes** e **hipótesis** por fase.  
->  
-> **H1 (OE1):** normalización intermedia habilita cálculo sistemático de S, E, C.  
-> **H2 (OE2):** schema matching produce **E** coherente con la organización REST vs BIAN.  
-> **H3 (OE3):** similitud semántica produce **S** que discrimina desalineaciones.  
-> **H4 (OE4):** agregación ponderada produce **AlignmentScore** interpretable.  
->  
-> Los factores **α, β, γ** y los ratios **S, E, C** quedan explícitos en la matriz y en la Tabla 5 del Capítulo 2.
-
-**Acción:** mencionar H1–H4; abrir Anexo C si el docente pide fila completa.
-
----
-
-## SLIDE 20 · 13:20–14:00 · **Jack + Alex**
-
-**Diapositiva:** Brecha V1–V5 (figura)
+**Diapositiva:** Brecha V1–V5 (figura Cap. 3)
 
 **Jack (V1–V2):**
 
-> La **brecha** viene del **estado del arte**, §3.6 — **distinta** de la matriz.  
-> **V1:** no hay marco sistemático OpenAPI↔BIAN. **V2:** falta cuantificación reproducible de desalineación.
+> La **brecha de investigación** resume **vacíos del estado del arte** (Capítulo 3, §3.6) — **distinta** de la matriz.  
+> **V1:** no existe un marco **sistemático** para alinear OpenAPI con BIAN.  
+> **V2:** falta una forma **reproducible** de **cuantificar** la desalineación — hoy predomina revisión manual.
 
 **Alex (V3–V5):**
 
-> **V3:** integración S+E+C en un score interpretable. **V4:** procedimiento aplicable pre-despliegue. **V5:** separación clara entre calidad runtime y coherencia documental.  
+> **V3:** falta integrar **S, E y C** en un **único score** interpretable para arquitectos.  
+> **V4:** falta un procedimiento aplicable **antes del despliegue**, sobre el contrato publicado.  
+> **V5:** confundir **calidad en runtime** (latencia, errores HTTP) con **coherencia documental** negocio–API; nuestro plan mide lo segundo.  
 >  
-> La figura muestra la transición E1–E6 → vacíos V1–V5 → oportunidad de nuestro plan.
+> La figura muestra cómo los trabajos previos (**E1–E6** en la revisión) dejan estos vacíos (**V1–V5**) y dónde se ubica nuestra propuesta.
 
-**Acción:** señalar vacíos en la figura; cerrar: «**Brecha ≠ matriz**».
+**Acción:** señalar vacíos en la figura; cerrar: «**Brecha ≠ matriz**». Leer el caption navy (PI-11) si hace falta reforzar.
 
 ---
 
-## SLIDE 21 · 14:00–14:30 · **Jack**
+## SLIDE 20 · 12:10–12:40 · **Jack**
 
 **Diapositiva:** Conclusiones
 
-> Concluimos con **relaciones entre conceptos**, no con opinión personal:  
+> Cerramos con **relaciones entre conceptos**, no con opinión personal:  
 >  
-> OpenAPI es **maduro** como artefacto técnico; falta un procedimiento **OpenAPI↔BIAN** reproducible.  
-> Objeto (**contrato**) + referencia (**BIAN**) + **UA** (instancia) producen scores **S, E, C** integrados.  
-> **OE1–OE4** encadenan transformaciones con productos verificables.  
-> La **matriz Anexo C** cierra trazabilidad problema → objetivos → VI/VD → hipótesis.  
-> **Guía 1** entrega el **diseño**; **Tesis 2** prevé software y validación empírica.
+> **OpenAPI** es maduro como formato de contrato técnico; falta un procedimiento **OpenAPI↔BIAN** reproducible.  
+> El **objeto** es el contrato; **BIAN** es **referencia**; la **unidad de análisis** es cada par comparable dentro del contrato → de ahí salen **S, E, C** integrados.  
+> **OE1 a OE4** encadenan transformaciones con **productos verificables** en cada paso.  
+> La **matriz del Anexo C** cierra la trazabilidad: problema tecnológico → objetivos → variables → hipótesis.  
+> **Guía 1** entrega el **diseño**; **Tesis 2** prevé software y validación empírica con contratos reales.
 
 ---
 
-## SLIDE 22 · 14:30–14:45 · **Alex**
+## SLIDE 21 · 12:40–12:55 · **Alex**
 
-**Diapositiva:** Recomendaciones (breve)
+**Diapositiva:** Recomendaciones
 
-> Como **recomendaciones** para continuidad: implementar el artefacto según §4.2; calibrar umbrales con muestra bancaria; validar **H1–H4** con contratos públicos del Anexo F; integrar el score en gobernanza de APIs **antes** del despliegue.
+> Como **recomendaciones** de continuidad: **(1)** implementar el artefacto según el procedimiento del §4.2; **(2)** calibrar los umbrales 0,80 / 0,60 / 0,40 con una muestra representativa de contratos bancarios; **(3)** validar las hipótesis **H1–H4** con contratos OpenAPI 3.x públicos del **Anexo F**; **(4)** integrar el score en la **gobernanza de APIs** del banco **antes** del despliegue a producción.
 
 ---
 
-## SLIDE 23 · 14:45–15:00 · **Jack**
+## SLIDE 22 · 12:55–15:00 · **Jack**
 
 **Diapositiva:** Referencias + cierre
 
-> Citamos en esta exposición a **Casas et al., 2021**; **Shvaiko & Euzenat, 2005**; **Farzi, 2021**; **CMA, 2016**; y el caso **TSB, 2018**.  
+> En esta exposición citamos principalmente a:  
+> — **Casas et al. (2021)** — revisión sistemática de investigación sobre OpenAPI;  
+> — **Shvaiko & Euzenat (2005)** — taxonomía de *schema matching*;  
+> — **Farzi et al. (2021)** — documentación del panorama de servicios **BIAN**;  
+> — **CMA (2016)** — informe británico que impulsó **open banking**;  
+> — **TSB (2018)** — caso de falla tras migración IT.  
 >  
-> Tenemos los PDFs de **Casas** y **Shvaiko** disponibles para mostrar el pasaje citado.  
+> Tenemos abiertos los PDFs de **Casas** y **Shvaiko** para mostrar el pasaje citado si lo solicitan.  
 >  
 > **¿Preguntas?**  
 >  
-> *(Cierre fijo, 15 s:)* «El plan entrega el **diseño** del procedimiento S/E/C; la **validación empírica** queda en **Tesis 2**, §1.6.»
+> *(Cierre fijo, ~15 s:)* «El plan entrega el **diseño** del procedimiento S/E/C; la **validación empírica** con datos bancarios queda para **Tesis 2**, según el §1.6 del informe.»
 
 ---
 
 ## Anexo — Respuestas rápidas (preguntas del docente)
 
-| Pregunta | Respuesta (quien responde) |
-|----------|----------------------------|
-| ¿Cuál es la UA? | Instancia `{fuente}_{SD}_{versión}`: par endpoint/schema ↔ behavior/BO dentro del contrato vs un SD. (**Jack**) |
-| ¿Objeto de estudio? | Contrato OpenAPI bancario completo (YAML/JSON). BIAN = referencia. (**Jack**) |
-| ¿Tres niveles de problema? | Real §1.2 → subyacente §1.4 → tecnológico §1.3 / matriz. (**Alex**) |
-| ¿Brecha vs matriz? | Brecha = Cap. 3 estado del arte; matriz = problema tecnológico Anexo C. (**Alex**) |
-| ¿Por qué no experimentan? | Guía 1 = diseño §1.6; protocolo bosquejado para Tesis 2. (**Alex**) |
-| ¿Leíste Casas/Shvaiko? | Sí → abrir PDF y señalar párrafo (68 % Casas; taxonomía matching Shvaiko). (**quien citó**) |
-| ¿Instancia o contrato? | UA = instancia; score global agregado por contrato × SD. (**Alex**) |
+| Pregunta | Respuesta narrativa (quien responde) |
+|----------|--------------------------------------|
+| ¿Qué es OpenAPI? | Estándar de facto para describir APIs REST en YAML/JSON: rutas, operaciones y esquemas. Es nuestro **objeto de estudio**. (**Jack**) |
+| ¿Qué es BIAN? | *Banking Industry Architecture Network*: red de la industria que publica un modelo de referencia de capacidades bancarias en **Service Domains**. Lo usamos como **contraste**, no como objeto. (**Jack**) |
+| ¿Cuál es la UA? | **Unidad de análisis**: cada par comparable *endpoint/schema ↔ behavior/objeto de negocio* dentro de un contrato evaluado frente a un Service Domain, identificado como `{fuente}_{SD}_{versión}`. (**Jack**) |
+| ¿Objeto vs UA? | **Objeto** = contrato OpenAPI completo. **UA** = instancia de medición dentro de ese contrato. El score global resume **contrato × Service Domain**. (**Alex**) |
+| ¿Qué es la CMA? | *Competition and Markets Authority* del Reino Unido; su informe de **2016** sobre competencia bancaria impulsó el **open banking** británico. (**Jack**) |
+| ¿Tres niveles de problema? | **Real** (§1.2): síntomas en el sector. **Subyacente** (§1.4): dos jerarquías desalineadas. **Tecnológico** (§1.3): falta método reproducible — es el de la **matriz**. (**Alex**) |
+| ¿Brecha vs matriz? | **Brecha** = vacíos V1–V5 del **estado del arte** (Cap. 3). **Matriz** = trazabilidad del **problema tecnológico** del diseño (Anexo C). (**Alex**) |
+| ¿Por qué no experimentan? | **Guía 1** = solo **diseño** del procedimiento (§1.6); la ejecución y prueba con bancos reales es **Tesis 2**. (**Alex**) |
+| ¿Leíste Casas/Shvaiko? | Sí → abrir PDF y señalar el párrafo (68 % dominio concreto en Casas; taxonomía de matching en Shvaiko). (**quien citó**) |
 
 ---
 
-## Errores a evitar (PI-12/13/14)
+## Errores a evitar
 
-- Hablar sin señalar la diapositiva  
-- Decir «no existe método» (usar **insuficiente / no adaptado**)  
-- Confundir problemática ↔ problema tecnológico ↔ brecha ↔ matriz  
-- Exponer slide 2 Fuentes  
-- Leer párrafos enteros del slide  
+- Mencionar siglas (**CMA**, **BIAN**, **OE1**, **UA**…) **sin una frase que las explique**
+- Hablar sin señalar la diapositiva
+- Decir «no existe ningún método» (usar **insuficiente / no adaptado**)
+- Confundir problemática del sector ↔ problema tecnológico ↔ brecha ↔ matriz
+- Exponer slides **2**, **3** o **4**
+- Leer párrafos enteros del slide en lugar de narrar
 
 ---
 
-*Libreto Grupo 9.2 — sincronizado con `Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx` y `GUION_15MIN_AMPLIADO.md`.*
+*Libreto Grupo 9.2 — sincronizado con `Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf` y `ppt/GUION_15MIN_AMPLIADO.md`.*

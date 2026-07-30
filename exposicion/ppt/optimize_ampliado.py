@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Optimiza Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx:
+LEGACY — Obsoleto. Presentación oral oficial: ../Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf
+Guion: ../LIBRETO_EXPOSICION_COMPLETO.md · GUION_15MIN_AMPLIADO.md
+
+Optimiza Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx (versión anterior, no usar en clase):
 - 15 min de exposición (notas orales por slide)
 - ppt-rules: Fuentes NO se expone; resto según guion
 - Elimina duplicados de imágenes Alex (misma sección)

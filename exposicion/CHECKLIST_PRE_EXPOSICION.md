@@ -4,9 +4,8 @@ Usar **5 min antes** de compartir pantalla. Detalle en [`GUIA_EXPOSICION_JULIO.m
 
 ## Documento
 
-- [ ] PDF actualizado: `../latex/build/Plan_Tesis_Grupo9.2.pdf`
-- [ ] Índice / panel de navegación visible
-- [ ] Secciones clave localizadas: Cap. 4 §4.2.1 · Cap. 1 §1.2–§1.4 · Cap. 3 §3.6
+- [ ] **Presentación oficial:** `Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf` (22 slides; saltar slides **2** y **3**)
+- [ ] PDF plan de respaldo: `../latex/build/Plan_Tesis_Grupo9.2.pdf` (Anexo C si preguntan matriz)
 
 ## Referencias (demostración en vivo)
 
@@ -15,7 +14,7 @@ Usar **5 min antes** de compartir pantalla. Detalle en [`GUIA_EXPOSICION_JULIO.m
 
 ## Técnico
 
-- [ ] Pantalla completa (no solo ventana del PDF)
+- [ ] Pantalla completa · avanzar **1 → 5** (slides 2–4 tienen punto rojo · no oral)
 - [ ] Micrófono probado
 - [ ] Roles Alex/Jack acordados (quién navega, quién marca ideas)
 
@@ -28,6 +27,6 @@ Usar **5 min antes** de compartir pantalla. Detalle en [`GUIA_EXPOSICION_JULIO.m
 
 ## Si es exposición final (30 jul)
 
-- [ ] PPT en `ppt/` revisado (8–10 diapositivas)
-- [ ] Caso A (S) y Caso B (C) preparados
-- [ ] Fig. modelo S/E/C incluida
+- [ ] Ensayo cronometrado con [`LIBRETO_EXPOSICION_COMPLETO.md`](LIBRETO_EXPOSICION_COMPLETO.md) (20 slides orales · saltar 2 y 3)
+- [ ] Caso A (S) y Caso B (C) en slide 10
+- [ ] Matriz slide **18** (una sola) · Brecha slide 19

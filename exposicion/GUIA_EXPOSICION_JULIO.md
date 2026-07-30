@@ -103,26 +103,28 @@ Decir explícito: «S/E/C se calculan por **unidad de análisis**; el score glob
 
 ---
 
-## 7. Exposición final con PPT (30 jul)
+## 7. Exposición final con presentación Beamer (30 jul)
 
-**Archivo para presentar:** [`ppt/Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx`](ppt/Exposicion_Plan_Tesis_Grupo9.2-ampliado.pptx) (23 slides · **15 min**)  
-**Guion:** [`ppt/GUION_15MIN_AMPLIADO.md`](ppt/GUION_15MIN_AMPLIADO.md)  
-**Optimizar tras editar:** `ppt/optimize_ampliado.py`
+**Archivo para presentar:** [`Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf`](Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf) (**22 slides** · **15 min**)  
+**Guion resumido:** [`ppt/GUION_15MIN_AMPLIADO.md`](ppt/GUION_15MIN_AMPLIADO.md)  
+**Libreto completo:** [`LIBRETO_EXPOSICION_COMPLETO.md`](LIBRETO_EXPOSICION_COMPLETO.md)  
+**Regenerar PDF:** `cd latex && make pdf`
 
-### Regla ppt-rules
+### Navegación en clase
 
-- **Slide 2 Fuentes:** NO exponer en clase (solo entrega Drive).
-- Presentar en orden: slide 1 → 3 → … → 23.
+- **Slides 2 y 3** (Fuentes + Intro escrita): ⛔ **no exponer** (punto rojo esquina superior).
+- Presentar en orden: slide **1 → 4 → … → 22**.
 
 ### Bloques (15 min)
 
-| Min | Bloque | Slides |
-|-----|--------|--------|
-| 0–4 | Intro + problemática + objeto (figuras Alex) | 1, 3–8 |
+| Min | Bloque | Slides Beamer |
+|-----|--------|---------------|
+| 0–1 | Portada | 1 |
+| 1–4 | Ontología + problemática + objeto | 4–8 |
 | 4–7 | Instrumento + casos + problema + OG | 9–12 |
 | 7–11 | OE + variables + metodología + S/E/C | 13–17 |
-| 11–14 | Matriz + brecha | 18–20 |
-| 14–15 | Cierre + referencias | 21–23 |
+| 11–13 | Matriz + brecha | 18–19 |
+| 13–15 | Cierre + referencias | 20–22 |
 
 ---
 

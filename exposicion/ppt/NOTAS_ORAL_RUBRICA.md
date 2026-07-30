@@ -1,64 +1,56 @@
-# Notas orales — PPT exposición final (30 jul)
+# Notas orales — exposición final (30 jul)
 
-**Archivo:** `Exposicion_Plan_Tesis_Grupo9.2.pptx` (21 diapositivas)  
-**Revisión cruzada:** `REVISION_PPT_ALEX_JACK.md`  
-**Duración objetivo:** 15–18 min (modo rápido 12 min)
+> **Presentación oficial:** [`../Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf`](../Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf) (**22 slides** · Beamer LaTeX)  
+> **Guion completo:** [`../LIBRETO_EXPOSICION_COMPLETO.md`](../LIBRETO_EXPOSICION_COMPLETO.md)  
+> **Timing:** [`GUION_15MIN_AMPLIADO.md`](GUION_15MIN_AMPLIADO.md)
 
----
-
-## Estructura alineada a ppt-rules
-
-| # | Slide | ppt-rules | Quién | ~min |
-|---|-------|-----------|-------|------|
-| 1 | Título + ACM/IEEE | §1 | Jack | 0:40 |
-| 2 | Introducción | §4 | Alex | 0:50 |
-| 3 | Ontología (Fig. 02) | §5 | Jack | 0:45 |
-| 4 | Problemática: dónde/actores | §6 | Jack | 0:45 |
-| 5 | Problemática: síntomas/stats | §7 | Jack | 0:45 |
-| 6 | Objeto subyacente | §8 | Jack | 0:45 |
-| 7 | Objeto real + taxonomía | §9 | Jack | 0:30 |
-| 8 | Instrumento + casos + estados | §10–11 | Alex | 0:45 |
-| 9 | Problema tecnológico P1–P4 | §12–14 | Alex | 0:45 |
-| 10 | Objetivo general + VD | §15 | Alex | 0:30 |
-| 11 | OE1–OE4 (Fig. 04) | §16 | Alex | 0:45 |
-| 12 | Variables independientes | §17–18 | Alex | 0:30 |
-| 13 | Variables dependientes | §19 | Alex | 0:30 |
-| 14 | Metodología / fases | §20 | Alex | 0:30 |
-| 15 | Artefacto S/E/C (Fig. 03) | §12* | Alex | 0:30 |
-| 16 | **Matriz consistencia (I)** | **§21** | **Alex** | **0:30** |
-| 17 | **Matriz consistencia (II)** | **§21** | **Alex** | **0:30** |
-| 18 | Brecha V1–V5 (Fig. 06) | PI-11 | Ambos | 0:20 |
-| 19 | Conclusiones | §22 | Jack | 0:20 |
-| 20 | Recomendaciones | §23 | Alex | 0:15 |
-| 21 | Referencias + preguntas | §24 | Jack | 0:20 |
+**Duración objetivo:** 15:00 (20 slides orales; omitir slides **2** y **3**)
 
 ---
 
-## Matriz de consistencia (obligatorio)
+## Estructura Beamer (22 slides)
 
-**Slide 16:** señalar columnas Problema → Objetivo → Producto por fase 1–3.  
-**Slide 17:** VI · VD · Hipótesis H1–H4.  
-**Frase clave:** «La matriz alinea el **problema tecnológico** del artefacto; la brecha (slide 18) viene del estado del arte.»
+| Slide | Contenido | Oral | ~min |
+|-------|-----------|------|------|
+| 1 | Título + IEEE/ACM | ✅ Jack | 0:45 |
+| 2 | Fuentes Drive + Zotero | ⛔ | — |
+| 3 | Intro §1.1 escrita | ⛔ | — |
+| 4 | Ontología | ✅ Alex | 0:50 |
+| 5 | Problemática: dónde/actores | ✅ Jack | 0:50 |
+| 6 | Síntomas + Casas 68 % | ✅ Jack | 0:50 |
+| 7 | Objeto subyacente | ✅ Jack | 0:45 |
+| 8 | Taxonomía / ciclo de vida | ✅ Jack | 0:45 |
+| 9 | Instrumento | ✅ Alex | 0:45 |
+| 10 | Casos A/B + estados | ✅ Alex | 0:45 |
+| 11 | Problema tecnológico P1–P4 | ✅ Alex | 0:50 |
+| 12 | Objetivo general + VD | ✅ Alex | 0:35 |
+| 13 | OE1–OE4 (figura informe) | ✅ Alex | 0:50 |
+| 14 | Variables independientes | ✅ Alex | 0:40 |
+| 15 | Variables dependientes | ✅ Alex | 0:40 |
+| 16 | Metodología 5 fases | ✅ Alex | 0:40 |
+| 17 | Artefacto S/E/C | ✅ Alex | 0:45 |
+| 18 | **Matriz Anexo C** (2 tablas, 1 slide) | ✅ Alex | 1:00 |
+| 19 | Brecha V1–V5 (figura informe) | ✅ Ambos | 0:40 |
+| 20 | Conclusiones | ✅ Jack | 0:30 |
+| 21 | Recomendaciones | ✅ Alex | 0:15 |
+| 22 | Referencias + preguntas | ✅ Jack | 1:20 |
+
+---
+
+## Matriz y brecha (obligatorio)
+
+**Slide 18:** señalar columnas Problema → Objetivo → Producto; segunda tabla VI · VD · H1–H4.  
+**Slide 19:** vacíos V1–V5; caption navy **PI-11** bajo figura (matriz ≠ brecha).
 
 Tener PDF **Anexo C** abierto por si piden detalle.
 
 ---
 
-## Imágenes
-
-Ancho fijo (12,1"), sin forzar alto — evita recorte. Slides 3, 11, 15, 18: revisar y mover a mano si el caption se superpone.
-
----
-
-## Modo rápido (12 min)
-
-Acelerar slides 6, 7, 20 (30 s c/u). **No omitir** slides 16–17 (matriz).
-
----
-
-## Regenerar
+## Regenerar presentación
 
 ```bash
-cd plan-tesis/exposicion/ppt
-.venv/bin/python3 build_exposicion.py
+cd plan-tesis/exposicion/latex
+make pdf
 ```
+
+*Los `.pptx` de esta carpeta son solo fuente de figuras; no usar para exponer.*
