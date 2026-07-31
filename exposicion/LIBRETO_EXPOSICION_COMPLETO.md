@@ -166,15 +166,33 @@
 
 **Diapositiva:** Problema tecnológico + P1–P4 (§1.3)
 
-> Este es el **problema tecnológico** — el de la **matriz de consistencia** (Anexo C). Es **distinto** de la problemática del sector que explicó Jack: aquí hablamos de **qué artefacto falta diseñar** y con qué método.  
+> Hasta aquí Jack nos mostró el **dolor del sector** — la problemática real — y yo mostré **cómo mediríamos** casos concretos con S, E y C. Ahora cambiamos de registro: esta diapositiva es el **problema tecnológico** del plan, sección **1.3**. Es el problema que aparece en la **matriz de consistencia** del Anexo C — no confundirlo con la slide 5 ni con la brecha de la slide 19.  
 >  
-> Formulamos que los enfoques actuales son **insuficientes o no adaptados** al par OpenAPI↔BIAN. **No** decimos «no existe ningún método»: hay revisión manual y *schema matching* genérico, pero falta un procedimiento **reproducible y documentado** para este par de artefactos.  
->  
-> El **artefacto** a diseñar combina procedimiento + modelo **S/E/C → AlignmentScore**.  
->  
-> Las preguntas **P1 a P4** lo operacionalizan: **P1** — ¿cómo emparejar estructuras? → **E**; **P2** — ¿cómo medir similitud de significado? → **S**; **P3** — ¿qué proporción del dominio BIAN cubre el contrato? → **C**; **P4** — ¿cómo integrar y clasificar? → **AlignmentScore** y nivel Alta/Media/Baja/Nula.
+> Señalo primero el recuadro dorado de **recordatorio**: **«Problemática del sector ≠ problema tecnológico del artefacto»**. En palabras simples: que exista fragmentación en los bancos **motiva** la investigación, pero **no es** el problema que nuestro procedimiento resuelve directamente. Nuestro problema tecnológico es otro: **cómo diseñar un método reproducible** para cuantificar la alineación entre un contrato OpenAPI y un Service Domain BIAN.
 
-**Acción:** enfatizar en voz la palabra «**insuficiente**»; señalar P1–P4 en la diapositiva.
+**El problema tecnológico en una frase**
+
+> Formulamos que los enfoques actuales son **insuficientes o no adaptados** a este par específico OpenAPI↔BIAN. Quiero que quede claro: **no** decimos «no existe ningún método». Sí existen revisión manual entre equipos, herramientas genéricas de *schema matching* — del tipo que revisa **Shvaiko y Euzenat en 2005** — y trabajos sobre OpenAPI como el mapeo de **Casas et al. en 2021**. Lo que **falta** es un procedimiento **documentado, reproducible y orientado** a contratos bancarios OpenAPI frente a dominios BIAN, que entregue los scores S, E y C de forma sistemática.
+
+**Las cuatro preguntas P1–P4**
+
+> Para no dejar el problema en abstracto, lo descomponemos en **cuatro preguntas de diseño**, P1 a P4, que ven en el panel. Las señalo una por una:  
+>  
+> **P1 — Matching estructural:** ¿cómo emparejar de forma sistemática paths, operaciones y schemas del contrato con behaviors y objetos de negocio del Service Domain? Esa pregunta alimenta el **StructuralScore E** — la dimensión «¿encajan las piezas?».  
+>  
+> **P2 — Similitud semántica:** aunque la estructura coincida, ¿los nombres y conceptos significan lo mismo? Recuerden el **Caso A** de la slide anterior: mismos roles de negocio, nombres distintos. Esa pregunta alimenta el **SemanticScore S**.  
+>  
+> **P3 — Cobertura:** ¿qué proporción del Service Domain BIAN queda reflejada en el contrato? Si faltan operaciones — como en el **Caso B** — el contrato puede ser estructuralmente correcto pero **incompleto**. Esa pregunta alimenta el **CoverageScore C**.  
+>  
+> **P4 — Score integrado:** ¿cómo combinar S, E y C en un **AlignmentScore** único, interpretable, y cómo clasificar el contrato en **Alta, Media, Baja o Nula** en la escala [0, 1]? Aquí entran los pesos **α, β, γ** que verán en las slides de variables.
+
+**El artefacto que respondemos diseñar**
+
+> El **artefacto** que el plan se compromete a **diseñar** — no a implementar en producción en Guía 1 — es la **unión de dos piezas**: un **procedimiento** paso a paso (normalizar → emparejar → calcular similitud → integrar) y el **modelo S/E/C** con su **AlignmentScore** y reglas de clasificación. El producto es **documentación verificable**; el software ejecutable queda para **Tesis 2**.  
+>  
+> Cierro la idea señalando la última viñeta: el artefacto termina en una **clasificación en [0, 1]** — no en una opinión subjetiva del arquitecto, sino en un ratio reproducible que el banco podría usar **antes del despliegue** para decidir si el contrato cuenta la misma historia de negocio que el modelo BIAN de referencia.
+
+**Acción:** leer en voz alta y con énfasis «**insuficiente o no adaptado**» — es un matiz que el docente valora (PI-12). Señalar el **recuadro dorado**, luego **P1 → P2 → P3 → P4** en orden. Si preguntan por las citas: Shvaiko sustenta P1/E; Casas contextualiza por qué OpenAPI está maduro pero BIAN no está integrado en la literatura.
 
 ---
 
