@@ -250,36 +250,102 @@
 
 **Diapositiva:** Variables dependientes (Tabla 5 · Anexo D)
 
-> Las **variables dependientes (VD)** son los **ratios o puntajes medidos** como resultado del procedimiento:  
+> En la slide anterior vimos las **variables independientes (VI)** — las **decisiones de diseño** que **nosotros fijamos** al construir el procedimiento. Esta diapositiva muestra las **variables dependientes (VD)**. La palabra «dependiente» suele generar duda, así que la aclaro primero.  
 >  
-> **OE1:** **completitud de la normalización** (elementos extraídos vs esperados).  
-> **OE2:** **E** — StructuralScore ∈ [0, 1].  
-> **OE3:** **S** — SemanticScore ∈ [0, 1].  
-> **OE4:** **C** (cobertura), **AlignmentScore** agregado y **nivel** Alta/Media/Baja/Nula.  
->  
-> Repito la fórmula central porque es el corazón del artefacto: **AlignmentScore = α·S + β·E + γ·C**.  
->  
-> El detalle de **cómo medir** cada ratio está en el **Anexo D** del informe; la trazabilidad con hipótesis, en el **Anexo C**.
+> **¿Dependientes de qué?** Dependen de **dos cosas**:  
+> **(1)** de las **VI** de la slide 14 — si cambiamos el esquema de normalización, la estrategia de matching, la técnica semántica o los pesos **α, β, γ**, cambia el puntaje que obtiene el mismo contrato;  
+> **(2)** del **insumo concreto** que entra al procedimiento — un **contrato OpenAPI** emparejado con un **Service Domain BIAN** determinado. No son decisiones que el investigador elige a mano en cada ejecución: son **salidas medidas** que el artefacto **produce** al procesar ese par.
 
-**Acción:** decir la fórmula mirando la tabla; reforzar en slide 17 si hace falta.
+**Por qué «dependiente» y no «independiente»**
+
+> En el plan usamos el lenguaje clásico de investigación: la **VI** es lo que **controlamos** en el diseño (*¿con qué algoritmo emparejo?*, *¿con qué pesos agrego?*); la **VD** es lo que **observamos** como resultado (*¿qué tan completa fue la normalización?*, *¿cuánto vale E, S, C?*).  
+>  
+> En **Guía 1** no ejecutamos el procedimiento a escala; por eso las VD están **definidas y documentadas** — sabemos **qué** mediremos y **en qué escala** [0, 1] —, pero los valores numéricos concretos se obtendrán en **Tesis 2** cuando corramos el software sobre contratos reales del **Anexo F**.
+
+**Cada fila de la tabla — qué medimos y de qué VI depende**
+
+> Recorro la tabla señalando cada fila y enlazándola con la slide 14:  
+>  
+> **OE1 — Completitud de la normalización.**  
+> **VD:** ratio **elementos extraídos / elementos esperados** al pasar el contrato y BIAN al esquema intermedio.  
+> **Depende de la VI «esquema de representación intermedia»:** si el esquema es pobre, la completitud será baja aunque el contrato sea bueno. Es el indicador de que **OE1 cumplió su producto** antes de calcular scores.  
+>  
+> **OE2 — StructuralScore (E).**  
+> **VD:** puntaje **E ∈ [0, 1]** — qué tan bien emparejan estructuras REST y BIAN.  
+> **Depende de la VI «estrategia de schema matching»** (base teórica: Shvaiko & Euzenat, 2005): distinta estrategia → distinta matriz de correspondencia → distinto **E** para el mismo contrato.  
+>  
+> **OE3 — SemanticScore (S).**  
+> **VD:** puntaje **S ∈ [0, 1]** — similitud de **significado**, no solo de forma.  
+> **Depende de la VI «técnica de similitud semántica»** (embeddings, ontología o híbrido). Recuerden el **Caso A** de la slide 10: mismos roles de negocio, nombres distintos → **S** bajo.  
+>  
+> **OE4 — CoverageScore (C), AlignmentScore y clasificación.**  
+> **VD:** tres salidas ligadas: **C** (cobertura del Service Domain), el **AlignmentScore** agregado y el **nivel** Alta / Media / Baja / Nula.  
+> **Dependen de la VI «pesos α, β, γ»** y, indirectamente, de todo lo anterior — porque **C** usa el emparejamiento previo, y el **AlignmentScore** combina S, E y C. La fórmula que debe quedar en la cabeza del auditor es:  
+>  
+> **AlignmentScore = α·S + β·E + γ·C**, con **α + β + γ = 1**.  
+>  
+> Si subo el peso **β**, doy más importancia a la estructura; si subo **α**, a la semántica. Por eso el score final **depende** de las decisiones de diseño **y** de los S, E, C que salieron de ese contrato concreto.
+
+**Cierre y enlaces**
+
+> En resumen: las **VD no son entradas** — son **productos medibles** del artefacto. La slide 14 dice **cómo lo construimos**; esta slide dice **qué nos devuelve** al evaluar un contrato frente a BIAN.  
+>  
+> El **Anexo D** del informe detalla **cómo calcular** cada ratio; el **Anexo C** enlaza cada VD con su **hipótesis** (H1–H4) para la validación futura. Si el docente pide profundidad, abrimos el Anexo D en la fila que pregunte.
+
+**Acción:** antes de recorrer filas, decir en voz alta: «**Dependen de las VI de la slide anterior y del contrato que evaluamos**». Señalar **OE1→OE4** en orden; escribir o trazar en el aire la fórmula **α·S + β·E + γ·C**. Enlace oral explícito: «la fila OE2 de VI era matching; la fila OE2 de VD es **E**».
 
 ---
 
 ## SLIDE 16 · 9:05–9:45 · **Alex**
 
-**Diapositiva:** Metodología — 5 fases (§4.2)
+**Diapositiva:** Metodología — 5 fases (§4.2 · §4.2.1)
 
-> Si el docente pide «empiecen por metodología», esta es la diapositiva clave.  
+> Hasta ahora definimos **objetivos**, **variables independientes** y **dependientes**. Esta diapositiva responde la pregunta operativa: **¿en qué orden se hace el trabajo?** Es la **metodología** del Capítulo 4 — sección **4.2** y tabla **4.2.1** del informe.  
 >  
-> **Fase 1 · Diseñar** — definir entradas, definición de scores y umbrales → producto: modelo S/E/C **documentado**.  
-> **Fase 2 · Normalizar** — ejecutar OE1 sobre contrato + Service Domain.  
-> **Fase 3 · Emparejar** — OE2 → matriz estructural y **E**.  
-> **Fase 4 · Calcular similitud** — OE3 → **S**.  
-> **Fase 5 · Integrar** — OE4 → **C**, **AlignmentScore** y tipologías de desalineación.  
->  
-> Cada verbo corresponde a una fila de la tabla del Capítulo 4, sección 4.2.1, del informe escrito.
+> Si el docente dice «**empiecen por metodología**» — criterio **PI-14** — esta es la diapositiva por la que **conviene arrancar** la parte técnica: muestra el **procedimiento como una secuencia de verbos**, no como una lista suelta de conceptos.
 
-**Acción:** señalar cada fase en la tabla; tener el PDF §4.2.1 por si profundizan.
+**Qué muestra la tabla**
+
+> La tabla tiene **cuatro columnas** que conviene nombrar antes de bajar fila por fila: **Fase** (el número de paso), **Verbo** (la acción en infinitivo — diseñar, normalizar, emparejar…), **Transformación** (qué entra y qué operación se aplica) y **Producto** (qué queda **verificable** al terminar esa fase). Esa lógica **Problema → objetivo → producto** es la misma que verán formalizada en la **matriz del Anexo C** en la slide 18.
+
+**Fase 1 — Diseñar**
+
+> **Verbo: Diseñar.**  
+> Aquí estamos **hoy**, en **Guía 1**: fijamos **entradas** (contrato OpenAPI + Service Domain BIAN), **definición de los scores** S, E y C, **umbrales** de clasificación (0,80 / 0,60 / 0,40) y la **fórmula** de agregación.  
+> **Transformación:** no procesamos aún un banco real a escala; **documentamos** el modelo.  
+> **Producto:** el **modelo S/E/C documentado** — el entregable central del plan. Sin esta fase, las demás no tendrían reglas claras.
+
+**Fase 2 — Normalizar (OE1)**
+
+> **Verbo: Normalizar.**  
+> **Transformación:** tomamos el **contrato** y el **extracto BIAN** — en Tesis 2, con parser y extracto real — y los llevamos a **representaciones comparables** en un esquema intermedio.  
+> **Producto:** representaciones **versionadas** listas para matching.  
+> Enlazo con la slide 15: la **VD** de esta fase es la **completitud de la normalización**; si falla aquí, no tiene sentido calcular E, S ni C.
+
+**Fase 3 — Emparejar (OE2)**
+
+> **Verbo: Emparejar.**  
+> **Transformación:** sobre las representaciones normalizadas, aplicamos **schema matching** — emparejamiento estructural entre capa REST y modelo BIAN.  
+> **Producto:** matriz de correspondencia + **StructuralScore E** ∈ [0, 1].  
+> Responde a la **P1** de la slide 11: «¿cómo emparejar estructuras?». Base teórica: **Shvaiko & Euzenat (2005)**.
+
+**Fases 4 y 5 — Calcular similitud e integrar (OE3 y OE4)**
+
+> En la diapositiva, **Fase 4–5** aparecen en **una fila** por espacio, pero oralmente son **dos pasos**:  
+>  
+> **Fase 4 — Calcular (OE3):** medir **similitud semántica** → producto **SemanticScore S**. Responde a **P2** y al **Caso A** (nombres distintos, mismo negocio).  
+>  
+> **Fase 5 — Integrar (OE4):** medir **cobertura C**, agregar **AlignmentScore = α·S + β·E + γ·C** y asignar la **clasificación** Alta / Media / Baja / Nula, más las **tipologías** de desalineación. Responde a **P3** y **P4** y al **Caso B** (operaciones faltantes).  
+>  
+> El **producto final** del procedimiento es el **AlignmentScore** con su etiqueta interpretable para arquitectura — no un número suelto.
+
+**Cierre — Guía 1 vs ejecución**
+
+> Repito el matiz del plan: en **Guía 1** **diseñamos y documentamos** estas cinco fases; en **Tesis 2** **ejecutamos** el software sobre contratos del **Anexo F** y **validamos** las hipótesis H1–H4. La metodología ya está **cerrada en papel**; falta la evidencia empírica.  
+>  
+> La **slide 17** muestra el **mismo artefacto** en figura — S, E, C y la fórmula — para quien prefiera visualizarlo.
+
+**Acción:** señalar el **encabezado de columnas** antes de bajar. Recorrer **Fase 1 → 5** con el dedo en la columna **Verbo**. En **Fase 4–5**, separar oralmente «primero S, luego C y score». Si preguntan detalle de actividades, abrir PDF **§4.2.1**. Cierre en voz: «**Cinco verbos, cinco productos, un solo procedimiento reproducible**».
 
 ---
 

@@ -50,6 +50,13 @@ artefacto y la validación empírica a escala quedan fuera del alcance del prese
 OpenAPI frente a \ServiceDomain{} BIAN, mediante un procedimiento reproducible documentado en este
 plan.
 
+\textbf{Base de medición.} El objetivo general se verifica sobre cada instancia
+\texttt{contrato OpenAPI bancario $\times$ Service Domain BIAN}: el procedimiento produce
+\AlignmentScore{} $\in [0,1]$ y clasificación por niveles (Alta/Media/Baja/Nula). La
+\textbf{variable dependiente del artefacto} es el \AlignmentScore{} junto con la clasificación; los
+ratios S, E, C y la completitud de normalización son \textbf{productos parciales} de OE1--OE4, no
+sustitutos de la VD global.
+
 Cada componente responde a las preguntas P1--P4 del §\ref{sec:planteamiento}: OE1 normaliza los
 artefactos; OE2 responde P1 con \textit{matching} estructural (E); OE3 responde P2 con similitud
 semántica (S); OE4 integra S, E y C para responder P3 (cobertura) y P4 (score global y

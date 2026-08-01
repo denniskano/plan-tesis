@@ -200,6 +200,44 @@
 
 \newcommand{\keyterm}[1]{\textbf{\textcolor{uninavy}{#1}}}
 
+% Enunciado completo en slide (autocontenido — no depender del libreto)
+\newenvironment{planstatement}{%
+  \begin{tcolorbox}[
+    enhanced,
+    arc=4pt,
+    boxrule=0.45pt,
+    colframe=uninavy!55,
+    colback=uninavy!4,
+    width=\linewidth,
+    boxsep=0pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+    borderline west={2.5pt}{0pt}{uniaccent},
+  ]
+  \small
+}{%
+  \end{tcolorbox}%
+}
+
+% VD del artefacto (destacada)
+\newenvironment{planvdartefacto}{%
+  \begin{tcolorbox}[
+    enhanced,
+    arc=4pt,
+    boxrule=0.55pt,
+    colframe=uniaccent!85,
+    colback=uniaccent!12,
+    width=\linewidth,
+    boxsep=0pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt,
+    title={\bfseries Variable dependiente del artefacto (rendimiento global)},
+    fonttitle=\normalsize,
+    coltitle=uninavy,
+  ]
+  \small
+}{%
+  \end{tcolorbox}%
+}
+
 % Punto rojo esquina superior derecha — slide no oral
 \newcommand{\marcadorNoExponer}{%
   \begin{tikzpicture}[remember picture,overlay]

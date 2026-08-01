@@ -1,11 +1,14 @@
-El procedimiento sigue las cinco fases del modelo (Anexo~C), alineadas con OE1--OE4. Este capítulo
+El procedimiento sigue las cinco fases del modelo (Anexo~C), alineadas con OE1--OE4. La
+\textbf{adquisición de artefactos} (Cap.~4 §4.3) precede a la normalización: contratos OpenAPI y
+material BIAN se identifican, versionan y almacenan antes del \textit{parsing}. Este capítulo
 documenta el diseño del procedimiento; su ejecución a escala queda fuera del alcance (§1.6).
 
 \begin{enumerate}
   \item \textbf{Fase 1 --- Diseñar el modelo:} definir entradas, scores S/E/C, fórmula de
         agregación y umbrales de clasificación (Cap.~1 §1.4; Anexo~C).
-  \item \textbf{Fase 2 --- Normalizar artefactos (OE1):} parsear el contrato OpenAPI y el material
-        BIAN; producir representaciones comparables (tabular, grafo o RDF según factor elegido).
+  \item \textbf{Fase 2 --- Adquirir y normalizar artefactos (OE1):} obtener contratos OpenAPI y
+        extractos BIAN (§4.3); parsear y producir representaciones comparables (tabular, grafo o RDF
+        según factor elegido).
   \item \textbf{Fase 3 --- Emparejar estructuras (OE2):} calcular correspondencias y
         \StructuralScore{} (E).
   \item \textbf{Fase 4 --- Calcular similitud semántica (OE3):} obtener \SemanticScore{} (S).

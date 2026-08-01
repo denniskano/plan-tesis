@@ -1,10 +1,10 @@
 # Checklist pre-exposición — Grupo 9.2
 
-Usar **5 min antes** de compartir pantalla. Detalle en [`GUIA_EXPOSICION_JULIO.md`](GUIA_EXPOSICION_JULIO.md).
+Usar **5 min antes** de compartir pantalla. Las slides son **autocontenidas** (PI-16): no depender del libreto para PT, OG, VD ni ejemplos.
 
 ## Documento
 
-- [ ] **Presentación oficial:** `Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf` (22 slides; saltar slides **2** y **3**)
+- [ ] **Presentación oficial:** `Exposicion_Plan_Tesis_Grupo9.2-beamer.pdf` (22 slides; avanzar **1 → 5**, omitir 2–4 con punto rojo)
 - [ ] PDF plan de respaldo: `../latex/build/Plan_Tesis_Grupo9.2.pdf` (Anexo C si preguntan matriz)
 
 ## Referencias (demostración en vivo)
@@ -18,15 +18,27 @@ Usar **5 min antes** de compartir pantalla. Detalle en [`GUIA_EXPOSICION_JULIO.m
 - [ ] Micrófono probado
 - [ ] Roles Alex/Jack acordados (quién navega, quién marca ideas)
 
-## Mensajes clave (una frase cada uno)
+## Slides críticas (texto escrito visible — PI-16)
+
+- [ ] **Slide 10:** problema tecnológico como **situación** (no «diseñar»)
+- [ ] **Slide 11:** OG con insumo, producto, **base de medición**, VD, fórmula
+- [ ] **Slide 14–15:** VI con técnicas nombradas; VD global vs ratios OE
+- [ ] **Slide 9:** tres casos numéricos (A/B/C) + ejemplo E = 7/8
+
+## Respuestas rápidas (si preguntan)
+
+- [ ] **VD del artefacto:** AlignmentScore + clasificación (no «representación intermedia»)
+- [ ] **¿Algoritmo?** Schema matching + similitud semántica — **no** ML supervisado
+- [ ] **BIAN:** Service Domain (behaviors, BO), no «segundo contrato OpenAPI» genérico
+
+## Mensajes clave
 
 - [ ] Tres niveles de problema (real → subyacente → técnico)
 - [ ] Objeto vs UA vs producto
 - [ ] Brecha (Cap. 3) ≠ problema matriz (Anexo C)
 - [ ] Guía 1 = diseño; Tesis 2 = validación (§1.6)
 
-## Si es exposición final (30 jul)
+## Si es exposición final
 
-- [ ] Ensayo cronometrado con [`LIBRETO_EXPOSICION_COMPLETO.md`](LIBRETO_EXPOSICION_COMPLETO.md) (20 slides orales · saltar 2 y 3)
-- [ ] Caso A (S) y Caso B (C) en slide 10
-- [ ] Matriz slide **18** (una sola) · Brecha slide 19
+- [ ] Ensayo cronometrado 15+5 min (libreto opcional, slides mandan)
+- [ ] Matriz slide **18** · Brecha slide **19**
