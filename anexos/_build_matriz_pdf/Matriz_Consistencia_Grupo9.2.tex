@@ -1,0 +1,64 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[a3paper,margin=10mm]{geometry}
+\usepackage{array,booktabs,longtable,ragged2e,colortbl,xcolor}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{3.5pt}
+\definecolor{tablehead}{RGB}{47,84,150}
+\definecolor{tablealt}{RGB}{238,242,247}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}{\LARGE\bfseries MATRIZ DE CONSISTENCIA}\end{center}
+\noindent{\small Evaluación de la alineación semántica entre contratos OpenAPI y modelos de negocio BIAN mediante análisis estructural y similitud semántica en arquitecturas API bancarias}\par\vspace{0.4em}
+\noindent{\small Grupo 9.2 — Alex Mancilla · Jack Paitan}\par\vspace{0.4em}
+\noindent{\small Problema general: ¿En qué medida y bajo qué tipologías se produce desalineación entre contratos OpenAPI y los modelos de negocio BIAN en arquitecturas API bancarias? Objetivo general: Evaluar la alineación estructural y semántica entre contratos OpenAPI y modelos BIAN mediante un procedimiento reproducible que produzca métricas y un score de coherencia global por caso de estudio.}\par\vspace{0.4em}
+\vspace{0.5em}
+\scriptsize
+\begin{longtable}{@{} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} P{0.094\textwidth} @{}}
+\toprule
+\textbf{\color{white}\cellcolor{tablehead}Fase} & \textbf{\color{white}\cellcolor{tablehead}Problema} & \textbf{\color{white}\cellcolor{tablehead}Objetivo} & \textbf{\color{white}\cellcolor{tablehead}Producto verificable} & \textbf{\color{white}\cellcolor{tablehead}Variable Independiente} & \textbf{\color{white}\cellcolor{tablehead}Estados de la Variable Independiente} & \textbf{\color{white}\cellcolor{tablehead}Variable Dependiente} & \textbf{\color{white}\cellcolor{tablehead}Hipótesis} & \textbf{\color{white}\cellcolor{tablehead}Indicadores / Métricas de la Variable Dependiente} & \textbf{\color{white}\cellcolor{tablehead}Variables de Control} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{10}{r}{\textit{(continúa)}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Fase 1 — Diseño del procedimiento de evaluación & No existe un procedimiento documentado y reproducible para evaluar la alineación entre contratos OpenAPI y modelos de negocio BIAN en arquitecturas API bancarias. & Diseñar el procedimiento de evaluación de alineación OpenAPI $\leftrightarrow$ BIAN, definiendo entradas, transformaciones, salidas y criterios de verificación. & Pipeline metodológico documentado: adquisición → normalización → matching estructural → similitud semántica → score integrado. & No aplica & No aplica & Adecuación del diseño metodológico & Un procedimiento estructurado por fases permite evaluar de forma reproducible la coherencia entre contratos OpenAPI y artefactos BIAN. & Cobertura del pipeline (nº de etapas definidas), trazabilidad entrada→salida, criterios de validez explícitos. & Ámbito: sector bancario; artefactos OpenAPI 3.x y Service Domains BIAN; alcance documental (sin despliegue en producción). \\
+\rowcolor{tablealt} Fase 2 — Adquisición y normalización de artefactos (OE1) & Los contratos OpenAPI y las especificaciones BIAN son heterogéneos, lo que impide compararlos directamente (P1). & Transformar contratos OpenAPI y artefactos BIAN en representaciones estructurales normalizadas y comparables. & Conjunto de representaciones normalizadas versionadas (paths, operations, schemas, behaviors, business objects) listas para matching. & Esquema de representación intermedia & Modelo tabular (recurso–operación–esquema); modelo en grafo (nodos/aristas); modelo RDF/triples (opcional). & Calidad y completitud de la extracción estructural & La normalización de artefactos OpenAPI y BIAN en un modelo intermedio común habilita el análisis sistemático de correspondencias. & Nº de elementos extraídos (endpoints, schemas, behaviors, business objects); \% de cobertura respecto al artefacto fuente; integridad de metadatos. & Misma versión del contrato OpenAPI y del Service Domain BIAN; mismo caso piloto (Payment Execution); herramientas de parsing fijas. \\
+Fase 3 — Matching estructural (OE2) & No se conocen las correspondencias estructurales entre endpoints, recursos y esquemas OpenAPI y los elementos del Service Domain BIAN (P1). & Calcular métricas de correspondencia estructural entre componentes OpenAPI y artefactos BIAN normalizados. & Matriz de correspondencias estructurales y score estructural por caso de estudio. & Estrategia de matching estructural (schema matching) & Correspondencia por nombre exacto; similitud de ruta/recurso; correspondencia por profundidad y tipo de esquema; matching por operación HTTP. & Grado de alineación estructural OpenAPI $\leftrightarrow$ BIAN & Las técnicas de schema matching identifican correspondencias significativas entre endpoints/recursos OpenAPI y behaviors/business objects BIAN. & Tasa de correspondencia estructural (\%); nº de pares alineados; score estructural normalizado (0–100\%); desalineaciones estructurales detectadas. & Mismo conjunto normalizado de la Fase 2; umbral de correspondencia fijo; sin intervención manual en el matching. \\
+\rowcolor{tablealt} Fase 4 — Análisis de similitud semántica (OE3) & Se desconoce el grado de equivalencia semántica entre términos de negocio BIAN y nombres/descripciones en OpenAPI (P2). & Calcular métricas de similitud semántica entre conceptos de negocio BIAN y componentes del contrato OpenAPI. & Matriz de similitud semántica y score semántico por par de conceptos comparables. & Técnica de similitud semántica & Embeddings + similitud coseno; matching léxico/ontológico; enfoque híbrido (estructural + semántico). & Grado de alineación semántica OpenAPI $\leftrightarrow$ BIAN & Las métricas de similitud semántica discriminan pares de conceptos alineados de pares con desalineación semántica o de modelado. & Similitud coseno promedio; score semántico normalizado (0–100\%); nº de pares sobre umbral; distribución por tipología (semántica, modelado). & Mismo corpus de términos; umbral de similitud fijo; misma técnica de embedding/modelo por corrida. \\
+Fase 5 — Evaluación integrada y tipología (OE4 / P3–P4) & No existe un indicador integrado que combine métricas estructurales y semánticas ni caracterice las tipologías de desalineación predominantes (P3, P4). & Obtener un esquema de puntuación de coherencia global y clasificar las desalineaciones por tipología por caso de estudio. & Score integrado de coherencia (\%), informe de tipologías (estructural, semántica, modelado, REST/contrato) por caso. & Esquema de agregación de métricas & Promedio ponderado (estructural + semántico); mínimo de ambos scores; regla por tipología dominante. & Coherencia global OpenAPI $\leftrightarrow$ BIAN & La integración de scores estructural y semántico produce un indicador interpretable de coherencia global por Service Domain evaluado. & Score integrado de coherencia (\%); peso estructural/semántico aplicado; frecuencia por tipología de desalineación; ranking de elementos críticos. & Pesos de agregación fijos; mismos scores de Fases 3 y 4; misma taxonomía de desalineaciones (Tabla 2, Cap. 1). \\
+\rowcolor{tablealt} Fase 6 — Validación en caso de estudio & Falta evidencia empírica de la aplicabilidad del procedimiento en un dominio bancario concreto con artefactos de referencia públicos. & Validar el procedimiento completo en el caso piloto Payment Execution (OpenAPI + Service Domain BIAN). & Informe de resultados del caso piloto: scores, correspondencias, tipologías y trazabilidad de artefactos. & Caso de estudio (Service Domain BIAN) & Payment Execution (caso piloto); eventual extensión a otro Service Domain. & Validez y reproducibilidad del procedimiento en el caso & El procedimiento aplicado al caso Payment Execution produce resultados reproducibles y trazables a partir de artefactos oficiales BIAN. & Coherencia global del caso (\%); reproducibilidad entre ejecuciones; nº de correspondencias trazables; amenazas a la validez documentadas. & Artefactos oficiales del catálogo BIAN; OpenAPI 3.x; versiones registradas en Anexo F; sin modificación manual de resultados. \\
+\end{longtable}
+\normalsize
+\newpage
+\begin{center}{\Large\bfseries Resumen OG--OE}\end{center}
+\vspace{0.5em}
+\small
+\begin{longtable}{@{}L{0.22\textwidth}L{0.52\textwidth}L{0.22\textwidth}@{}}
+\toprule
+\textbf{\color{white}\cellcolor{tablehead}Elemento} & \textbf{\color{white}\cellcolor{tablehead}Descripción} & \textbf{\color{white}\cellcolor{tablehead}Vinculación} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\endlastfoot
+Problema general & ¿En qué medida y bajo qué tipologías se produce desalineación entre contratos OpenAPI y los modelos de negocio BIAN en arquitecturas API bancarias? & Cap. 1 §1.3 \\
+\rowcolor{tablealt} Objetivo general & Evaluar la alineación estructural y semántica entre contratos OpenAPI y modelos BIAN mediante un procedimiento reproducible que produzca métricas y un score de coherencia global por caso de estudio. & Cap. 2 §2.2 \\
+OE1 & Transformar contratos OpenAPI y artefactos BIAN en representaciones estructurales normalizadas y comparables. & Fase 2 — Normalización \\
+\rowcolor{tablealt} OE2 & Calcular métricas de correspondencia estructural entre componentes OpenAPI y artefactos BIAN normalizados. & Fase 3 — Matching estructural \\
+OE3 & Calcular métricas de similitud semántica entre conceptos de negocio BIAN y componentes del contrato OpenAPI. & Fase 4 — Similitud semántica \\
+\rowcolor{tablealt} OE4 & Obtener un esquema de puntuación de coherencia global y clasificar las desalineaciones por tipología por caso de estudio. & Fase 5 — Score integrado \\
+P1 & Correspondencias estructurales & Fases 2–3 \\
+\rowcolor{tablealt} P2 & Similitud semántica & Fase 4 \\
+P3–P4 & Tipologías y coherencia global & Fase 5 \\
+\rowcolor{tablealt} Caso piloto & Payment Execution (OpenAPI + BIAN SD) & Fase 6 \\
+\end{longtable}
+\end{document}

@@ -1,0 +1,39 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[a3paper,margin=10mm]{geometry}
+\usepackage{array,booktabs,longtable,ragged2e,colortbl,xcolor}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{3.5pt}
+\definecolor{tablehead}{RGB}{47,84,150}
+\definecolor{tablealt}{RGB}{238,242,247}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}{\LARGE\bfseries MATRIZ DE CONSISTENCIA (v2)}\end{center}
+\noindent{\small Alineación entre contratos OpenAPI bancarios y modelos de referencia BIAN mediante análisis estructural y similitud semántica}\par\vspace{0.4em}
+\noindent{\small Grupo 9.2 — Alex Mancilla \textbullet{} Jack Paitan}\par\vspace{0.4em}
+\vspace{0.5em}
+\scriptsize
+\begin{longtable}{@{} P{0.117\textwidth} P{0.117\textwidth} P{0.117\textwidth} P{0.117\textwidth} P{0.117\textwidth} P{0.117\textwidth} P{0.117\textwidth} P{0.117\textwidth} @{}}
+\toprule
+\textbf{\color{white}\cellcolor{tablehead}Problema de Estudio} & \textbf{\color{white}\cellcolor{tablehead}Objetivo General} & \textbf{\color{white}\cellcolor{tablehead}Objetivos Específicos} & \textbf{\color{white}\cellcolor{tablehead}Hipótesis} & \textbf{\color{white}\cellcolor{tablehead}Variables} & \textbf{\color{white}\cellcolor{tablehead}Metodología} & \textbf{\color{white}\cellcolor{tablehead}Técnicas e Instrumentos} & \textbf{\color{white}\cellcolor{tablehead}Resultados Esperados} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{\textit{(continúa)}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Problema tecnológico (Fase 1): no existe un procedimiento documentado y reproducible que cuantifique en qué medida un contrato OpenAPI bancario se alinea con un Service Domain BIAN y bajo qué tipologías se desalinea (distinto de la problemática del sector, §1.2). & Diseñar un modelo de alineación (SemanticScore S, StructuralScore E, CoverageScore C) y un procedimiento reproducible que, sobre cada instancia contrato OpenAPI bancario × Service Domain BIAN, calcule el AlignmentScore $\in$ [0, 1] y la clasificación por niveles (Alta / Media / Baja / Nula), documentado en la Guía 1 (Cap. 2 §2.3). Base de medición: par contrato + extracto BIAN; VD del artefacto: AlignmentScore + clasificación. & Marco del plan: definir entradas, componentes S/E/C, fórmula AlignmentScore = $\alpha$\textbullet{}S + $\beta$\textbullet{}E + $\gamma$\textbullet{}C, umbrales y criterios de verificación (Fase 1 — diseño del modelo). & Un modelo estructurado por componentes S, E y C permite calcular de forma reproducible un score de alineación interpretable entre OpenAPI y BIAN. & VI: esquema S/E/C; pesos $\alpha$, $\beta$, $\gamma$. VD (artefacto): definición documentada de scores y trazabilidad. Control: ámbito bancario; OpenAPI 3.x; alcance Guía 1 (diseño). & Investigación tecnológica \textbullet{} Design Science. Fase 1 — Diseñar el modelo de alineación y el procedimiento (Anexo C). & Revisión documental; modelado conceptual; matriz de consistencia; redacción del procedimiento §4.2 (sin implementación en producción). & Modelo metodológico documentado: adquisición → normalización → S + E + C → AlignmentScore. \\
+\rowcolor{tablealt} Los contratos OpenAPI bancarios y los Service Domains BIAN expresan el dominio en vistas distintas (REST vs. negocio), lo que impide compararlos directamente (P1, P2). Falta adquisición versionada de artefactos antes del análisis. & Contribuye al OG: habilitar mediciones sobre representaciones comparables (OE1). & OE1 — Adquirir y normalizar: transformar contrato OpenAPI y extracto BIAN en representaciones normalizadas sobre un modelo intermedio común. & La normalización de OpenAPI bancario y BIAN en un modelo intermedio común habilita el cálculo sistemático de los scores S, E y C. & VI: esquema de representación intermedia (tabular / grafo / RDF). VD (ratio OE1): completitud de extracción (extraídos / esperados). Control: versión fija contrato + SD; herramientas de parsing fijas. & Fase 2 — Adquirir artefactos (§4.3) y normalizar (OE1): parsing OpenAPI 3.x; extracción paths, operations, schemas, behaviors, business objects. & Adquisición de datos (YAML/JSON versionado); parsing OpenAPI 3.x; extracción estructural; metadatos por instancia \{fuente\}\_\{service-domain\}\_\{version\}. & Representaciones normalizadas versionadas listas para matching y cálculo de scores. \\
+No se conocen las correspondencias de jerarquía entre endpoints, recursos y esquemas OpenAPI y los elementos del Service Domain BIAN (P1). & Contribuye al OG: cuantificar dimensión estructural (StructuralScore E). & OE2 — Emparejar estructuras: calcular correspondencias y StructuralScore (E) $\in$ [0, 1]. & Las técnicas de schema matching producen un StructuralScore que refleja la correspondencia entre la organización REST y el modelo BIAN. & VI: estrategia de schema matching (nombre, ruta, profundidad, operación HTTP). VD (ratio OE2): StructuralScore (E). Control: mismo conjunto normalizado OE1; umbral de correspondencia fijo. & Fase 3 — Emparejar estructuras (OE2): matriz de correspondencias endpoint/schema $\leftrightarrow$ Behavior/BusinessObject. & Schema matching (Shvaiko \& Euzenat, 2005): correspondencia por nombre, ruta, profundidad de esquema y operación HTTP; no aprendizaje supervisado. & Matriz de correspondencias estructurales y StructuralScore (E) normalizado [0, 1]. \\
+\rowcolor{tablealt} Se desconoce el grado de equivalencia semántica entre términos BIAN y nombres/descripciones en contratos OpenAPI bancarios (P2). & Contribuye al OG: cuantificar dimensión semántica (SemanticScore S). & OE3 — Calcular similitud semántica: SemanticScore (S) $\in$ [0, 1] entre conceptos OpenAPI y BIAN. & Las métricas de similitud semántica producen un SemanticScore que discrimina conceptos alineados de desalineaciones semánticas o de modelado. & VI: técnica de similitud semántica (embeddings / ontología / híbrido). VD (ratio OE3): SemanticScore (S). Control: mismo corpus de términos; umbral de similitud fijo. & Fase 4 — Calcular similitud semántica (OE3) sobre representaciones de OE1. & Similitud semántica (El Bayadh et al., 2015; Chandrasekaran \& Mago, 2022): embeddings + coseno, matching léxico/ontológico u híbrido. & Matriz de similitud semántica y SemanticScore (S) normalizado [0, 1]. \\
+No existe un indicador integrado que combine S, E y C ni una escala interpretable de alineación global por instancia contrato × SD (P3, P4). & Contribuye al OG: entregar AlignmentScore y clasificación — VD global del artefacto. & OE4 — Integrar: CoverageScore (C), AlignmentScore = $\alpha$\textbullet{}S + $\beta$\textbullet{}E + $\gamma$\textbullet{}C y clasificación por tipologías de desalineación. & La agregación ponderada de S, E y C produce un AlignmentScore interpretable y clasificable por niveles de alineación del contrato OpenAPI bancario. & VI: pesos $\alpha$, $\beta$, $\gamma$ ($\alpha$+$\beta$+$\gamma$=1). VD (artefacto): AlignmentScore + clasificación Alta/Media/Baja/Nula. VD (ratio OE4): CoverageScore (C). Control: pesos fijos; taxonomía §1.4; umbrales 0,80 / 0,60 / 0,40. & Fase 5 — Integrar y clasificar (OE4): agregación ponderada e informe de tipologías. & Agregación lineal $\alpha$\textbullet{}S + $\beta$\textbullet{}E + $\gamma$\textbullet{}C; reglas de clasificación; tipologías Tabla 2 Cap. 1. Validación empírica del prototipo: Tesis 2 (ground truth especialistas). & CoverageScore (C); AlignmentScore; clasificación (Alta $\geq$0,80 \textbullet{} Media \textbullet{} Baja \textbullet{} Nula); informe de tipologías de desalineación. \\
+\end{longtable}
+\normalsize
+\end{document}

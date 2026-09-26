@@ -3,7 +3,8 @@
 | Anexo | Archivo | Estado |
 |-------|---------|--------|
 | **B — Matriz de papers (estado del arte)** | `Matriz_Papers_EstadoDelArte_Grupo9.2.xlsx` | ✅ 14 fichas sincronizadas (Fase 0) |
-| **C — Matriz de consistencia** | `Matriz_Consistencia_Grupo9.2.xlsx` | ✅ Generada (5 fases, modelo S/E/C) |
+| **C — Matriz de consistencia** | `Matriz_Consistencia_Grupo9.2.xlsx` · `.pdf` (v1, 10 cols + resumen OG-OE) | ✅ Excel + PDF |
+| **C — Matriz v2 (institucional)** | `Matriz_Consistencia_Grupo9.2_v2.xlsx` · `_v2.pdf` (8 cols) | ✅ Solo `anexos/` |
 | **Figuras — Modelo de alineación** | `figuras_alineacion_openapi_bian.pdf` | ✅ Fuente · páginas en `../figuras/modelo-alineacion/` |
 | Guía exposición matriz | `GUIA_EXPOSICION_MATRIZ_CONSISTENCIA.md` | ✅ Guion oral |
 | D — Matriz de operación de variables | ✅ LaTeX Anexo D | ✅ |
@@ -14,8 +15,18 @@
 # Anexo B — fichas papers (Fase 0)
 herramientas/.venv-excel/bin/python3 herramientas/scripts/build_matriz_papers.py
 
-# Anexo C — consistencia
+# Anexo C — consistencia (Excel)
 herramientas/.venv-excel/bin/python3 herramientas/scripts/build_matriz_consistencia.py
+
+# Anexo C — PDF v1 (desde el xlsx actual)
+herramientas/.venv-excel/bin/python3 herramientas/scripts/export_matriz_consistencia_pdf.py
+
+# Matriz v2 — Excel (8 columnas) + PDF
+herramientas/.venv-excel/bin/python3 herramientas/scripts/build_matriz_consistencia_v2.py
+herramientas/.venv-excel/bin/python3 herramientas/scripts/export_matriz_consistencia_pdf.py \
+  --xlsx plan-tesis/anexos/Matriz_Consistencia_Grupo9.2_v2.xlsx \
+  --pdf plan-tesis/anexos/Matriz_Consistencia_Grupo9.2_v2.pdf \
+  --header-row 5 --intro-rows 3 --no-resumen
 ```
 
 ---
